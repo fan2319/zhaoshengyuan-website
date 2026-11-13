@@ -12,10 +12,10 @@ const LANG_META = {
 const I18N = {
   zh: {
     meta: {
-      title: '九江昭盛元科技有限公司 | 跨境供应链 · 茶叶与流体设备出口',
-      desc: '供应链管理服务；货物与技术进出口、进出口代理。茶叶产地直采，及泵、消防泵组、变频供水设备等流体设备的出口与选型支持。'
+      title: '九江昭盛元科技有限公司 | 茶叶 · 景德镇瓷器 · 流体设备出口',
+      desc: '供应链管理服务；货物与技术进出口、进出口代理。修水茶叶产地直采、景德镇瓷器选品，以及泵与消防供水设备的出口与选型支持。'
     },
-    nav: { about:'关于我们', center:'产品中心', products:'茶叶产品', industrial:'流体设备', stories:'产品故事', capability:'服务能力', why:'为什么选择我们', terms:'合作条款', faq:'常见问题', contact:'联系合作' },
+    nav: { about:'关于我们', center:'产品中心', products:'茶叶产品', industrial:'流体设备', porcelain:'景德镇瓷器', stories:'产品故事', capability:'服务能力', why:'为什么选择我们', terms:'合作条款', faq:'常见问题', contact:'联系合作' },
 
     drop: {
       teaLabel:'茶叶 · TEA', teaTitle:'茶叶与茶制品', teaDesc:'工夫红茶 · 高山绿茶 · 果茶花草茶',
@@ -23,17 +23,19 @@ const I18N = {
       machLabel:'流体设备 · FLUID', machTitle:'泵 · 消防泵组 · 供水设备', machDesc:'按工况选型，参数与资质可核验',
       machSeries:'六大产品系列', machCerts:'资质与合规', machRfq:'按工况发送询价',
       moreLabel:'继续了解', stories:'产品故事', capability:'服务能力', faq:'常见问题',
-      all:'查看全部产品 →', markText:'一个窗口，对接两条业务线'
+      porcLabel:'景德镇瓷器 · PORCELAIN', porcTitle:'景德镇瓷器', porcDesc:'咖啡器 · 茶器 · 成套餐具 · 艺术瓷',
+      pCoffee:'咖啡杯与杯碟', pTeaset:'旅行茶具套组', pDinner:'成套餐具', pCrafts:'五大工艺谱系', pHistory:'千年制瓷史',
+      all:'查看全部产品 →', markText:'一个窗口，对接三条业务线'
     },
 
     hero: { eyebrow:'江西 · 九江 · 修水',
       cta1:'查看产品', cta2:'发送询盘',
-      f1:'供应链管理经验', f2:'在营品类', f3:'运输方式', f4:'中俄直连' },
+      f1:'供应链管理经验', f2:'独立业务线', f3:'运输方式', f4:'中俄直连' },
 
     about: { label:'关于我们', qualTitle:'经营范围（可在国家企业信用信息公示系统核验）' },
 
     prod: { label:'茶叶产品', title:'茶叶产品',
-      lead:'茶叶品类已可供货；瓷器陆续上架。泵与给水设备另有独立板块，请点顶部「流体设备」。',
+      lead:'茶叶品类已可供货。景德镇瓷器与流体设备各自独立成板块，均可从顶部「产品中心」下拉进入。',
       note:'图示为实物拍摄。各品类规格、起订量与打样周期，请在询盘中说明采购规模与销售渠道。',
       subAll:'全部', readStory:'读它的故事' },
 
@@ -42,6 +44,32 @@ const I18N = {
             '下面每一段，都是真实的地理与历史，不是包装出来的说法。',
       empty:'故事整理中，即将上线。',
       era:'年代', readMore:'展开全文', readLess:'收起' },
+
+    porc: {
+      histLabel:'千年窑火 / A THOUSAND YEARS OF KILN FIRE',
+      histTitle:'一座城，一条路，一千年',
+      histLead:'以下年份与工艺说明均据公开权威资料整理。供货方产品图册只用于品类与规格，不作为史料来源。',
+      cityTitle:'从昌江，到圣彼得堡',
+      cityText:'昌江把瓷土、松柴与窑火送进这座城；万里茶道又把茶叶与瓷器一同送出，经恰克图抵达圣彼得堡。我们做茶，也做盛茶的器 —— 两条线在同一条商路上相遇。',
+      srcLabel:'史料来源',
+      craftLabel:'工艺谱系', craftTitle:'五大技艺，各有来处',
+      craftLead:'先认工艺，再认器型。青白瓷是宋代立镇之瓷，青花、玲珑、粉彩、颜色釉合称景德镇四大名瓷。下方色块为釉色示意，不是产品照片。',
+      catLabel:'产品目录', catTitle:'先按用途找，再按工艺筛',
+      catLead:'一级按器型用途归类（咖啡器、茶器、餐具……），二级按工艺筛选（青花、青白瓷、粉彩……）。卡片正面是容量、口径与成套配置，规格均取自图册。',
+      allGroup:'全部品类', allCraft:'全部工艺',
+      specLabel:'代表规格', detailLabel:'展开查看选品说明', detailHide:'收起',
+      quoteBtn:'按此品类询价',
+      compLabel:'出口与合规', compTitle:'可以核验的，才写上来',
+      compHeading:'出口与合规说明',
+      docsLabel:'询价请提供', rfqBtn:'发送选品询价',
+      lane1:'看工艺谱系', lane1d:'先看全不全。青白瓷、青花、玲珑、粉彩、颜色釉按窑口技艺归类，适合按目录选品。',
+      lane2:'看器型与规格', lane2d:'先看容量 ml、口径 mm、成套头数与适用场景。规格就在卡片正面，适合按采购清单逐项核对。',
+      lane3:'看归属与文件', lane3d:'先看图册来源、品牌归属声明与可索取的检测文件，适合尽调、清关与贴牌流程。',
+      laneTag:'同一份目录，三种读法',
+      empty:'该组合暂无上架品项，请选择其他分类。',
+      figureTag:'图册资料图 · 以确认样品为准',
+      ownerLabel:'归属声明'
+    },
 
     mach: {
       seriesLabel:'产品系列', seriesTitle:'六大系列，按工况归类',
@@ -58,7 +86,7 @@ const I18N = {
       lane1:'看型号谱系', lane1d:'先看全不全。完整系列与型号一览在每张卡片的展开区，适合按目录采购。',
       lane2:'看工况参数', lane2d:'先看 Q / H / P / DN、材质与结构。参数就在卡片正面，适合工程师按工况选型。',
       lane3:'看资质与文件', lane3d:'先看体系认证、归属声明与可索取的数据表，适合合规与尽调流程。',
-      laneTag:'同一份内容，三种读法'
+      laneTag:'同一份内容，三种读法', figureTag:'示意图 · 非实物照片'
     },
 
     cap: { label:'服务能力' },
@@ -93,10 +121,10 @@ const I18N = {
 
   en: {
     meta: {
-      title: 'Zhaoshengyuan | Cross-border Supply Chain · Tea & Fluid Equipment',
-      desc: 'Supply-chain management, import & export, import-export agency. Origin-sourced tea plus pumps, fire pump sets and VFD booster systems, with selection support.'
+      title: 'Zhaoshengyuan | Tea · Jingdezhen Porcelain · Fluid Equipment',
+      desc: 'Supply-chain management, import/export and agency. Origin-sourced Xiushui tea, Jingdezhen porcelain sourcing, plus pumps, fire sets and booster systems with selection support.'
     },
-    nav: { about:'About', center:'Products', products:'Tea', industrial:'Fluid Equipment', stories:'Stories', capability:'Services', why:'Why Us', terms:'Terms', faq:'FAQ', contact:'Contact' },
+    nav: { about:'About', center:'Products', products:'Tea', industrial:'Fluid Equipment', porcelain:'Porcelain', stories:'Stories', capability:'Services', why:'Why Us', terms:'Terms', faq:'FAQ', contact:'Contact' },
 
     drop: {
       teaLabel:'TEA', teaTitle:'Tea & Tea Products', teaDesc:'Black tea · Green tea · Fruit & herbal',
@@ -104,17 +132,19 @@ const I18N = {
       machLabel:'FLUID EQUIPMENT', machTitle:'Pumps · Fire sets · Booster systems', machDesc:'Selected by duty point, with verifiable data',
       machSeries:'Six series', machCerts:'Approvals & compliance', machRfq:'Send a duty-point enquiry',
       moreLabel:'Explore further', stories:'Product stories', capability:'Services', faq:'FAQ',
-      all:'View all products →', markText:'One window, two business lines'
+      porcLabel:'JINGDEZHEN PORCELAIN', porcTitle:'Jingdezhen Porcelain', porcDesc:'Coffee ware · Tea ware · Dinner services · Art porcelain',
+      pCoffee:'Coffee cups & saucers', pTeaset:'Travel tea sets', pDinner:'Dinner services', pCrafts:'Five craft families', pHistory:'A thousand years of making',
+      all:'View all products →', markText:'One window, three business lines'
     },
 
     hero: { eyebrow:'Jiangxi · Jiujiang · Xiushui',
       cta1:'View Products', cta2:'Send Enquiry',
-      f1:'Supply-chain experience', f2:'Active categories', f3:'Transport modes', f4:'RU & CN direct' },
+      f1:'Supply-chain experience', f2:'Business lines', f3:'Transport modes', f4:'RU & CN direct' },
 
     about: { label:'About Us', qualTitle:'Registered business scope (verifiable on the National Enterprise Credit Information Publicity System)' },
 
     prod: { label:'Tea', title:'Tea Products',
-      lead:'Tea categories are available now; porcelain is being added. Pumps and water systems have their own section — see “Fluid Equipment” above.',
+      lead:'Tea categories are available now. Jingdezhen Porcelain and Fluid Equipment are separate sections — both reachable from Products in the top menu.',
       note:'All photos are real. For exact specifications, MOQ and sampling lead times, please state your volume and sales channel.',
       subAll:'All', readStory:'Read its story' },
 
@@ -123,6 +153,32 @@ const I18N = {
             'Each passage below is real geography and real history — not a packaging claim.',
       empty:'Stories are being prepared.',
       era:'Period', readMore:'Read full story', readLess:'Show less' },
+
+    porc: {
+      histLabel:'A THOUSAND YEARS OF KILN FIRE',
+      histTitle:'One city, one road, a thousand years',
+      histLead:'All dates and craft notes below are drawn from public authoritative sources. Supplier catalogues are used for categories and dimensions only, never as historical sources.',
+      cityTitle:'From the Chang River to St Petersburg',
+      cityText:'The Chang River carried clay, pine fuel and kiln fire into the town; the Great Tea Road carried tea and porcelain back out through Kyakhta to St Petersburg. We source tea, and the vessels that hold it — two ranges meeting on the same road.',
+      srcLabel:'Sources',
+      craftLabel:'Craft families', craftTitle:'Five techniques, each with a provenance',
+      craftLead:'Know the technique before the shape. Yingqing is the Song ware that named the town; blue-and-white, linglong, famille rose and coloured glazes are the Four Great Porcelains. Swatches below indicate glaze colour, not product photos.',
+      catLabel:'Catalogue', catTitle:'Find by use, filter by craft',
+      catLead:'The first level groups by use (coffee ware, tea ware, tableware…); the second filters by craft (blue-and-white, yingqing, famille rose…). Card fronts show capacity, rim diameter and set composition, all quoted from the catalogues.',
+      allGroup:'All categories', allCraft:'All crafts',
+      specLabel:'Representative dimensions', detailLabel:'Read selection notes', detailHide:'Collapse',
+      quoteBtn:'Enquire about this item',
+      compLabel:'Export & compliance', compTitle:'Only what can be verified',
+      compHeading:'Export & compliance notes',
+      docsLabel:'What to include', rfqBtn:'Send a sourcing enquiry',
+      lane1:'Start with the craft families', lane1d:'Check completeness first. Yingqing, blue-and-white, linglong, famille rose and coloured glazes grouped by kiln technique — the catalogue-buying path.',
+      lane2:'Start with shape and dimensions', lane2d:'Check capacity in ml, rim Ø in mm, piece count and intended use first. Dimensions sit on the card front — the procurement-checklist path.',
+      lane3:'Start with ownership and documents', lane3d:'Check catalogue provenance, brand ownership statement and available test reports first — the due-diligence, customs and private-label path.',
+      laneTag:'One catalogue, three ways to read it',
+      empty:'No published items in this combination — please choose another filter.',
+      figureTag:'CATALOGUE IMAGE / SAMPLE TO BE CONFIRMED',
+      ownerLabel:'Ownership statement'
+    },
 
     mach: {
       seriesLabel:'Product series', seriesTitle:'Six series, grouped by duty',
@@ -139,7 +195,7 @@ const I18N = {
       lane1:'Start with the model range', lane1d:'Check completeness first. Every card expands to its full series and model list — the catalogue-buying path.',
       lane2:'Start with duty data', lane2d:'Check Q / H / P / DN, materials and configuration first. Parameters are on the card front — the engineering path.',
       lane3:'Start with approvals', lane3d:'Check system certificates, ownership statement and available datasheets first — the compliance and due-diligence path.',
-      laneTag:'One catalogue, three ways to read it'
+      laneTag:'One catalogue, three ways to read it', figureTag:'SCHEMATIC / NOT A PRODUCT PHOTO'
     },
 
     cap: { label:'Services' },
@@ -174,10 +230,10 @@ const I18N = {
 
   ru: {
     meta: {
-      title: 'Чжаошэнъюань | Трансграничные поставки · Чай и гидравлическое оборудование',
-      desc: 'Управление цепями поставок, импорт и экспорт, агентская ВЭД. Чай от источника, а также насосы, пожарные агрегаты и насосные станции с подбором по параметрам.'
+      title: 'Чжаошэнъюань | Чай · Фарфор Цзиндэчжэнь · Оборудование',
+      desc: 'Управление цепями поставок, импорт и экспорт, агентская ВЭД. Чай из Сюшуя, подбор фарфора Цзиндэчжэня, а также насосы и пожарные станции с подбором по параметрам.'
     },
-    nav: { about:'О компании', center:'Продукция', products:'Чай', industrial:'Оборудование', stories:'Истории', capability:'Услуги', why:'Почему мы', terms:'Условия', faq:'Вопросы', contact:'Контакты' },
+    nav: { about:'О компании', center:'Продукция', products:'Чай', industrial:'Оборудование', porcelain:'Фарфор', stories:'Истории', capability:'Услуги', why:'Почему мы', terms:'Условия', faq:'Вопросы', contact:'Контакты' },
 
     drop: {
       teaLabel:'ЧАЙ', teaTitle:'Чай и чайная продукция', teaDesc:'Красный · зелёный · фруктовые чаи',
@@ -185,17 +241,19 @@ const I18N = {
       machLabel:'ОБОРУДОВАНИЕ', machTitle:'Насосы · Пожарные агрегаты · Станции', machDesc:'Подбор по параметрам, проверяемые данные',
       machSeries:'Шесть серий', machCerts:'Документы и соответствие', machRfq:'Запрос по параметрам',
       moreLabel:'Далее', stories:'Истории продуктов', capability:'Услуги', faq:'Вопросы',
-      all:'Вся продукция →', markText:'Одно окно — два направления'
+      porcLabel:'ФАРФОР ЦЗИНДЭЧЖЭНЯ', porcTitle:'Цзиндэчжэньский фарфор', porcDesc:'Кофе · чай · сервизы · художественный фарфор',
+      pCoffee:'Кофейные чашки и блюдца', pTeaset:'Дорожные чайные наборы', pDinner:'Столовые сервизы', pCrafts:'Пять техник', pHistory:'Тысяча лет ремесла',
+      all:'Вся продукция →', markText:'Одно окно — три направления'
     },
 
     hero: { eyebrow:'Цзянси · Цзюцзян · Сюшуй',
       cta1:'Продукция', cta2:'Отправить запрос',
-      f1:'Опыт в поставках', f2:'Активных категорий', f3:'Способов перевозки', f4:'RU и CN напрямую' },
+      f1:'Опыт в поставках', f2:'Направления бизнеса', f3:'Способов перевозки', f4:'RU и CN напрямую' },
 
     about: { label:'О компании', qualTitle:'Зарегистрированный вид деятельности (проверяется в Национальной системе раскрытия информации)' },
 
     prod: { label:'Чай', title:'Чайная продукция',
-      lead:'Чайные категории доступны; фарфор добавляется. Насосы и станции вынесены в отдельный раздел «Оборудование».',
+      lead:'Чайные категории доступны. Фарфор Цзиндэчжэня и оборудование вынесены в отдельные разделы — оба открываются из меню «Продукция» сверху.',
       note:'Все фото реальные. Точные характеристики, минимальный объём и сроки образцов уточняйте в запросе.',
       subAll:'Все', readStory:'Читать историю' },
 
@@ -205,6 +263,32 @@ const I18N = {
             'а не маркетинговая формулировка.',
       empty:'Истории готовятся к публикации.',
       era:'Эпоха', readMore:'Читать полностью', readLess:'Свернуть' },
+
+    porc: {
+      histLabel:'ТЫСЯЧА ЛЕТ ОГНЯ ПЕЧЕЙ',
+      histTitle:'Один город, одна дорога, тысяча лет',
+      histLead:'Все даты и описания техник приведены по открытым официальным источникам. Каталоги поставщиков используются только для категорий и размеров, но не как исторический источник.',
+      cityTitle:'От реки Чанцзян до Санкт-Петербурга',
+      cityText:'Река Чан несла в город глину, сосновые дрова и огонь печей; Великий чайный путь выносил чай и фарфор обратно — через Кяхту в Санкт-Петербург. Мы поставляем чай и посуду для него: две линии встречаются на одной дороге.',
+      srcLabel:'Источники',
+      craftLabel:'Техники', craftTitle:'Пять техник, у каждой — своя история',
+      craftLead:'Сначала техника, потом форма. «Инцин» — фарфор, давший городу имя; сине-белый, линлун, фэньцай и цветные глазури — четыре знаменитых фарфора Цзиндэчжэня. Цветовые плашки ниже обозначают оттенок глазури, а не фото изделия.',
+      catLabel:'Каталог', catTitle:'Ищем по назначению, фильтруем по технике',
+      catLead:'Первый уровень — по назначению (кофейная, чайная, столовая посуда…), второй — по технике (сине-белый, «инцин», фэньцай…). На лицевой стороне карточки — объём, диаметр и состав набора; все размеры взяты из каталогов.',
+      allGroup:'Все категории', allCraft:'Все техники',
+      specLabel:'Типовые размеры', detailLabel:'Подробнее о подборе', detailHide:'Свернуть',
+      quoteBtn:'Запросить эту позицию',
+      compLabel:'Экспорт и соответствие', compTitle:'Только то, что можно проверить',
+      compHeading:'Экспорт и соответствие',
+      docsLabel:'Что указать в запросе', rfqBtn:'Отправить запрос на подбор',
+      lane1:'Начать с техник', lane1d:'Сначала — полнота ассортимента. «Инцин», сине-белый, линлун, фэньцай и цветные глазури сгруппированы по печной технике: путь закупки по каталогу.',
+      lane2:'Начать с формы и размеров', lane2d:'Сначала — объём в мл, диаметр в мм, число предметов в сервизе и сценарий использования. Размеры на лицевой стороне карточки: путь по закупочной спецификации.',
+      lane3:'Начать с принадлежности и документов', lane3d:'Сначала — происхождение каталога, заявление о правах на бренд и доступные протоколы испытаний: путь due diligence, таможни и private label.',
+      laneTag:'Один каталог — три способа чтения',
+      empty:'В этом сочетании нет опубликованных позиций — выберите другой фильтр.',
+      figureTag:'ФОТО ИЗ КАТАЛОГА / ОБРАЗЕЦ СОГЛАСУЕТСЯ',
+      ownerLabel:'Заявление о принадлежности прав'
+    },
 
     mach: {
       seriesLabel:'Серии оборудования', seriesTitle:'Шесть серий по назначению',
@@ -221,7 +305,7 @@ const I18N = {
       lane1:'Начать с ряда моделей', lane1d:'Сначала — полнота ассортимента. Полный перечень серий и моделей в раскрытом блоке каждой карточки: путь закупки по каталогу.',
       lane2:'Начать с параметров', lane2d:'Сначала — Q / H / P / DN, материалы и исполнение. Данные на лицевой стороне карточки: путь инженера-проектировщика.',
       lane3:'Начать с документов', lane3d:'Сначала — сертификаты системы менеджмента, заявление о принадлежности и доступные даташиты: путь комплаенса и due diligence.',
-      laneTag:'Один каталог — три способа чтения'
+      laneTag:'Один каталог — три способа чтения', figureTag:'СХЕМА / НЕ ФОТО ИЗДЕЛИЯ'
     },
 
     cap: { label:'Услуги' },

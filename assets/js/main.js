@@ -26,7 +26,9 @@
   var SITE = null;   // data/site.json
   var PROD = null;   // data/products.json
   var MACH = null;   // data/machinery.json —— 独立业务线，不与茶叶数据混用
+  var PORC = null;   // data/porcelain.json —— 景德镇瓷器，第三条独立业务线
   var mFilter = 'all'; var machOpen = {};
+  var pGroup = 'all'; var pCraft = 'all'; var pOpen = {};
   var filterCat = 'all';
   var filterSub = 'all';
 
@@ -145,7 +147,7 @@
        L === 'en' ? 'Jiujiang Zhaoshengyuan Technology Co., Ltd.' :
        '九江昭盛元科技有限公司');
 
-    var navKeys = ['about','products','stories','industrial','capability','why','terms','faq','contact'];
+    var navKeys = ['about','products','stories','porcelain','industrial','capability','why','terms','faq','contact'];
     $('#footerLinks').innerHTML = navKeys.map(function (k) {
       return '<li><a href="#' + k + '">' + esc(I18N[L].nav[k]) + '</a></li>';
     }).join('');
@@ -156,6 +158,7 @@
 
     renderProducts();
     renderStories();
+    renderPorcelain();
     renderMachinery();
   }
 
@@ -191,14 +194,23 @@
     items.forEach(function (p) { used[p.category] = (used[p.category] || 0) + 1; });
     var html = '<button type="button" class="catbtn' + (filterCat === 'all' ? ' on' : '') +
                '" data-cat="all">' + (L === 'ru' ? 'Все' : L === 'en' ? 'All' : '全部') + '</button>';
+    // 选中的一级若已无上架商品，自动回到「全部」，避免出现空白页
+    if (filterCat !== 'all' && !used[filterCat]) filterCat = 'all';
     cats.forEach(function (c) {
       var n = used[c.key] || 0;
+      // 跨板块入口：泵与给水设备有独立业务线与独立数据文件，不做成本板块的空筛选
+      if (c.link) {
+        html += '<a class="catbtn catbtn-jump" href="' + esc(c.link) + '">' +
+                esc(t(c.label, L)) + ' <span class="jmp">\u2197</span></a>';
+        return;
+      }
+      if (!n) return;   // 暂无上架商品的品类自动隐藏，后台加商品后自己出现
       html += '<button type="button" class="catbtn' + (filterCat === c.key ? ' on' : '') +
               '" data-cat="' + esc(c.key) + '">' + esc(t(c.label, L)) +
-              (n ? ' <span class="cnt">' + n + '</span>' : '') + '</button>';
+              ' <span class="cnt">' + n + '</span></button>';
     });
     $('#catFilter').innerHTML = html;
-    $$('#catFilter .catbtn').forEach(function (b) {
+    $$('#catFilter button.catbtn').forEach(function (b) {
       b.onclick = function () {
         filterCat = b.getAttribute('data-cat');
         filterSub = 'all';          // 换一级分类时，二级重置
@@ -337,6 +349,213 @@
   }
 
   /* ============================================================
+     景德镇瓷器 · 第三条独立业务线
+     独立数据 data/porcelain.json，与茶叶 products.json、机电 machinery.json
+     互不相干。目录为两级：一级按用途（器型），二级按工艺（釉色 / 技法）。
+     所有展示文字三语；历史与工艺说明来自公开权威资料，图册只作品类与规格来源。
+     ============================================================ */
+  function renderPorcelain() {
+    if (!PORC) return;
+    var L = cur, D = I18N[L].porc, P = PORC;
+    function put(id, txt) { var e = $(id); if (e) e.textContent = txt || ''; }
+
+    /* Hero + 归属声明 */
+    put('#pEyebrow', t(P.hero && P.hero.eyebrow, L));
+    put('#pTitle',   t(P.hero && P.hero.title, L));
+    put('#pLead',    t(P.hero && P.hero.lead, L));
+    put('#pCta',     t(P.hero && P.hero.cta, L));
+    put('#pSupplierName', t(P.supplier && P.supplier.name, L));
+    put('#pSupplierRole', t(P.supplier && P.supplier.role, L));
+    var hero = $('#pHero');
+    if (hero) {
+      hero.style.backgroundImage =
+        'linear-gradient(100deg, rgba(11,28,39,.94) 0%, rgba(11,28,39,.84) 46%, rgba(11,28,39,.36) 100%),' +
+        'url("assets/img/porcelain-dinner-bluewhite.jpg")';
+    }
+
+    /* 三种阅读路径 */
+    var lanes = $('#pLanes');
+    if (lanes) {
+      lanes.innerHTML =
+        '<div class="p-lane-tag">' + esc(D.laneTag) + '</div>' +
+        '<div class="p-lane-grid">' +
+          '<div class="p-lane"><div class="p-lane-in"><b>01</b><h4>' + esc(D.lane1) + '</h4><p>' + esc(D.lane1d) + '</p></div></div>' +
+          '<div class="p-lane"><div class="p-lane-in"><b>02</b><h4>' + esc(D.lane2) + '</h4><p>' + esc(D.lane2d) + '</p></div></div>' +
+          '<div class="p-lane"><div class="p-lane-in"><b>03</b><h4>' + esc(D.lane3) + '</h4><p>' + esc(D.lane3d) + '</p></div></div>' +
+        '</div>';
+    }
+
+    /* 产地图文 */
+    var city = $('#pCityText');
+    if (city) {
+      city.innerHTML = '<h4>' + esc(D.cityTitle) + '</h4><p>' + esc(D.cityText) + '</p>';
+    }
+
+    /* 历史时间轴：每条都带年代、正文与资料来源 */
+    var tl = $('#pTimeline');
+    if (tl) {
+      tl.innerHTML = (P.history || []).map(function (h, i) {
+        return '<div class="p-tl-row">' +
+          '<div class="p-tl-year">' + esc(h.year || '') + '</div>' +
+          '<div class="p-tl-dot"></div>' +
+          '<div class="p-tl-card">' +
+            '<p class="p-tl-era">' + esc(t(h.era, L)) + '</p>' +
+            '<h4>' + esc(t(h.title, L)) + '</h4>' +
+            '<p class="p-tl-text">' + esc(t(h.text, L)) + '</p>' +
+            '<p class="p-tl-src"><b>' + esc(D.srcLabel) + '</b> · ' + esc(t(h.src, L)) + '</p>' +
+          '</div></div>';
+      }).join('');
+    }
+    put('#pSourceNote', t(P.sourceNote, L));
+
+    /* 工艺谱系：色块是釉色示意，不是产品照片 */
+    var cg = $('#pCraftGrid');
+    if (cg) {
+      cg.innerHTML = (P.crafts || []).map(function (c) {
+        return '<div class="p-craft">' +
+          '<div class="p-craft-in">' +
+            '<div class="p-swatch" style="background:' + esc(c.swatch || '#dfe9e4') + '"></div>' +
+            '<div class="p-craft-body">' +
+              '<span class="p-craft-tag">' + esc(t(c.tag, L)) + '</span>' +
+              '<h4>' + esc(t(c.name, L)) + '</h4>' +
+              '<p>' + esc(t(c.text, L)) + '</p>' +
+            '</div></div></div>';
+      }).join('');
+    }
+
+    /* 目录：一级用途 + 二级工艺 */
+    var items = (P.items || []).filter(function (x) { return x.published !== false; });
+    var groups = P.groups || [], crafts = P.crafts || [];
+    var gc = {}, cc = {};
+    items.forEach(function (x) { gc[x.group] = (gc[x.group] || 0) + 1; cc[x.craft] = (cc[x.craft] || 0) + 1; });
+
+    var gt = $('#pGroupTabs');
+    if (gt) {
+      var gh = '<button type="button" class="p-tab' + (pGroup === 'all' ? ' on' : '') +
+               '" data-pg2="all">' + esc(D.allGroup) + ' <span class="cnt">' + items.length + '</span></button>';
+      groups.forEach(function (g) {
+        var n = gc[g.key] || 0; if (!n) return;
+        gh += '<button type="button" class="p-tab' + (pGroup === g.key ? ' on' : '') +
+              '" data-pg2="' + esc(g.key) + '">' + esc(t(g.label, L)) +
+              ' <span class="cnt">' + n + '</span></button>';
+      });
+      gt.innerHTML = gh;
+      $$('#pGroupTabs .p-tab').forEach(function (b) {
+        b.onclick = function () { pGroup = b.getAttribute('data-pg2'); pCraft = 'all'; renderPorcelain(); };
+      });
+    }
+
+    var ct = $('#pCraftTabs');
+    if (ct) {
+      var pool = items.filter(function (x) { return pGroup === 'all' || x.group === pGroup; });
+      var pc = {};
+      pool.forEach(function (x) { pc[x.craft] = (pc[x.craft] || 0) + 1; });
+      var ch = '<button type="button" class="p-subtab' + (pCraft === 'all' ? ' on' : '') +
+               '" data-pc2="all">' + esc(D.allCraft) + ' <span class="cnt">' + pool.length + '</span></button>';
+      crafts.forEach(function (c) {
+        var n = pc[c.key] || 0; if (!n) return;
+        ch += '<button type="button" class="p-subtab' + (pCraft === c.key ? ' on' : '') +
+              '" data-pc2="' + esc(c.key) + '">' + esc(t(c.name, L)) +
+              ' <span class="cnt">' + n + '</span></button>';
+      });
+      ct.innerHTML = ch;
+      $$('#pCraftTabs .p-subtab').forEach(function (b) {
+        b.onclick = function () { pCraft = b.getAttribute('data-pc2'); renderPorcelain(); };
+      });
+    }
+
+    var list = items.filter(function (x) {
+      return (pGroup === 'all' || x.group === pGroup) && (pCraft === 'all' || x.craft === pCraft);
+    });
+    list.sort(function (a, b) { return (a.order || 99) - (b.order || 99); });
+    var grid = $('#pGrid'), emp = $('#pEmpty');
+    if (emp) emp.style.display = list.length ? 'none' : 'block';
+    if (emp && !list.length) emp.textContent = D.empty;
+    if (grid) {
+      grid.innerHTML = list.map(function (x) {
+        var open = !!pOpen[x.id];
+        var specs = (x.specs || []).map(function (r) {
+          return '<tr><th>' + esc(t(r.k, L)) + '</th><td>' + esc(t(r.v, L)) + '</td></tr>';
+        }).join('');
+        var detail = t(x.detail, L) || '';
+        return '' +
+          '<article class="p-card" data-pid="' + esc(x.id) + '">' +
+            '<div class="p-card-in">' +
+              (x.image ? '<div class="p-card-img"><img src="' + esc(x.image) + '" alt="' +
+                esc(t(x.name, L)) + '" loading="lazy" onerror="this.src=\'' + PH + '\'">' +
+                '<span class="p-fig-tag">' + esc(D.figureTag) + '</span></div>' : '') +
+              '<div class="p-card-top">' +
+                '<span class="p-code">' + esc(x.code || '') + '</span>' +
+                '<h4>' + esc(t(x.name, L)) + '</h4>' +
+                '<p class="p-card-sub">' + esc(t(x.subtitle, L)) + '</p>' +
+              '</div>' +
+              '<div class="p-card-body">' +
+                '<p class="p-desc">' + esc(t(x.desc, L)) + '</p>' +
+                (specs ? '<table class="p-spec"><tbody>' + specs + '</tbody></table>' : '') +
+                (detail ? '<div class="p-detail' + (open ? ' open' : '') + '"><p>' + esc(detail) + '</p></div>' : '') +
+                '<div class="p-card-foot">' +
+                  (detail ? '<button type="button" class="p-expand" data-pexp="' + esc(x.id) + '">' +
+                    esc(open ? D.detailHide : D.detailLabel) + '</button>' : '<span></span>') +
+                  '<a class="p-quote" href="#contact" data-penq="' + esc(t(x.name, L)) + '">' +
+                    esc(D.quoteBtn) + ' →</a>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</article>';
+      }).join('');
+
+      $$('#pGrid .p-expand').forEach(function (b) {
+        b.onclick = function () {
+          var id = b.getAttribute('data-pexp');
+          pOpen[id] = !pOpen[id];
+          renderPorcelain();
+        };
+      });
+      $$('#pGrid [data-penq]').forEach(function (a) {
+        a.onclick = function () {
+          var ta = document.querySelector('#contactForm [name=msg]');
+          var nm = a.getAttribute('data-penq');
+          var pre = (L === 'ru' ? 'Фарфор Цзиндэчжэнь — интересует: '
+                     : L === 'en' ? 'Jingdezhen porcelain — interested in: '
+                     : '景德镇瓷器咨询：') + nm;
+          if (ta && ta.value.indexOf(pre) === -1) ta.value = pre + (ta.value ? '\n' + ta.value : '');
+        };
+      });
+    }
+    put('#pFigureNote', t(P.figureNote, L));
+
+    /* 出口与合规 */
+    var comp = $('#pComplianceList');
+    if (comp && P.compliance) {
+      comp.innerHTML = '<h4>' + esc(D.compHeading) + '</h4><ul>' +
+        (P.compliance.items || []).map(function (x) { return '<li>' + esc(t(x, L)) + '</li>'; }).join('') +
+        '</ul>';
+    }
+
+    /* 询价清单 */
+    var rfq = $('#pRfq'), R = P.rfq;
+    if (rfq && R) {
+      rfq.innerHTML =
+        '<div class="p-rfq-head"><div><p class="p-kicker">' + esc(D.docsLabel) + '</p>' +
+        '<h3>' + esc(t(R.title, L)) + '</h3><p>' + esc(t(R.lead, L)) + '</p></div>' +
+        '<a class="p-btn sm" href="#contact">' + esc(D.rfqBtn) + '</a></div>' +
+        '<div class="p-rfq-grid">' +
+        (R.items || []).map(function (r) {
+          return '<div class="p-rfq-row"><div class="p-rfq-row-in"><b>' + esc(t(r.k, L)) + '</b><span>' + esc(t(r.v, L)) + '</span></div></div>';
+        }).join('') +
+        '</div><p class="p-rfq-note">' + esc(t(R.note, L)) + '</p>';
+    }
+    put('#pNote', t(P.note, L));
+    var own = $('#pOwnerNote');
+    if (own) own.innerHTML = '<b>' + esc(D.ownerLabel) + '</b><span>' + esc(t(P.supplier && P.supplier.note, L)) + '</span>';
+  }
+
+  function applyPorcGroup(g) {
+    pGroup = g || 'all'; pCraft = 'all';
+    renderPorcelain();
+  }
+
+  /* ============================================================
      流体设备 · 独立业务线
      独立数据、独立筛选、独立视觉；与茶叶产品中心互不相干。
      信息按三种阅读习惯分层：
@@ -396,6 +615,8 @@
     /* 产品系列卡片 */
     var list = series.filter(function (x) { return mFilter === 'all' || x.group === mFilter; });
     list.sort(function (a, b) { return (a.order || 99) - (b.order || 99); });
+    var fnote = $('#mFigureNote');
+    if (fnote && M.figureNote) { fnote.textContent = t(M.figureNote, L); fnote.style.display = 'block'; }
     var grid = $('#mGrid');
     if (grid) {
       grid.innerHTML = list.map(function (x) {
@@ -406,7 +627,9 @@
         return '' +
           '<article class="m-card' + (open ? ' open' : '') + '" data-mid="' + esc(x.id) + '">' +
             '<div class="m-card-in">' +
-            (x.image ? '<div class="m-card-img"><img src="' + esc(x.image) + '" alt="' + esc(t(x.name, L)) + '" loading="lazy"></div>' : '') +
+            (x.image ? '<div class="m-card-img"><img src="' + esc(x.image) + '" alt="' +
+              esc(t(x.name, L)) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
+              '<span class="m-fig-tag">' + esc(D.figureTag || '') + '</span></div>' : '') +
             '<div class="m-card-top">' +
               '<span class="m-code">' + esc(x.code || '') + '</span>' +
               '<h4>' + esc(t(x.name, L)) + '</h4>' +
@@ -576,6 +799,13 @@
       });
     });
 
+    /* 瓷器子项 → 直达瓷器板块并预选对应用途分组 */
+    $$('.navdrop a[data-pg]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        applyPorcGroup(a.getAttribute('data-pg'));
+      });
+    });
+
     var onScroll = function () {
       bar.classList.toggle('scrolled', window.scrollY > 30);
       if (prog) {
@@ -738,6 +968,7 @@
     if (url.indexOf('site.json') > -1 && window.__ZSY_SITE__) return Promise.resolve(window.__ZSY_SITE__);
     if (url.indexOf('products.json') > -1 && window.__ZSY_PROD__) return Promise.resolve(window.__ZSY_PROD__);
     if (url.indexOf('machinery.json') > -1 && window.__ZSY_MACH__) return Promise.resolve(window.__ZSY_MACH__);
+    if (url.indexOf('porcelain.json') > -1 && window.__ZSY_PORC__) return Promise.resolve(window.__ZSY_PORC__);
     return fetch(url, { cache: 'no-store' }).then(function (r) {
       if (!r.ok) throw new Error(url + ' ' + r.status);
       return r.json();
@@ -749,14 +980,16 @@
      用法：iframe.contentWindow.ZSY.setData(siteObj, prodObj, 'zh')
      ============================================================ */
   window.ZSY = {
-    setData: function (site, prod, lang, mach) {
+    setData: function (site, prod, lang, mach, porc) {
       if (site) SITE = site;
       if (prod) PROD = prod;
       if (mach) MACH = mach;
+      if (porc) PORC = porc;
       if (lang && LANGS.indexOf(lang) > -1) cur = lang;
       setLang(cur, true);
     },
     setMach: function (m) { if (m) { MACH = m; renderMachinery(); } },
+    setPorc: function (p) { if (p) { PORC = p; renderPorcelain(); } },
     getLang: function () { return cur; }
   };
 
@@ -767,11 +1000,13 @@
     Promise.all([
       loadJSON('data/site.json').catch(function (e) { console.warn(e); return null; }),
       loadJSON('data/products.json').catch(function (e) { console.warn(e); return null; }),
-      loadJSON('data/machinery.json').catch(function (e) { console.warn(e); return null; })
+      loadJSON('data/machinery.json').catch(function (e) { console.warn(e); return null; }),
+      loadJSON('data/porcelain.json').catch(function (e) { console.warn(e); return null; })
     ]).then(function (res) {
       SITE = res[0] || {};
       PROD = res[1] || { categories: [], products: [] };
       MACH = res[2] || null;
+      PORC = res[3] || null;
       setLang(cur, true);
       initReveal();
     });

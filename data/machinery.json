@@ -182,7 +182,7 @@
         "en": "Fire systems · high-rise buildings · industrial water · HVAC",
         "ru": "Пожаротушение · высотные здания · промышленное водоснабжение · ОВиК"
       },
-      "image": ""
+      "image": "assets/img/pump-fire.svg"
     },
     {
       "id": "m-drainage",
@@ -265,7 +265,7 @@
         "en": "Wastewater · municipal drainage · basements · flood pumping",
         "ru": "Очистные сооружения · городской дренаж · подвалы · откачка при паводках"
       },
-      "image": ""
+      "image": "assets/img/pump-drainage.svg"
     },
     {
       "id": "m-centrifugal",
@@ -348,7 +348,7 @@
         "en": "Process water · building services · HVAC · chemical processes",
         "ru": "Техническое водоснабжение · инженерные системы зданий · ОВиК · химпроизводство"
       },
-      "image": ""
+      "image": "assets/img/pump-centrifugal.svg"
     },
     {
       "id": "m-multistage",
@@ -431,7 +431,7 @@
         "en": "High-rise boosting · boiler feed · long-distance transfer · OEM packages",
         "ru": "Высотное водоснабжение · питание котлов · дальняя перекачка · комплектация оборудования"
       },
-      "image": ""
+      "image": "assets/img/pump-multistage.svg"
     },
     {
       "id": "m-station",
@@ -514,7 +514,7 @@
         "en": "Municipal supply · residential complexes · hotels · secondary supply retrofits",
         "ru": "Городское водоснабжение · жилые комплексы · отели · реконструкция систем подкачки"
       },
-      "image": ""
+      "image": "assets/img/pump-station.svg"
     },
     {
       "id": "m-special",
@@ -597,7 +597,7 @@
         "en": "Petrochemical · marine · food & pharma · irrigation · aquaculture",
         "ru": "Нефтехимия · судостроение · пищевая и фармацевтическая промышленность · орошение · рыбоводство"
       },
-      "image": ""
+      "image": "assets/img/pump-special.svg"
     }
   ],
   "applications": [
@@ -886,5 +886,10 @@
       "en": "Per-model performance curves, dimension drawings and installation manuals are available on request. We do not publish figures we cannot verify.",
       "ru": "Кривые характеристик, габаритные чертежи и руководства по монтажу предоставляются по запросу. Мы не публикуем непроверенные данные."
     }
+  },
+  "figureNote": {
+    "zh": "以上为工业示意图，非实物照片。实物图与逐型号数据表可索取。",
+    "en": "Illustrations above are schematics, not product photos. Actual photos and per-model datasheets are available on request.",
+    "ru": "Изображения выше — схемы, а не фотографии изделий. Фото и таблицы по каждому типоразмеру предоставляются по запросу."
   }
 }

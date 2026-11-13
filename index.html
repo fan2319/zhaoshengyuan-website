@@ -69,6 +69,20 @@
                 <a href="#products" data-cat="tea" data-sub="teabag" data-i18n="drop.teabag"></a>
               </div>
             </div>
+            <div class="nd-col nd-porc">
+              <p class="nd-kicker" data-i18n="drop.porcLabel"></p>
+              <a class="nd-lead" href="#porcelain">
+                <b data-i18n="drop.porcTitle"></b>
+                <small data-i18n="drop.porcDesc"></small>
+              </a>
+              <div class="nd-subs">
+                <a href="#porcelain" data-pg="coffee"   data-i18n="drop.pCoffee"></a>
+                <a href="#porcelain" data-pg="teaset"   data-i18n="drop.pTeaset"></a>
+                <a href="#porcelain" data-pg="dinner"   data-i18n="drop.pDinner"></a>
+                <a href="#pCrafts"                      data-i18n="drop.pCrafts"></a>
+                <a href="#pHistory"                     data-i18n="drop.pHistory"></a>
+              </div>
+            </div>
             <div class="nd-col nd-mach">
               <p class="nd-kicker" data-i18n="drop.machLabel"></p>
               <a class="nd-lead" href="#industrial">
@@ -81,16 +95,14 @@
                 <a href="#contact"    data-i18n="drop.machRfq"></a>
               </div>
             </div>
-            <div class="nd-col nd-more">
-              <p class="nd-kicker" data-i18n="drop.moreLabel"></p>
-              <a href="#stories"    data-i18n="drop.stories"></a>
-              <a href="#capability" data-i18n="drop.capability"></a>
-              <a href="#faq"        data-i18n="drop.faq"></a>
-              <div class="nd-mark"><span>ZSY</span><small data-i18n="drop.markText"></small></div>
-            </div>
           </div>
           <div class="nd-foot">
             <a href="#products" data-cat="all" data-sub="all" data-i18n="drop.all"></a>
+            <span class="nd-foot-sep"></span>
+            <a href="#stories"    data-i18n="drop.stories"></a>
+            <a href="#capability" data-i18n="drop.capability"></a>
+            <a href="#faq"        data-i18n="drop.faq"></a>
+            <span class="nd-mark"><span>ZSY</span><small data-i18n="drop.markText"></small></span>
           </div>
         </div>
       </div>
@@ -184,6 +196,78 @@
   </div>
 </section>
 
+<!-- ================= 景德镇瓷器 · 独立业务线 =================
+     与茶叶、流体设备各自独立：独立数据 data/porcelain.json、独立配色、
+     独立历史时间轴、独立「用途 + 工艺」双维度目录。
+     面向中俄两类买家：中国人看窑口 / 工艺谱系 / 头数配置；
+     俄罗斯人看 сервиз（成套）、чайная пара（杯碟）、ml/mm、
+     微波炉洗碗机适用性与 EAC 归属。
+     ============================================================ -->
+<section id="porcelain" class="p-sec">
+  <div class="p-hero" id="pHero">
+    <div class="container">
+      <p class="p-eyebrow" id="pEyebrow"></p>
+      <h2 id="pTitle"></h2>
+      <p class="p-lead" id="pLead"></p>
+      <a class="p-btn" href="#contact" id="pCta"></a>
+      <div class="p-supplier">
+        <b id="pSupplierName"></b>
+        <span id="pSupplierRole"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container p-body">
+
+    <!-- 同一份目录，三种读法 -->
+    <div class="p-lanes" id="pLanes"></div>
+
+    <!-- 景德镇历史 -->
+    <div class="p-sechead" id="pHistory">
+      <p class="p-kicker" data-i18n="porc.histLabel"></p>
+      <h3 class="p-h3" data-i18n="porc.histTitle"></h3>
+      <p class="p-sub" data-i18n="porc.histLead"></p>
+    </div>
+    <div class="p-cityband">
+      <div class="p-cityimg"><img src="assets/img/porcelain-city.jpg" alt="Jingdezhen" loading="lazy"></div>
+      <div class="p-citytxt" id="pCityText"></div>
+    </div>
+    <div class="p-timeline" id="pTimeline"></div>
+    <p class="p-source" id="pSourceNote"></p>
+
+    <!-- 工艺谱系 -->
+    <div class="p-sechead" id="pCrafts">
+      <p class="p-kicker" data-i18n="porc.craftLabel"></p>
+      <h3 class="p-h3" data-i18n="porc.craftTitle"></h3>
+      <p class="p-sub" data-i18n="porc.craftLead"></p>
+    </div>
+    <div class="p-crafts" id="pCraftGrid"></div>
+
+    <!-- 产品目录：一级按用途，二级按工艺 -->
+    <div class="p-sechead" id="pCatalogue">
+      <p class="p-kicker" data-i18n="porc.catLabel"></p>
+      <h3 class="p-h3" data-i18n="porc.catTitle"></h3>
+      <p class="p-sub" data-i18n="porc.catLead"></p>
+    </div>
+    <div class="p-tabs" id="pGroupTabs"></div>
+    <div class="p-subtabs" id="pCraftTabs"></div>
+    <div class="p-grid" id="pGrid"></div>
+    <div class="p-empty" id="pEmpty" style="display:none"></div>
+    <p class="p-figure-note" id="pFigureNote"></p>
+
+    <!-- 出口与合规 -->
+    <div class="p-sechead" id="pCompliance">
+      <p class="p-kicker" data-i18n="porc.compLabel"></p>
+      <h3 class="p-h3" data-i18n="porc.compTitle"></h3>
+    </div>
+    <div class="p-compliance" id="pComplianceList"></div>
+
+    <div class="p-rfq" id="pRfq"></div>
+    <p class="p-note" id="pNote"></p>
+    <p class="p-owner" id="pOwnerNote"></p>
+  </div>
+</section>
+
 <!-- ================= 流体设备 · 独立业务线 =================
      与茶叶完全分离：独立 hero、独立配色、独立信息架构、独立数据文件
      信息分层按不同市场阅读习惯：
@@ -217,6 +301,7 @@
     </div>
     <div class="m-tabs" id="mTabs"></div>
     <div class="m-grid" id="mGrid"></div>
+    <p class="m-figure-note" id="mFigureNote" style="display:none"></p>
 
     <div class="m-sechead">
       <p class="m-kicker" data-i18n="mach.appsLabel"></p>

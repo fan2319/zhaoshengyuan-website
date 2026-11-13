@@ -19,10 +19,12 @@
     {
       "key": "machinery",
       "label": {
-        "zh": "机电泵阀",
-        "en": "Pumps & Valves",
-        "ru": "Насосы и арматура"
-      }
+        "zh": "流体设备",
+        "en": "Fluid Equipment",
+        "ru": "Оборудование"
+      },
+      "link": "#industrial",
+      "note": "Pumps & water systems live in the separate #industrial section."
     }
   ],
   "emptyText": {
