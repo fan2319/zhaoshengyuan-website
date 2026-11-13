@@ -12,10 +12,10 @@ const LANG_META = {
 const I18N = {
   zh: {
     meta: {
-      title: '九江昭盛元科技有限公司 | 跨境供应链 · 茶叶出口',
-      desc: '供应链管理服务；货物与技术进出口、进出口代理。茶叶产地直采，可选袋泡茶、果茶、花草茶与 OEM/ODM 贴牌代工。'
+      title: '九江昭盛元科技有限公司 | 跨境供应链 · 茶叶与流体设备出口',
+      desc: '供应链管理服务；货物与技术进出口、进出口代理。茶叶产地直采，及泵、消防泵组、变频供水设备等流体设备的出口与选型支持。'
     },
-    nav: { about:'关于我们', products:'产品中心', stories:'产品故事', capability:'服务能力', why:'为什么选择我们', terms:'合作条款', faq:'常见问题', contact:'联系合作' },
+    nav: { about:'关于我们', products:'茶叶产品', industrial:'流体设备', stories:'产品故事', capability:'服务能力', why:'为什么选择我们', terms:'合作条款', faq:'常见问题', contact:'联系合作' },
 
     hero: { eyebrow:'江西 · 九江 · 修水',
       cta1:'查看产品', cta2:'发送询盘',
@@ -23,8 +23,8 @@ const I18N = {
 
     about: { label:'关于我们', qualTitle:'经营范围（可在国家企业信用信息公示系统核验）' },
 
-    prod: { label:'产品中心', title:'产品中心',
-      lead:'茶叶品类已可供货；瓷器与机电泵阀陆续上架，敬请询盘。',
+    prod: { label:'茶叶产品', title:'茶叶产品',
+      lead:'茶叶品类已可供货；瓷器陆续上架。泵与给水设备另有独立板块，请点顶部「流体设备」。',
       note:'图示为实物拍摄。各品类规格、起订量与打样周期，请在询盘中说明采购规模与销售渠道。',
       subAll:'全部', readStory:'读它的故事' },
 
@@ -33,6 +33,24 @@ const I18N = {
             '下面每一段，都是真实的地理与历史，不是包装出来的说法。',
       empty:'故事整理中，即将上线。',
       era:'年代', readMore:'展开全文', readLess:'收起' },
+
+    mach: {
+      seriesLabel:'产品系列', seriesTitle:'六大系列，按工况归类',
+      seriesLead:'不按中文型号堆砌，而是按用途分组。每张卡片正面是工程参数，展开可看完整型号谱系。',
+      appsLabel:'应用领域', appsTitle:'这些设备用在什么地方',
+      certLabel:'资质与合规', certTitle:'可以核验的，才写上来',
+      certLead:'以下为合作生产企业持有的资质。证书编号、检测报告全文与逐型号参数表不在公开展示，客户索取时提供。',
+      holderLabel:'持有方', issuerLabel:'颁发 / 出具机构',
+      complianceTitle:'出口合规说明',
+      modelsLabel:'型号谱系', modelsHint:'展开查看该系列完整型号', modelsHide:'收起',
+      appsCardLabel:'典型应用',
+      allTab:'全部系列', quoteBtn:'按此系列询价',
+      rfqBtn:'按工况发送询价', docsLabel:'可索取文件',
+      lane1:'看型号谱系', lane1d:'先看全不全。完整系列与型号一览在每张卡片的展开区，适合按目录采购。',
+      lane2:'看工况参数', lane2d:'先看 Q / H / P / DN、材质与结构。参数就在卡片正面，适合工程师按工况选型。',
+      lane3:'看资质与文件', lane3d:'先看体系认证、归属声明与可索取的数据表，适合合规与尽调流程。',
+      laneTag:'同一份内容，三种读法'
+    },
 
     cap: { label:'服务能力' },
 
@@ -66,10 +84,10 @@ const I18N = {
 
   en: {
     meta: {
-      title: 'Zhaoshengyuan | Cross-border Supply Chain · Tea Export from China',
-      desc: 'Supply-chain management, import & export of goods and technology, import-export agency. Tea sourced at origin; tea bags, fruit and herbal blends, OEM/ODM.'
+      title: 'Zhaoshengyuan | Cross-border Supply Chain · Tea & Fluid Equipment',
+      desc: 'Supply-chain management, import & export, import-export agency. Origin-sourced tea plus pumps, fire pump sets and VFD booster systems, with selection support.'
     },
-    nav: { about:'About', products:'Products', stories:'Stories', capability:'Services', why:'Why Us', terms:'Terms', faq:'FAQ', contact:'Contact' },
+    nav: { about:'About', products:'Tea', industrial:'Fluid Equipment', stories:'Stories', capability:'Services', why:'Why Us', terms:'Terms', faq:'FAQ', contact:'Contact' },
 
     hero: { eyebrow:'Jiangxi · Jiujiang · Xiushui',
       cta1:'View Products', cta2:'Send Enquiry',
@@ -77,8 +95,8 @@ const I18N = {
 
     about: { label:'About Us', qualTitle:'Registered business scope (verifiable on the National Enterprise Credit Information Publicity System)' },
 
-    prod: { label:'Products', title:'Products',
-      lead:'Tea categories are available now; porcelain and pumps are being added — enquiries welcome.',
+    prod: { label:'Tea', title:'Tea Products',
+      lead:'Tea categories are available now; porcelain is being added. Pumps and water systems have their own section — see “Fluid Equipment” above.',
       note:'All photos are real. For exact specifications, MOQ and sampling lead times, please state your volume and sales channel.',
       subAll:'All', readStory:'Read its story' },
 
@@ -87,6 +105,24 @@ const I18N = {
             'Each passage below is real geography and real history — not a packaging claim.',
       empty:'Stories are being prepared.',
       era:'Period', readMore:'Read full story', readLess:'Show less' },
+
+    mach: {
+      seriesLabel:'Product series', seriesTitle:'Six series, grouped by duty',
+      seriesLead:'Grouped by application, not by Chinese model codes. Engineering data sits on the front of each card; the full model range is in the expanded panel.',
+      appsLabel:'Applications', appsTitle:'Where this equipment is used',
+      certLabel:'Approvals & compliance', certTitle:'Only what can be verified',
+      certLead:'The qualifications below are held by our manufacturing partner. Certificate numbers, full test reports and per-model performance tables are supplied on request rather than published.',
+      holderLabel:'Holder', issuerLabel:'Issued by',
+      complianceTitle:'Export compliance',
+      modelsLabel:'Model range', modelsHint:'Expand for the full model list', modelsHide:'Collapse',
+      appsCardLabel:'Typical use',
+      allTab:'All series', quoteBtn:'Enquire about this series',
+      rfqBtn:'Send a duty-point enquiry', docsLabel:'Documents on request',
+      lane1:'Start with the model range', lane1d:'Check completeness first. Every card expands to its full series and model list — the catalogue-buying path.',
+      lane2:'Start with duty data', lane2d:'Check Q / H / P / DN, materials and configuration first. Parameters are on the card front — the engineering path.',
+      lane3:'Start with approvals', lane3d:'Check system certificates, ownership statement and available datasheets first — the compliance and due-diligence path.',
+      laneTag:'One catalogue, three ways to read it'
+    },
 
     cap: { label:'Services' },
 
@@ -120,10 +156,10 @@ const I18N = {
 
   ru: {
     meta: {
-      title: 'Чжаошэнъюань | Трансграничные поставки · Экспорт чая из Китая',
-      desc: 'Управление цепями поставок, импорт и экспорт товаров и технологий, агентская ВЭД. Чай от источника; пакетики, фруктовые и травяные купажи, OEM/ODM.'
+      title: 'Чжаошэнъюань | Трансграничные поставки · Чай и гидравлическое оборудование',
+      desc: 'Управление цепями поставок, импорт и экспорт, агентская ВЭД. Чай от источника, а также насосы, пожарные агрегаты и насосные станции с подбором по параметрам.'
     },
-    nav: { about:'О компании', products:'Продукция', stories:'Истории', capability:'Услуги', why:'Почему мы', terms:'Условия', faq:'Вопросы', contact:'Контакты' },
+    nav: { about:'О компании', products:'Чай', industrial:'Оборудование', stories:'Истории', capability:'Услуги', why:'Почему мы', terms:'Условия', faq:'Вопросы', contact:'Контакты' },
 
     hero: { eyebrow:'Цзянси · Цзюцзян · Сюшуй',
       cta1:'Продукция', cta2:'Отправить запрос',
@@ -131,8 +167,8 @@ const I18N = {
 
     about: { label:'О компании', qualTitle:'Зарегистрированный вид деятельности (проверяется в Национальной системе раскрытия информации)' },
 
-    prod: { label:'Продукция', title:'Продукция',
-      lead:'Чайные категории доступны; фарфор и насосы добавляются — запросы принимаются.',
+    prod: { label:'Чай', title:'Чайная продукция',
+      lead:'Чайные категории доступны; фарфор добавляется. Насосы и станции вынесены в отдельный раздел «Оборудование».',
       note:'Все фото реальные. Точные характеристики, минимальный объём и сроки образцов уточняйте в запросе.',
       subAll:'Все', readStory:'Читать историю' },
 
@@ -142,6 +178,24 @@ const I18N = {
             'а не маркетинговая формулировка.',
       empty:'Истории готовятся к публикации.',
       era:'Эпоха', readMore:'Читать полностью', readLess:'Свернуть' },
+
+    mach: {
+      seriesLabel:'Серии оборудования', seriesTitle:'Шесть серий по назначению',
+      seriesLead:'Группировка по применению, а не по китайским обозначениям. Технические данные — на лицевой стороне карточки, полный ряд типоразмеров — в раскрывающемся блоке.',
+      appsLabel:'Области применения', appsTitle:'Где работает это оборудование',
+      certLabel:'Документы и соответствие', certTitle:'Только то, что можно проверить',
+      certLead:'Указанные документы принадлежат производственному партнёру. Номера сертификатов, полные протоколы испытаний и таблицы по каждому типоразмеру предоставляются по запросу, а не публикуются.',
+      holderLabel:'Владелец', issuerLabel:'Выдавший орган',
+      complianceTitle:'Экспортное соответствие',
+      modelsLabel:'Ряд типоразмеров', modelsHint:'Развернуть полный перечень моделей', modelsHide:'Свернуть',
+      appsCardLabel:'Типовое применение',
+      allTab:'Все серии', quoteBtn:'Запросить по этой серии',
+      rfqBtn:'Отправить запрос по параметрам', docsLabel:'Документы по запросу',
+      lane1:'Начать с ряда моделей', lane1d:'Сначала — полнота ассортимента. Полный перечень серий и моделей в раскрытом блоке каждой карточки: путь закупки по каталогу.',
+      lane2:'Начать с параметров', lane2d:'Сначала — Q / H / P / DN, материалы и исполнение. Данные на лицевой стороне карточки: путь инженера-проектировщика.',
+      lane3:'Начать с документов', lane3d:'Сначала — сертификаты системы менеджмента, заявление о принадлежности и доступные даташиты: путь комплаенса и due diligence.',
+      laneTag:'Один каталог — три способа чтения'
+    },
 
     cap: { label:'Услуги' },
 

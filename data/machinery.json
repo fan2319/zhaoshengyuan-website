@@ -1,0 +1,890 @@
+{
+  "supplier": {
+    "name": {
+      "zh": "上海瓯润泵业集团有限公司",
+      "en": "Shanghai Ourun Pump Industry Group Co., Ltd.",
+      "ru": "Shanghai Ourun Pump Industry Group Co., Ltd."
+    },
+    "role": {
+      "zh": "合作生产企业 · 昭盛元负责出口与跨境供应链",
+      "en": "Manufacturing partner — Zhaoshengyuan handles export and cross-border supply",
+      "ru": "Производственный партнёр — «Чжаошэнъюань» отвечает за экспорт и трансграничную логистику"
+    },
+    "note": {
+      "zh": "本板块所列产品与资质均属合作生产企业。昭盛元为出口与供应链服务方，不宣称自有工厂、不宣称授权或战略合作。",
+      "en": "Products and qualifications in this section belong to our manufacturing partner. Zhaoshengyuan acts as exporter and supply-chain provider; we do not claim own factories, authorisation or strategic partnership.",
+      "ru": "Продукция и документы в этом разделе принадлежат производственному партнёру. «Чжаошэнъюань» выступает экспортёром и логистическим оператором; мы не заявляем о собственных заводах, авторизации или стратегическом партнёрстве."
+    }
+  },
+  "hero": {
+    "eyebrow": {
+      "zh": "流体设备 · 独立业务线",
+      "en": "Fluid Equipment · A Separate Business Line",
+      "ru": "Гидравлическое оборудование · отдельное направление"
+    },
+    "title": {
+      "zh": "泵与给水设备",
+      "en": "Pumps & Water Supply Systems",
+      "ru": "Насосы и установки водоснабжения"
+    },
+    "lead": {
+      "zh": "按工况选型，按样本报价。我们提供系列级技术参数、型号谱系与可索取的数据表，不做无法核验的承诺。",
+      "en": "Selected by duty point, quoted from the catalogue. We provide series-level technical data, model ranges and datasheets on request — no claims we cannot substantiate.",
+      "ru": "Подбор по рабочей точке, расчёт по каталогу. Предоставляем технические данные по сериям, ряд типоразмеров и опросные листы по запросу — без неподтверждённых заявлений."
+    },
+    "cta": {
+      "zh": "提交工况询价",
+      "en": "Send a duty-point enquiry",
+      "ru": "Отправить запрос по параметрам"
+    }
+  },
+  "groups": [
+    {
+      "key": "fire",
+      "label": {
+        "zh": "消防泵组",
+        "en": "Fire Pump Sets",
+        "ru": "Пожарные насосные агрегаты"
+      }
+    },
+    {
+      "key": "drainage",
+      "label": {
+        "zh": "排污与污水泵",
+        "en": "Sewage & Drainage Pumps",
+        "ru": "Канализационные и дренажные насосы"
+      }
+    },
+    {
+      "key": "centrifugal",
+      "label": {
+        "zh": "离心与管道泵",
+        "en": "Centrifugal & Inline Pumps",
+        "ru": "Центробежные и циркуляционные насосы"
+      }
+    },
+    {
+      "key": "multistage",
+      "label": {
+        "zh": "多级泵",
+        "en": "Multistage Pumps",
+        "ru": "Многоступенчатые насосы"
+      }
+    },
+    {
+      "key": "station",
+      "label": {
+        "zh": "变频供水设备与控制柜",
+        "en": "Booster Sets & Control Panels",
+        "ru": "Насосные станции и шкафы управления"
+      }
+    },
+    {
+      "key": "special",
+      "label": {
+        "zh": "特种与化工泵",
+        "en": "Special & Chemical Pumps",
+        "ru": "Специальные и химические насосы"
+      }
+    }
+  ],
+  "series": [
+    {
+      "id": "m-fire",
+      "group": "fire",
+      "published": true,
+      "order": 1,
+      "code": "XBD / XBC",
+      "name": {
+        "zh": "消防泵组",
+        "en": "Fire Pump Sets",
+        "ru": "Пожарные насосные агрегаты"
+      },
+      "subtitle": {
+        "zh": "立式单级 / 卧式单级 / 立式多级 / 柴油机驱动",
+        "en": "Vertical single-stage · horizontal · vertical multistage · diesel driven",
+        "ru": "Вертикальные одноступенчатые · горизонтальные · многоступенчатые · с дизельным приводом"
+      },
+      "desc": {
+        "zh": "用于消防系统增压送水，亦可满足工业与城市给排水、高层建筑增压、远距离送水及采暖空调循环。输送不含固体颗粒的清水或物理化学性质类似水的液体。",
+        "en": "For fire-system pressure boosting, and also for industrial and municipal water supply, high-rise boosting, long-distance transfer and HVAC circulation. Handles clean water or liquids of similar physical and chemical properties, free of solids.",
+        "ru": "Для повышения давления в системах пожаротушения, а также для промышленного и городского водоснабжения, высотных зданий, дальней перекачки и циркуляции отопления и кондиционирования. Перекачивает чистую воду и жидкости со сходными физико-химическими свойствами без твёрдых включений."
+      },
+      "specs": [
+        {
+          "k": {
+            "zh": "流量 Q",
+            "en": "Flow Q",
+            "ru": "Расход Q"
+          },
+          "v": {
+            "zh": "5 – 330 L/s",
+            "en": "5 – 330 L/s",
+            "ru": "5 – 330 л/с"
+          }
+        },
+        {
+          "k": {
+            "zh": "出口压力",
+            "en": "Discharge pressure",
+            "ru": "Давление на выходе"
+          },
+          "v": {
+            "zh": "0.2 – 2.25 MPa",
+            "en": "0.2 – 2.25 MPa",
+            "ru": "0,2 – 2,25 МПа"
+          }
+        },
+        {
+          "k": {
+            "zh": "配套功率 P",
+            "en": "Motor power P",
+            "ru": "Мощность P"
+          },
+          "v": {
+            "zh": "4 – 160 kW",
+            "en": "4 – 160 kW",
+            "ru": "4 – 160 кВт"
+          }
+        },
+        {
+          "k": {
+            "zh": "口径 DN",
+            "en": "Nominal diameter DN",
+            "ru": "Условный проход DN"
+          },
+          "v": {
+            "zh": "DN50 – DN500",
+            "en": "DN50 – DN500",
+            "ru": "Ду 50 – Ду 500"
+          }
+        },
+        {
+          "k": {
+            "zh": "转速 n",
+            "en": "Speed n",
+            "ru": "Частота вращения n"
+          },
+          "v": {
+            "zh": "2900 r/min（系列典型值）",
+            "en": "2900 rpm (typical for the series)",
+            "ru": "2900 об/мин (типично для серии)"
+          }
+        }
+      ],
+      "models": {
+        "zh": "XBD-L 立式单级 · XBD-W 卧式单级 · XBD-CDL / XBD-GDL 立式多级 · XBD-HY(HL) 恒压切线泵 · XBC 柴油机消防泵组 · 长轴深井消防泵",
+        "en": "XBD-L vertical single-stage · XBD-W horizontal · XBD-CDL / XBD-GDL vertical multistage · XBD-HY(HL) constant-pressure · XBC diesel driven · long-shaft deep-well fire pumps",
+        "ru": "XBD-L вертикальный одноступенчатый · XBD-W горизонтальный · XBD-CDL / XBD-GDL вертикальные многоступенчатые · XBD-HY(HL) постоянного давления · XBC с дизелем · длинновальные скважинные пожарные насосы"
+      },
+      "apps": {
+        "zh": "消防系统 · 高层建筑 · 工矿给排水 · 暖通循环",
+        "en": "Fire systems · high-rise buildings · industrial water · HVAC",
+        "ru": "Пожаротушение · высотные здания · промышленное водоснабжение · ОВиК"
+      },
+      "image": ""
+    },
+    {
+      "id": "m-drainage",
+      "group": "drainage",
+      "published": true,
+      "order": 2,
+      "code": "WQ / QW / GW / YW / LW",
+      "name": {
+        "zh": "排污与污水泵",
+        "en": "Sewage & Drainage Pumps",
+        "ru": "Канализационные и дренажные насосы"
+      },
+      "subtitle": {
+        "zh": "潜水式 · 管道式 · 液下式 · 立式 · 自动搅匀",
+        "en": "Submersible · inline · submerged · vertical · auto-mixing",
+        "ru": "Погружные · трубные · полупогружные · вертикальные · с перемешиванием"
+      },
+      "desc": {
+        "zh": "用于生活污水、积水排放、含颗粒流体及市政与建筑排水。潜水排污泵与自动搅匀型适合含悬浮物的介质；管道式与立式结构便于在既有管路中改造安装。",
+        "en": "For domestic sewage, accumulated water, particle-laden fluids and municipal/building drainage. Submersible and auto-mixing types suit suspended solids; inline and vertical designs simplify retrofit into existing pipework.",
+        "ru": "Для бытовых стоков, дренажа, жидкостей с частицами, городской и строительной канализации. Погружные и перемешивающие модели рассчитаны на взвешенные включения; трубные и вертикальные исполнения удобны для встройки в существующие линии."
+      },
+      "specs": [
+        {
+          "k": {
+            "zh": "介质",
+            "en": "Medium",
+            "ru": "Среда"
+          },
+          "v": {
+            "zh": "生活污水 · 积水 · 含颗粒流体",
+            "en": "Sewage · surface water · solids-bearing fluids",
+            "ru": "Сточные воды · дренаж · среды с частицами"
+          }
+        },
+        {
+          "k": {
+            "zh": "结构型式",
+            "en": "Configuration",
+            "ru": "Исполнение"
+          },
+          "v": {
+            "zh": "潜水 / 管道 / 液下 / 立式",
+            "en": "Submersible / inline / submerged / vertical",
+            "ru": "Погружное / трубное / полупогружное / вертикальное"
+          }
+        },
+        {
+          "k": {
+            "zh": "选型依据",
+            "en": "Selection basis",
+            "ru": "Исходные данные"
+          },
+          "v": {
+            "zh": "按流量、扬程、颗粒尺寸与安装深度确定",
+            "en": "By flow, head, particle size and immersion depth",
+            "ru": "По расходу, напору, размеру частиц и глубине погружения"
+          }
+        },
+        {
+          "k": {
+            "zh": "数据表",
+            "en": "Datasheet",
+            "ru": "Даташит"
+          },
+          "v": {
+            "zh": "逐型号性能表可提供",
+            "en": "Per-model performance tables available",
+            "ru": "Таблицы характеристик по каждому типоразмеру предоставляются"
+          }
+        }
+      ],
+      "models": {
+        "zh": "WQ / QW 潜水排污泵 · JYWQ / JPWQ 自动搅匀排污泵 · GW 管道排污泵 · YW 液下排污泵 · LW / WL 立式排污泵",
+        "en": "WQ / QW submersible · JYWQ / JPWQ auto-mixing · GW inline · YW submerged · LW / WL vertical",
+        "ru": "WQ / QW погружные · JYWQ / JPWQ с перемешиванием · GW трубные · YW полупогружные · LW / WL вертикальные"
+      },
+      "apps": {
+        "zh": "污水处理 · 市政排水 · 建筑地下室 · 洪涝抽排",
+        "en": "Wastewater · municipal drainage · basements · flood pumping",
+        "ru": "Очистные сооружения · городской дренаж · подвалы · откачка при паводках"
+      },
+      "image": ""
+    },
+    {
+      "id": "m-centrifugal",
+      "group": "centrifugal",
+      "published": true,
+      "order": 3,
+      "code": "ISG / ISW / IS / IH / S·SH",
+      "name": {
+        "zh": "离心与管道泵",
+        "en": "Centrifugal & Inline Pumps",
+        "ru": "Центробежные и циркуляционные насосы"
+      },
+      "subtitle": {
+        "zh": "立式管道 · 卧式离心 · 单级双吸 · 化工离心",
+        "en": "Vertical inline · horizontal · single-stage double-suction · chemical",
+        "ru": "Вертикальные трубные · горизонтальные · двухвсасывающие · химические"
+      },
+      "desc": {
+        "zh": "通用流体输送的主力系列。立式管道泵占地小、进出口同轴线，便于管路连接；单级双吸泵适合大流量工况；化工离心泵用于腐蚀性或磨蚀性介质。具体材质与密封形式按介质确定。",
+        "en": "The workhorse range for general fluid transfer. Vertical inline pumps save floor space with coaxial suction and discharge; single-stage double-suction pumps suit high-flow duties; chemical centrifugal pumps handle corrosive or abrasive media. Materials and seals are specified against the medium.",
+        "ru": "Основная серия для перекачки жидкостей. Вертикальные трубные насосы экономят площадь и имеют соосные патрубки; одноступенчатые двухвсасывающие рассчитаны на большие расходы; химические центробежные — на агрессивные и абразивные среды. Материалы и уплотнения подбираются под среду."
+      },
+      "specs": [
+        {
+          "k": {
+            "zh": "结构",
+            "en": "Design",
+            "ru": "Конструкция"
+          },
+          "v": {
+            "zh": "单级单吸 / 单级双吸 / 立卧两式",
+            "en": "Single-stage single / double suction; vertical & horizontal",
+            "ru": "Одноступенчатые одно- и двухвсасывающие; вертикальные и горизонтальные"
+          }
+        },
+        {
+          "k": {
+            "zh": "介质",
+            "en": "Medium",
+            "ru": "Среда"
+          },
+          "v": {
+            "zh": "清水 · 腐蚀性 / 磨蚀性流体 · 高温流体",
+            "en": "Clean water · corrosive / abrasive · high-temperature fluids",
+            "ru": "Чистая вода · агрессивные / абразивные · горячие жидкости"
+          }
+        },
+        {
+          "k": {
+            "zh": "关键选项",
+            "en": "Key options",
+            "ru": "Важные опции"
+          },
+          "v": {
+            "zh": "过流材质 · 机械密封 · 防爆电机",
+            "en": "Wetted materials · mechanical seal · Ex motor",
+            "ru": "Материалы проточной части · торцевое уплотнение · взрывозащита"
+          }
+        },
+        {
+          "k": {
+            "zh": "数据表",
+            "en": "Datasheet",
+            "ru": "Даташит"
+          },
+          "v": {
+            "zh": "逐型号 Q-H 曲线可提供",
+            "en": "Per-model Q-H curves available",
+            "ru": "Кривые Q-H по каждому типоразмеру предоставляются"
+          }
+        }
+      ],
+      "models": {
+        "zh": "ISG / IRG / IHG / ISGD 立式管道泵 · ISW / ISWR / ISWB / ISWD 卧式离心泵 · IS / IH 化工离心泵 · S / SH 单级双吸离心泵",
+        "en": "ISG / IRG / IHG / ISGD vertical inline · ISW / ISWR / ISWB / ISWD horizontal · IS / IH chemical · S / SH double-suction",
+        "ru": "ISG / IRG / IHG / ISGD вертикальные · ISW / ISWR / ISWB / ISWD горизонтальные · IS / IH химические · S / SH двухвсасывающие"
+      },
+      "apps": {
+        "zh": "工业生产用水 · 建筑给排水 · 暖通循环 · 化工流程",
+        "en": "Process water · building services · HVAC · chemical processes",
+        "ru": "Техническое водоснабжение · инженерные системы зданий · ОВиК · химпроизводство"
+      },
+      "image": ""
+    },
+    {
+      "id": "m-multistage",
+      "group": "multistage",
+      "published": true,
+      "order": 4,
+      "code": "CDL / CDLF / GDL / DL / LG",
+      "name": {
+        "zh": "立式多级泵",
+        "en": "Vertical Multistage Pumps",
+        "ru": "Вертикальные многоступенчатые насосы"
+      },
+      "subtitle": {
+        "zh": "轻型多级 · 高层建筑给水 · 锅炉供水",
+        "en": "Light multistage · high-rise supply · boiler feed",
+        "ru": "Лёгкие многоступенчатые · высотное водоснабжение · питание котлов"
+      },
+      "desc": {
+        "zh": "通过增减级数调整压力而不改变安装占地，是高层增压与锅炉供水的常用方案。CDL/CDLF 为不锈钢轻型多级结构，GDL / DL / LG 为传统立式多级系列。",
+        "en": "Pressure is adjusted by adding or removing stages without changing the footprint — a standard solution for high-rise boosting and boiler feed. CDL/CDLF are stainless light multistage designs; GDL / DL / LG are conventional vertical multistage series.",
+        "ru": "Напор регулируется числом ступеней без изменения габаритов — типовое решение для высотных зданий и питания котлов. CDL/CDLF — лёгкие многоступенчатые из нержавеющей стали; GDL / DL / LG — классические вертикальные серии."
+      },
+      "specs": [
+        {
+          "k": {
+            "zh": "调压方式",
+            "en": "Head adjustment",
+            "ru": "Регулирование напора"
+          },
+          "v": {
+            "zh": "增减级数 + 切割叶轮外径",
+            "en": "Stage count + impeller trimming",
+            "ru": "Число ступеней + обточка рабочего колеса"
+          }
+        },
+        {
+          "k": {
+            "zh": "安装",
+            "en": "Installation",
+            "ru": "Монтаж"
+          },
+          "v": {
+            "zh": "立式，占地小；进出口可多方向布置",
+            "en": "Vertical, small footprint; rotatable suction/discharge",
+            "ru": "Вертикальное, малая площадь; патрубки с поворотом"
+          }
+        },
+        {
+          "k": {
+            "zh": "典型材质",
+            "en": "Typical material",
+            "ru": "Типовой материал"
+          },
+          "v": {
+            "zh": "不锈钢（CDL/CDLF）",
+            "en": "Stainless steel (CDL/CDLF)",
+            "ru": "Нержавеющая сталь (CDL/CDLF)"
+          }
+        },
+        {
+          "k": {
+            "zh": "数据表",
+            "en": "Datasheet",
+            "ru": "Даташит"
+          },
+          "v": {
+            "zh": "级数—扬程—功率对照表可提供",
+            "en": "Stage / head / power tables available",
+            "ru": "Таблицы «число ступеней — напор — мощность» предоставляются"
+          }
+        }
+      ],
+      "models": {
+        "zh": "CDL / CDLF 轻型立式多级离心泵 · GDL 立式多级管道泵 · DL / DLR 立式多级离心泵 · LG 高层建筑给水泵 · TSWA 卧式多级离心泵",
+        "en": "CDL / CDLF light vertical multistage · GDL vertical multistage inline · DL / DLR · LG high-rise · TSWA horizontal multistage",
+        "ru": "CDL / CDLF лёгкие вертикальные · GDL вертикальные трубные · DL / DLR · LG для высотных зданий · TSWA горизонтальные"
+      },
+      "apps": {
+        "zh": "高层建筑增压 · 锅炉供水 · 远距离送水 · 设备配套",
+        "en": "High-rise boosting · boiler feed · long-distance transfer · OEM packages",
+        "ru": "Высотное водоснабжение · питание котлов · дальняя перекачка · комплектация оборудования"
+      },
+      "image": ""
+    },
+    {
+      "id": "m-station",
+      "group": "station",
+      "published": true,
+      "order": 5,
+      "code": "ORWG",
+      "name": {
+        "zh": "变频供水设备与控制柜",
+        "en": "Variable-Frequency Booster Sets & Control Panels",
+        "ru": "Частотные насосные станции и шкафы управления"
+      },
+      "subtitle": {
+        "zh": "无负压变频 · 恒压变频 · 生活/消防给水成套",
+        "en": "Non-negative pressure · constant pressure · packaged domestic / fire water systems",
+        "ru": "Без отрицательного давления · постоянного давления · готовые станции хоз./пож. водоснабжения"
+      },
+      "desc": {
+        "zh": "用于生活饮用水输送与分配过程中的压力提升，进水为市政自来水。成套设备含泵组、变频控制柜与不锈钢水箱，可按项目配置。过流部件采用 SUS304 不锈钢。",
+        "en": "Boosts pressure in the distribution of potable water, supplied from municipal mains. Packaged sets include pump units, VFD control panels and stainless tanks, configurable per project. Wetted parts in SUS304 stainless steel.",
+        "ru": "Повышает давление при транспортировке и распределении питьевой воды из городского водопровода. В состав станции входят насосные агрегаты, шкаф с частотным преобразователем и бак из нержавеющей стали; конфигурация — под проект. Проточная часть из стали SUS304."
+      },
+      "specs": [
+        {
+          "k": {
+            "zh": "产品类别",
+            "en": "Product category",
+            "ru": "Категория продукции"
+          },
+          "v": {
+            "zh": "输配水设备",
+            "en": "Water distribution equipment",
+            "ru": "Оборудование для распределения воды"
+          }
+        },
+        {
+          "k": {
+            "zh": "主要材质",
+            "en": "Main material",
+            "ru": "Основной материал"
+          },
+          "v": {
+            "zh": "SUS304 不锈钢",
+            "en": "SUS304 stainless steel",
+            "ru": "Нержавеющая сталь SUS304"
+          }
+        },
+        {
+          "k": {
+            "zh": "使用范围",
+            "en": "Scope of use",
+            "ru": "Область применения"
+          },
+          "v": {
+            "zh": "常温生活饮用水",
+            "en": "Ambient-temperature potable water",
+            "ru": "Питьевая вода обычной температуры"
+          }
+        },
+        {
+          "k": {
+            "zh": "卫生批件",
+            "en": "Hygiene approval",
+            "ru": "Санитарное заключение"
+          },
+          "v": {
+            "zh": "已取得生活饮用水输配水设备卫生许可批件",
+            "en": "Hygienic approval for potable-water distribution equipment held",
+            "ru": "Имеется санитарно-гигиеническое заключение на оборудование для питьевой воды"
+          }
+        }
+      ],
+      "models": {
+        "zh": "ORWG 无负压变频供水设备 · ORWG 恒压变频供水设备 · 成套生活（消防）给水设备 · 变频控制柜 / 水泵专用控制柜 · 智能无负压不锈钢水箱",
+        "en": "ORWG non-negative-pressure VFD set · ORWG constant-pressure VFD set · packaged domestic / fire water systems · VFD and pump control panels · stainless buffer tanks",
+        "ru": "ORWG без отрицательного давления · ORWG постоянного давления · готовые станции хоз./пож. водоснабжения · шкафы частотного управления · баки из нержавеющей стали"
+      },
+      "apps": {
+        "zh": "城镇供水 · 住宅小区 · 酒店与公共建筑 · 二次供水改造",
+        "en": "Municipal supply · residential complexes · hotels · secondary supply retrofits",
+        "ru": "Городское водоснабжение · жилые комплексы · отели · реконструкция систем подкачки"
+      },
+      "image": ""
+    },
+    {
+      "id": "m-special",
+      "group": "special",
+      "published": true,
+      "order": 6,
+      "code": "CQB / IHF / CYZ-A / QBY / QJ",
+      "name": {
+        "zh": "特种与化工泵",
+        "en": "Special & Chemical Pumps",
+        "ru": "Специальные и химические насосы"
+      },
+      "subtitle": {
+        "zh": "磁力驱动 · 氟塑料衬里 · 自吸 · 隔膜 · 深井",
+        "en": "Magnetic drive · fluoropolymer-lined · self-priming · diaphragm · deep-well",
+        "ru": "Магнитные · фторопластовые · самовсасывающие · мембранные · скважинные"
+      },
+      "desc": {
+        "zh": "面向有毒、危险、高粘度、含颗粒或食品级超高温流体的输送。磁力驱动泵无轴封、适合防泄漏要求高的场合；氟塑料衬里与磁力泵用于腐蚀性介质；隔膜泵与螺杆泵用于高粘度介质；深井潜水电泵用于取水。",
+        "en": "For toxic, hazardous, high-viscosity, solids-bearing or food-grade high-temperature fluids. Magnetic-drive pumps are seal-less for leak-critical duties; fluoropolymer-lined and magnetic pumps suit corrosive media; diaphragm and screw pumps handle viscous media; deep-well submersibles serve water abstraction.",
+        "ru": "Для токсичных, опасных, высоковязких, содержащих частицы и пищевых горячих сред. Магнитные насосы без торцевого уплотнения применяются там, где критична герметичность; фторопластовые и магнитные — для агрессивных сред; мембранные и винтовые — для вязких; скважинные погружные — для водозабора."
+      },
+      "specs": [
+        {
+          "k": {
+            "zh": "无泄漏方案",
+            "en": "Leak-free option",
+            "ru": "Герметичное исполнение"
+          },
+          "v": {
+            "zh": "CQB / CQ / ZCQ 磁力驱动",
+            "en": "CQB / CQ / ZCQ magnetic drive",
+            "ru": "CQB / CQ / ZCQ с магнитной муфтой"
+          }
+        },
+        {
+          "k": {
+            "zh": "耐腐蚀方案",
+            "en": "Corrosion-resistant",
+            "ru": "Коррозионностойкое исполнение"
+          },
+          "v": {
+            "zh": "CQB-F 氟塑料磁力泵 · IHF 衬里离心泵",
+            "en": "CQB-F fluoropolymer magnetic · IHF lined centrifugal",
+            "ru": "CQB-F фторопластовые магнитные · IHF футерованные"
+          }
+        },
+        {
+          "k": {
+            "zh": "含气 / 高粘度",
+            "en": "Gas / viscous",
+            "ru": "С газом / вязкие"
+          },
+          "v": {
+            "zh": "ZW / ZX 自吸 · QBY / DBY 隔膜 · G / I-1B 螺杆",
+            "en": "ZW / ZX self-priming · QBY / DBY diaphragm · G / I-1B screw",
+            "ru": "ZW / ZX самовсасывающие · QBY / DBY мембранные · G / I-1B винтовые"
+          }
+        },
+        {
+          "k": {
+            "zh": "选型前提",
+            "en": "Required for selection",
+            "ru": "Необходимо для подбора"
+          },
+          "v": {
+            "zh": "介质成分、浓度、温度、含固率",
+            "en": "Composition, concentration, temperature, solids content",
+            "ru": "Состав, концентрация, температура, содержание твёрдых частиц"
+          }
+        }
+      ],
+      "models": {
+        "zh": "CQB / CQB-F / CQ / ZCQ 磁力驱动泵 · IHF 氟塑料衬里离心泵 · CYZ-A 自吸离心油泵 · ZW / ZWP / ZX 自吸泵 · QBY 气动 / DBY 电动隔膜泵 · G / I-1B 螺杆泵 · QJ 深井潜水电泵 · NL 污水泥浆泵 · FY 液下泵",
+        "en": "CQB / CQB-F / CQ / ZCQ magnetic drive · IHF fluoropolymer lined · CYZ-A self-priming oil · ZW / ZWP / ZX self-priming · QBY air / DBY electric diaphragm · G / I-1B screw · QJ deep-well · NL slurry · FY submerged",
+        "ru": "CQB / CQB-F / CQ / ZCQ магнитные · IHF футерованные · CYZ-A самовсасывающие для нефтепродуктов · ZW / ZWP / ZX · QBY / DBY мембранные · G / I-1B винтовые · QJ скважинные · NL шламовые · FY полупогружные"
+      },
+      "apps": {
+        "zh": "石油与化工 · 船舶 · 食品与制药 · 农田排灌 · 淡水养殖",
+        "en": "Petrochemical · marine · food & pharma · irrigation · aquaculture",
+        "ru": "Нефтехимия · судостроение · пищевая и фармацевтическая промышленность · орошение · рыбоводство"
+      },
+      "image": ""
+    }
+  ],
+  "applications": [
+    {
+      "title": {
+        "zh": "工业生产",
+        "en": "Industrial production",
+        "ru": "Промышленное производство"
+      },
+      "text": {
+        "zh": "腐蚀性 / 磨蚀性流体、高粘度或含颗粒介质、食品级或超高温流体、有毒或危险流体、工业生产用水系统。",
+        "en": "Corrosive / abrasive fluids, high-viscosity or solids-bearing media, food-grade or high-temperature fluids, toxic or hazardous fluids, process water systems.",
+        "ru": "Агрессивные и абразивные среды, вязкие и содержащие частицы, пищевые и высокотемпературные, токсичные и опасные жидкости, системы технического водоснабжения."
+      }
+    },
+    {
+      "title": {
+        "zh": "建筑与城镇供水",
+        "en": "Buildings & municipal supply",
+        "ru": "Здания и городское водоснабжение"
+      },
+      "text": {
+        "zh": "生活用水增压、高层建筑供水、二次供水泵房、消防给水系统。",
+        "en": "Domestic pressure boosting, high-rise supply, secondary pump rooms, fire water systems.",
+        "ru": "Повышение давления хозпитьевой воды, высотные здания, станции подкачки, системы пожаротушения."
+      }
+    },
+    {
+      "title": {
+        "zh": "环保与污水处理",
+        "en": "Environment & wastewater",
+        "ru": "Экология и сточные воды"
+      },
+      "text": {
+        "zh": "生活污水与积水排放、污泥与泥浆输送、污水处理流程配套。",
+        "en": "Sewage and surface-water drainage, sludge and slurry transfer, wastewater process packages.",
+        "ru": "Отвод бытовых стоков и дренажных вод, перекачка шлама и пульпы, обвязка очистных сооружений."
+      }
+    },
+    {
+      "title": {
+        "zh": "市政与工程",
+        "en": "Municipal & civil works",
+        "ru": "Муниципальные и инженерные объекты"
+      },
+      "text": {
+        "zh": "引水与排水工程、自来水系统、隧道与地下空间排水。",
+        "en": "Water transfer and drainage schemes, mains networks, tunnel and underground drainage.",
+        "ru": "Водозаборные и дренажные сооружения, городские сети, водоотведение тоннелей и подземных пространств."
+      }
+    },
+    {
+      "title": {
+        "zh": "农田水利与排灌",
+        "en": "Agriculture & irrigation",
+        "ru": "Сельское хозяйство и мелиорация"
+      },
+      "text": {
+        "zh": "农田灌溉、土壤改良、洪涝与干旱抽排、淡水养殖用水。",
+        "en": "Field irrigation, soil improvement, flood and drought pumping, aquaculture water.",
+        "ru": "Орошение, мелиорация, откачка при паводках и засухе, водоснабжение рыбоводных хозяйств."
+      }
+    },
+    {
+      "title": {
+        "zh": "水利与电力",
+        "en": "Water & power",
+        "ru": "Гидротехника и энергетика"
+      },
+      "text": {
+        "zh": "调水与自来水工程、发电冷凝水与循环水、锅炉供水与除灰系统。",
+        "en": "Water transfer schemes, condenser and cooling water, boiler feed and ash-handling water.",
+        "ru": "Переброска стока и водозабор, конденсат и циркуляционная вода, питание котлов и системы золоудаления."
+      }
+    },
+    {
+      "title": {
+        "zh": "石油与船舶",
+        "en": "Petroleum & marine",
+        "ru": "Нефть и судостроение"
+      },
+      "text": {
+        "zh": "钻井注水、采油提炼、油料抽引与输送、海水循环、船舶生活供水。",
+        "en": "Drilling water injection, crude processing, oil transfer, seawater circulation, ship domestic water.",
+        "ru": "Закачка воды в скважины, нефтепереработка, перекачка нефтепродуктов, циркуляция забортной воды, бытовое водоснабжение судов."
+      }
+    }
+  ],
+  "certs": [
+    {
+      "type": "system",
+      "name": {
+        "zh": "按 ISO 9001:2015 质量管理体系要求组织生产",
+        "en": "Production organised under an ISO 9001:2015 quality management system",
+        "ru": "Производство организовано по системе менеджмента качества ISO 9001:2015"
+      },
+      "issuer": {
+        "zh": "体系证书及年审记录以生产企业现行原件为准",
+        "en": "Current certificate and surveillance records per the manufacturer's original documents",
+        "ru": "Действующий сертификат и отчёты по надзорному аудиту — по оригиналам предприятия"
+      },
+      "holder": {
+        "zh": "上海瓯润泵业集团有限公司",
+        "en": "Shanghai Ourun Pump Industry Group Co., Ltd.",
+        "ru": "Shanghai Ourun Pump Industry Group Co., Ltd."
+      }
+    },
+    {
+      "type": "system",
+      "name": {
+        "zh": "按 ISO 14001:2015 环境管理体系要求运行",
+        "en": "Operations under an ISO 14001:2015 environmental management system",
+        "ru": "Работа по системе экологического менеджмента ISO 14001:2015"
+      },
+      "issuer": {
+        "zh": "体系证书及年审记录以生产企业现行原件为准",
+        "en": "Current certificate and surveillance records per the manufacturer's original documents",
+        "ru": "Действующий сертификат и отчёты по надзорному аудиту — по оригиналам предприятия"
+      },
+      "holder": {
+        "zh": "上海瓯润泵业集团有限公司",
+        "en": "Shanghai Ourun Pump Industry Group Co., Ltd.",
+        "ru": "Shanghai Ourun Pump Industry Group Co., Ltd."
+      }
+    },
+    {
+      "type": "product",
+      "name": {
+        "zh": "生活饮用水输配水设备卫生许可批件（ORWG 无负压 / 恒压变频供水设备）",
+        "en": "Hygienic approval for potable-water distribution equipment (ORWG booster sets)",
+        "ru": "Санитарно-гигиеническое заключение на оборудование для распределения питьевой воды (станции ORWG)"
+      },
+      "issuer": {
+        "zh": "卫生行政主管部门",
+        "en": "Competent public-health authority",
+        "ru": "Уполномоченный орган санитарного надзора"
+      },
+      "holder": {
+        "zh": "上海瓯润泵业集团有限公司（实际生产企业为其分公司）",
+        "en": "Shanghai Ourun Pump Industry Group Co., Ltd. (manufactured by its branch)",
+        "ru": "Shanghai Ourun Pump Industry Group Co., Ltd. (изготовитель — филиал компании)"
+      }
+    },
+    {
+      "type": "test",
+      "name": {
+        "zh": "电动机消防泵组型式试验报告（多型号）",
+        "en": "Type-test reports for electric fire pump sets (multiple models)",
+        "ru": "Протоколы типовых испытаний электрических пожарных насосных агрегатов (несколько типоразмеров)"
+      },
+      "issuer": {
+        "zh": "CNAS 认可检测实验室（机械工业排灌机械产品质量检测中心）",
+        "en": "CNAS-accredited laboratory (Machinery Industry Irrigation Machinery Quality Inspection Centre)",
+        "ru": "Лаборатория, аккредитованная CNAS (Центр контроля качества ирригационного оборудования)"
+      },
+      "holder": {
+        "zh": "委托单位：上海瓯润泵业集团有限公司",
+        "en": "Applicant: Shanghai Ourun Pump Industry Group Co., Ltd.",
+        "ru": "Заказчик испытаний: Shanghai Ourun Pump Industry Group Co., Ltd."
+      }
+    }
+  ],
+  "compliance": {
+    "title": {
+      "zh": "出口合规说明",
+      "en": "Export compliance",
+      "ru": "Экспортное соответствие"
+    },
+    "items": [
+      {
+        "zh": "上述资质由合作生产企业持有，昭盛元仅作为出口与供应链服务方引用，不作权利归属声明。",
+        "en": "The qualifications above are held by our manufacturing partner and are cited by Zhaoshengyuan solely in its capacity as exporter and supply-chain provider; no claim of ownership is made.",
+        "ru": "Указанные документы принадлежат производственному партнёру и приводятся «Чжаошэнъюань» исключительно как экспортёром и логистическим оператором; мы не заявляем прав на них."
+      },
+      {
+        "zh": "输往俄罗斯及欧亚经济联盟的产品，其 EAC 符合性认证由俄方进口商作为申请人办理；我们配合提供俄文技术护照、数据表、图纸与检测报告。",
+        "en": "For shipments to Russia and the EAEU, EAC conformity assessment is completed by the Russian importer as applicant. We supply Russian-language technical passports, datasheets, drawings and test reports.",
+        "ru": "Для поставок в Россию и ЕАЭС оценку соответствия по EAC оформляет российский импортёр как заявитель. Мы предоставляем технические паспорта на русском языке, даташиты, чертежи и протоколы испытаний."
+      },
+      {
+        "zh": "消防类产品可能另有目的国消防认证要求，请在询盘中说明终端用途与项目所在地，以便逐项确认。",
+        "en": "Fire-related products may be subject to additional national fire approval. Please state the end use and project country in your enquiry so requirements can be confirmed individually.",
+        "ru": "На пожарное оборудование могут распространяться дополнительные национальные требования. Укажите назначение и страну проекта в запросе — мы уточним перечень документов."
+      }
+    ]
+  },
+  "rfq": {
+    "title": {
+      "zh": "询价时请提供这些工况",
+      "en": "What to include in an enquiry",
+      "ru": "Что указать в запросе"
+    },
+    "lead": {
+      "zh": "泵不是标准品，脱离工况报不出准确价格。信息越完整，选型与报价越快。",
+      "en": "Pumps are not off-the-shelf commodities — an accurate price requires the duty point. The more complete the data, the faster the selection and quotation.",
+      "ru": "Насосы не являются типовым товаром: точная цена без рабочей точки невозможна. Чем полнее исходные данные, тем быстрее подбор и расчёт."
+    },
+    "items": [
+      {
+        "k": {
+          "zh": "介质",
+          "en": "Medium",
+          "ru": "Среда"
+        },
+        "v": {
+          "zh": "名称、浓度、温度、含固率与颗粒尺寸",
+          "en": "Name, concentration, temperature, solids content and particle size",
+          "ru": "Наименование, концентрация, температура, содержание и размер частиц"
+        }
+      },
+      {
+        "k": {
+          "zh": "流量与压力",
+          "en": "Flow & head",
+          "ru": "Расход и напор"
+        },
+        "v": {
+          "zh": "Q（m³/h 或 L/s）、H（m）或出口压力（MPa）",
+          "en": "Q (m³/h or L/s), H (m) or discharge pressure (MPa)",
+          "ru": "Q (м³/ч или л/с), H (м) или давление на выходе (МПа)"
+        }
+      },
+      {
+        "k": {
+          "zh": "电源",
+          "en": "Power supply",
+          "ru": "Электропитание"
+        },
+        "v": {
+          "zh": "电压 / 频率 / 相数；是否需要防爆电机",
+          "en": "Voltage / frequency / phases; Ex motor required or not",
+          "ru": "Напряжение / частота / число фаз; необходимость взрывозащиты"
+        }
+      },
+      {
+        "k": {
+          "zh": "材质与密封",
+          "en": "Materials & sealing",
+          "ru": "Материалы и уплотнение"
+        },
+        "v": {
+          "zh": "过流件材质、机械密封或填料、连接方式",
+          "en": "Wetted materials, mechanical seal or packing, connection type",
+          "ru": "Материалы проточной части, торцевое уплотнение или сальник, тип присоединения"
+        }
+      },
+      {
+        "k": {
+          "zh": "安装与结构",
+          "en": "Installation",
+          "ru": "Монтаж и исполнение"
+        },
+        "v": {
+          "zh": "立式 / 卧式、潜水 / 干式、进出口方向、空间限制",
+          "en": "Vertical / horizontal, submersible / dry, port orientation, space limits",
+          "ru": "Вертикальное / горизонтальное, погружное / сухое, ориентация патрубков, ограничения по месту"
+        }
+      },
+      {
+        "k": {
+          "zh": "认证与文件",
+          "en": "Approvals & documents",
+          "ru": "Сертификация и документы"
+        },
+        "v": {
+          "zh": "EAC / 消防认证要求、俄文技术护照、数据表语言",
+          "en": "EAC / fire approval needs, Russian technical passport, datasheet language",
+          "ru": "Требования EAC / пожарной сертификации, техпаспорт на русском, язык даташита"
+        }
+      },
+      {
+        "k": {
+          "zh": "数量与交付",
+          "en": "Quantity & delivery",
+          "ru": "Объём и поставка"
+        },
+        "v": {
+          "zh": "台数、备件需求、目的港、期望交期",
+          "en": "Units, spare parts, destination port, required lead time",
+          "ru": "Количество, потребность в ЗИП, порт назначения, желаемый срок поставки"
+        }
+      }
+    ],
+    "note": {
+      "zh": "逐型号性能曲线、外形尺寸图与安装说明可按系列索取。我们不把无法核验的参数写进网页。",
+      "en": "Per-model performance curves, dimension drawings and installation manuals are available on request. We do not publish figures we cannot verify.",
+      "ru": "Кривые характеристик, габаритные чертежи и руководства по монтажу предоставляются по запросу. Мы не публикуем непроверенные данные."
+    }
+  }
+}

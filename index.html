@@ -45,6 +45,7 @@
     <nav class="navlinks" id="navlinks">
       <a href="#about"      data-i18n="nav.about"></a>
       <a href="#products"   data-i18n="nav.products"></a>
+      <a href="#industrial" class="nav-ind" data-i18n="nav.industrial"></a>
       <a href="#stories"    data-i18n="nav.stories"></a>
       <a href="#capability" data-i18n="nav.capability"></a>
       <a href="#why"        data-i18n="nav.why"></a>
@@ -131,6 +132,59 @@
   <div class="container">
     <div class="storylist" id="storyList"></div>
     <div class="empty-note" id="storyEmpty" style="display:none"></div>
+  </div>
+</section>
+
+<!-- ================= 流体设备 · 独立业务线 =================
+     与茶叶完全分离：独立 hero、独立配色、独立信息架构、独立数据文件
+     信息分层按不同市场阅读习惯：
+       正面的工程参数表 → 俄罗斯/国际工程采购
+       型号谱系折叠区   → 中国采购（看全不全）
+       资质与归属声明   → 所有市场共同关心的可核验性
+     ============================================================ -->
+<section id="industrial" class="m-sec">
+  <div class="m-hero">
+    <div class="container">
+      <p class="m-eyebrow" id="mEyebrow"></p>
+      <h2 id="mTitle"></h2>
+      <p class="m-lead" id="mLead"></p>
+      <a class="m-btn" href="#contact" id="mCta"></a>
+      <div class="m-supplier">
+        <b id="mSupplierName"></b>
+        <span id="mSupplierRole"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container m-body">
+
+    <!-- 三种阅读路径：同一份内容，不同市场各取所需 -->
+    <div class="m-lanes" id="mLanes"></div>
+
+    <div class="m-sechead">
+      <p class="m-kicker" data-i18n="mach.seriesLabel"></p>
+      <h3 class="m-h3" data-i18n="mach.seriesTitle"></h3>
+      <p class="m-sub" data-i18n="mach.seriesLead"></p>
+    </div>
+    <div class="m-tabs" id="mTabs"></div>
+    <div class="m-grid" id="mGrid"></div>
+
+    <div class="m-sechead">
+      <p class="m-kicker" data-i18n="mach.appsLabel"></p>
+      <h3 class="m-h3" data-i18n="mach.appsTitle"></h3>
+    </div>
+    <div class="m-apps" id="mApps"></div>
+
+    <div class="m-sechead">
+      <p class="m-kicker" data-i18n="mach.certLabel"></p>
+      <h3 class="m-h3" data-i18n="mach.certTitle"></h3>
+      <p class="m-sub" data-i18n="mach.certLead"></p>
+    </div>
+    <div class="m-certs" id="mCerts"></div>
+    <div class="m-compliance" id="mCompliance"></div>
+
+    <div class="m-rfq" id="mRfq"></div>
+    <p class="m-note" id="mNote"></p>
   </div>
 </section>
 
@@ -255,6 +309,7 @@
           <a class="qbtn wa" href="https://wa.me/79117067084" target="_blank" rel="noopener">WhatsApp</a>
           <a class="qbtn em" href="mailto:fanwh188@gmail.com">Email</a>
           <a class="qbtn ph" href="tel:+79117067084">+7 911 706 7084</a>
+          <a class="qbtn ml" id="mailFallback" href="mailto:fanwh188@gmail.com" style="display:none">📧 带上我填的内容发邮件</a>
         </div>
         <div class="fbk-tip" data-i18n="msg.fbTip"></div>
       </div>

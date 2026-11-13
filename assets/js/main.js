@@ -25,6 +25,8 @@
   var cur = 'zh';
   var SITE = null;   // data/site.json
   var PROD = null;   // data/products.json
+  var MACH = null;   // data/machinery.json —— 独立业务线，不与茶叶数据混用
+  var mFilter = 'all'; var machOpen = {};
   var filterCat = 'all';
   var filterSub = 'all';
 
@@ -143,7 +145,7 @@
        L === 'en' ? 'Jiujiang Zhaoshengyuan Technology Co., Ltd.' :
        '九江昭盛元科技有限公司');
 
-    var navKeys = ['about','products','capability','why','terms','faq','contact'];
+    var navKeys = ['about','products','stories','industrial','capability','why','terms','faq','contact'];
     $('#footerLinks').innerHTML = navKeys.map(function (k) {
       return '<li><a href="#' + k + '">' + esc(I18N[L].nav[k]) + '</a></li>';
     }).join('');
@@ -154,6 +156,7 @@
 
     renderProducts();
     renderStories();
+    renderMachinery();
   }
 
   /* ============================================================
@@ -323,6 +326,169 @@
     });
   }
 
+  /* ============================================================
+     流体设备 · 独立业务线
+     独立数据、独立筛选、独立视觉；与茶叶产品中心互不相干。
+     信息按三种阅读习惯分层：
+       ① 卡片正面工程参数 → 俄 / 国际工程采购
+       ② 折叠区型号谱系   → 中国采购
+       ③ 资质归属与文件   → 合规 / 尽调
+     ============================================================ */
+  function renderMachinery() {
+    if (!MACH) return;
+    var L = cur, D = I18N[L].mach, M = MACH;
+
+    function put(id, txt) { var e = $(id); if (e) e.textContent = txt || ''; }
+
+    /* Hero + 供货方归属声明 */
+    put('#mEyebrow', t(M.hero && M.hero.eyebrow, L));
+    put('#mTitle',   t(M.hero && M.hero.title, L));
+    put('#mLead',    t(M.hero && M.hero.lead, L));
+    put('#mCta',     t(M.hero && M.hero.cta, L));
+    put('#mSupplierName', t(M.supplier && M.supplier.name, L));
+    put('#mSupplierRole', t(M.supplier && M.supplier.role, L));
+    put('#mNote', t(M.supplier && M.supplier.note, L));
+
+    /* 三种阅读路径 */
+    var lanes = $('#mLanes');
+    if (lanes) {
+      lanes.innerHTML =
+        '<div class="m-lane-tag">' + esc(D.laneTag) + '</div>' +
+        '<div class="m-lane-grid">' +
+          '<div class="m-lane"><div class="m-lane-in"><b>01</b><h4>' + esc(D.lane1) + '</h4><p>' + esc(D.lane1d) + '</p></div></div>' +
+          '<div class="m-lane"><div class="m-lane-in"><b>02</b><h4>' + esc(D.lane2) + '</h4><p>' + esc(D.lane2d) + '</p></div></div>' +
+          '<div class="m-lane"><div class="m-lane-in"><b>03</b><h4>' + esc(D.lane3) + '</h4><p>' + esc(D.lane3d) + '</p></div></div>' +
+        '</div>';
+    }
+
+    /* 分组 tabs */
+    var groups = M.groups || [];
+    var series = (M.series || []).filter(function (x) { return x.published !== false; });
+    var cnt = {};
+    series.forEach(function (x) { cnt[x.group] = (cnt[x.group] || 0) + 1; });
+    var th = '<button type="button" class="m-tab' + (mFilter === 'all' ? ' on' : '') +
+             '" data-mg="all">' + esc(D.allTab) + ' <span class="cnt">' + series.length + '</span></button>';
+    groups.forEach(function (g) {
+      var n = cnt[g.key] || 0;
+      if (!n) return;
+      th += '<button type="button" class="m-tab' + (mFilter === g.key ? ' on' : '') +
+            '" data-mg="' + esc(g.key) + '">' + esc(t(g.label, L)) +
+            ' <span class="cnt">' + n + '</span></button>';
+    });
+    var tabs = $('#mTabs');
+    if (tabs) {
+      tabs.innerHTML = th;
+      $$('#mTabs .m-tab').forEach(function (b) {
+        b.onclick = function () { mFilter = b.getAttribute('data-mg'); renderMachinery(); };
+      });
+    }
+
+    /* 产品系列卡片 */
+    var list = series.filter(function (x) { return mFilter === 'all' || x.group === mFilter; });
+    list.sort(function (a, b) { return (a.order || 99) - (b.order || 99); });
+    var grid = $('#mGrid');
+    if (grid) {
+      grid.innerHTML = list.map(function (x) {
+        var open = !!machOpen[x.id];
+        var specs = (x.specs || []).map(function (r) {
+          return '<tr><th>' + esc(t(r.k, L)) + '</th><td>' + esc(t(r.v, L)) + '</td></tr>';
+        }).join('');
+        return '' +
+          '<article class="m-card' + (open ? ' open' : '') + '" data-mid="' + esc(x.id) + '">' +
+            '<div class="m-card-in">' +
+            (x.image ? '<div class="m-card-img"><img src="' + esc(x.image) + '" alt="' + esc(t(x.name, L)) + '" loading="lazy"></div>' : '') +
+            '<div class="m-card-top">' +
+              '<span class="m-code">' + esc(x.code || '') + '</span>' +
+              '<h4>' + esc(t(x.name, L)) + '</h4>' +
+              '<p class="m-card-sub">' + esc(t(x.subtitle, L)) + '</p>' +
+            '</div>' +
+            '<div class="m-card-body">' +
+              '<p class="m-desc">' + esc(t(x.desc, L)) + '</p>' +
+              (specs ? '<table class="m-spec"><tbody>' + specs + '</tbody></table>' : '') +
+              '<div class="m-apps-line"><b>' + esc(D.appsCardLabel) + '</b><span>' + esc(t(x.apps, L)) + '</span></div>' +
+              '<div class="m-models' + (open ? ' open' : '') + '" data-models="' + esc(x.id) + '">' +
+                '<div class="m-models-h">' + esc(D.modelsLabel) + '</div>' +
+                '<p>' + esc(t(x.models, L)) + '</p>' +
+              '</div>' +
+              '<div class="m-card-foot">' +
+                '<button type="button" class="m-expand" data-mexp="' + esc(x.id) + '">' +
+                  esc(open ? D.modelsHide : D.modelsHint) + '</button>' +
+                '<a class="m-quote" href="#contact" data-menq="' + esc(t(x.name, L)) + '">' +
+                  esc(D.quoteBtn) + ' →</a>' +
+              '</div>' +
+            '</div>' +
+            '</div>' +
+          '</article>';
+      }).join('');
+
+      $$('#mGrid .m-expand').forEach(function (b) {
+        b.onclick = function () {
+          var id = b.getAttribute('data-mexp');
+          machOpen[id] = !machOpen[id];
+          renderMachinery();
+        };
+      });
+      $$('#mGrid [data-menq]').forEach(function (a) {
+        a.onclick = function () {
+          var ta = document.querySelector('#contactForm [name=msg]');
+          var nm = a.getAttribute('data-menq');
+          var pre = (L === 'ru' ? 'Оборудование / Интересуют: '
+                     : L === 'en' ? 'Fluid equipment — interested in: '
+                     : '流体设备咨询：') + nm;
+          if (ta && ta.value.indexOf(pre) === -1) ta.value = pre + (ta.value ? '\n' + ta.value : '');
+        };
+      });
+    }
+
+    /* 应用领域 */
+    var apps = $('#mApps');
+    if (apps) {
+      apps.innerHTML = (M.applications || []).map(function (a, i) {
+        return '<div class="m-app"><div class="m-app-in"><span class="m-app-n">' + (i + 1 < 10 ? '0' : '') + (i + 1) + '</span>' +
+               '<h5>' + esc(t(a.title, L)) + '</h5><p>' + esc(t(a.text, L)) + '</p></div></div>';
+      }).join('');
+    }
+
+    /* 资质 */
+    var certs = $('#mCerts');
+    if (certs) {
+      var TYPE = {
+        system: { zh:'体系认证', en:'Management system', ru:'Система менеджмента' },
+        product:{ zh:'产品许可', en:'Product approval', ru:'Разрешение на продукцию' },
+        test:   { zh:'型式试验', en:'Type test',        ru:'Типовые испытания' }
+      };
+      certs.innerHTML = (M.certs || []).map(function (c) {
+        var ty = TYPE[c.type] ? t(TYPE[c.type], L) : c.type;
+        return '<div class="m-cert"><div class="m-cert-in"><span class="m-cert-type">' + esc(ty) + '</span>' +
+               '<h5>' + esc(t(c.name, L)) + '</h5>' +
+               '<dl><dt>' + esc(D.holderLabel) + '</dt><dd>' + esc(t(c.holder, L)) + '</dd>' +
+               '<dt>' + esc(D.issuerLabel) + '</dt><dd>' + esc(t(c.issuer, L)) + '</dd></dl></div></div>';
+      }).join('');
+    }
+
+    /* 出口合规 */
+    var comp = $('#mCompliance');
+    if (comp && M.compliance) {
+      comp.innerHTML = '<h4>' + esc(D.complianceTitle) + '</h4><ul>' +
+        (M.compliance.items || []).map(function (x) { return '<li>' + esc(t(x, L)) + '</li>'; }).join('') +
+        '</ul>';
+    }
+
+    /* RFQ 工况清单 */
+    var rfq = $('#mRfq'), R = M.rfq;
+    if (rfq && R) {
+      rfq.innerHTML =
+        '<div class="m-rfq-head"><div><p class="m-kicker">' + esc(D.docsLabel) + '</p>' +
+        '<h3>' + esc(t(R.title, L)) + '</h3><p>' + esc(t(R.lead, L)) + '</p></div>' +
+        '<a class="m-btn sm" href="#contact">' + esc(D.rfqBtn) + '</a></div>' +
+        '<div class="m-rfq-grid">' +
+        (R.items || []).map(function (r) {
+          return '<div class="m-rfq-row"><div class="m-rfq-row-in"><b>' + esc(t(r.k, L)) + '</b><span>' + esc(t(r.v, L)) + '</span></div></div>';
+        }).join('') +
+        '</div><p class="m-rfq-note">' + esc(t(R.note, L)) + '</p>';
+    }
+  }
+
   function catLabel(key, L) {
     var c = (PROD && PROD.categories || []).filter(function (x) { return x.key === key; })[0];
     return c ? t(c.label, L) : key;
@@ -394,12 +560,37 @@
     });
 
     var fbk = $('#fbk');
-    function showFbk() { if (fbk) { fbk.hidden = false; fbk.scrollIntoView({ behavior:'smooth', block:'center' }); } }
+    /* 兜底卡显示时，把访客已填的内容塞进 mailto，
+       即使后端完全不可用，点一下也能把完整询盘发出来。 */
+    function fillMailFallback(p) {
+      var a = document.getElementById('mailFallback');
+      if (!a) return;
+      var lines = [];
+      if (p.name)    lines.push('姓名 / Name: ' + p.name);
+      if (p.contact) lines.push('联系方式 / Contact: ' + p.contact);
+      if (p.company) lines.push('公司 / Company: ' + p.company);
+      if (p.country) lines.push('国家 / Country: ' + p.country);
+      if (p.qty)     lines.push('数量 / Qty: ' + p.qty);
+      if (p.type)    lines.push('类型 / Type: ' + p.type);
+      if (p.msg)     lines.push('需求 / Message: ' + p.msg);
+      lines.push('来源 / Source: ' + (p.page || location.href));
+      var subj = '询盘 / Enquiry' + (p.name ? ' - ' + p.name : '');
+      a.href = 'mailto:fanwh188@gmail.com?subject=' + encodeURIComponent(subj)
+             + '&body=' + encodeURIComponent(lines.join('\n'));
+      a.style.display = '';
+    }
+    function showFbk(p) {
+      if (!fbk) return;
+      if (p) fillMailFallback(p);
+      fbk.hidden = false;
+      fbk.scrollIntoView({ behavior:'smooth', block:'center' });
+    }
     function hideFbk() { if (fbk) fbk.hidden = true; }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       hideFbk();
+      var ma0 = document.getElementById('mailFallback'); if (ma0) ma0.style.display = 'none';
       var M = I18N[cur].msg;
       var name = (form.name.value || '').trim();
       var contact = (form.contact.value || '').trim();
@@ -428,7 +619,7 @@
       /* 极老浏览器没有 fetch，直接引导到兜底联系卡，不让它白等 */
       if (typeof fetch !== 'function') {
         msgEl.className = 'formmsg bad'; msgEl.textContent = M.errNetwork;
-        showFbk(); return;
+        showFbk(payload); return;
       }
       if (!list.length) {
         setTimeout(function () { msgEl.className = 'formmsg ok'; msgEl.textContent = M.ok; form.reset(); }, 600);
@@ -438,7 +629,7 @@
       (function attempt(i) {
         if (i >= list.length) {
           msgEl.className = 'formmsg bad'; msgEl.textContent = M.errNetwork;
-          showFbk(); return;
+          showFbk(payload); return;
         }
         fetch(list[i], {
           method: 'POST',
@@ -446,7 +637,7 @@
           body: JSON.stringify(payload)
         }).then(function (r) { return r.json(); })
           .then(function (j) {
-            if (j && j.ok) { msgEl.className = 'formmsg ok'; msgEl.textContent = M.ok; form.reset(); if (boxWrap) boxWrap.classList.remove('warn'); hideFbk(); }
+            if (j && j.ok) { msgEl.className = 'formmsg ok'; msgEl.textContent = M.ok; form.reset(); if (boxWrap) boxWrap.classList.remove('warn'); hideFbk(); var ma=document.getElementById('mailFallback'); if(ma) ma.style.display='none'; }
             else attempt(i + 1);
           })
           .catch(function () { attempt(i + 1); });
@@ -461,6 +652,7 @@
     /* 单文件版：数据已内联，直接用，避免 file:// 下 fetch 被浏览器拦截 */
     if (url.indexOf('site.json') > -1 && window.__ZSY_SITE__) return Promise.resolve(window.__ZSY_SITE__);
     if (url.indexOf('products.json') > -1 && window.__ZSY_PROD__) return Promise.resolve(window.__ZSY_PROD__);
+    if (url.indexOf('machinery.json') > -1 && window.__ZSY_MACH__) return Promise.resolve(window.__ZSY_MACH__);
     return fetch(url, { cache: 'no-store' }).then(function (r) {
       if (!r.ok) throw new Error(url + ' ' + r.status);
       return r.json();
@@ -472,12 +664,14 @@
      用法：iframe.contentWindow.ZSY.setData(siteObj, prodObj, 'zh')
      ============================================================ */
   window.ZSY = {
-    setData: function (site, prod, lang) {
+    setData: function (site, prod, lang, mach) {
       if (site) SITE = site;
       if (prod) PROD = prod;
+      if (mach) MACH = mach;
       if (lang && LANGS.indexOf(lang) > -1) cur = lang;
       setLang(cur, true);
     },
+    setMach: function (m) { if (m) { MACH = m; renderMachinery(); } },
     getLang: function () { return cur; }
   };
 
@@ -487,10 +681,12 @@
 
     Promise.all([
       loadJSON('data/site.json').catch(function (e) { console.warn(e); return null; }),
-      loadJSON('data/products.json').catch(function (e) { console.warn(e); return null; })
+      loadJSON('data/products.json').catch(function (e) { console.warn(e); return null; }),
+      loadJSON('data/machinery.json').catch(function (e) { console.warn(e); return null; })
     ]).then(function (res) {
       SITE = res[0] || {};
       PROD = res[1] || { categories: [], products: [] };
+      MACH = res[2] || null;
       setLang(cur, true);
       initReveal();
     });
