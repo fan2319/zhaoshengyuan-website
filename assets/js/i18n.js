@@ -15,7 +15,16 @@ const I18N = {
       title: '九江昭盛元科技有限公司 | 跨境供应链 · 茶叶与流体设备出口',
       desc: '供应链管理服务；货物与技术进出口、进出口代理。茶叶产地直采，及泵、消防泵组、变频供水设备等流体设备的出口与选型支持。'
     },
-    nav: { about:'关于我们', products:'茶叶产品', industrial:'流体设备', stories:'产品故事', capability:'服务能力', why:'为什么选择我们', terms:'合作条款', faq:'常见问题', contact:'联系合作' },
+    nav: { about:'关于我们', center:'产品中心', products:'茶叶产品', industrial:'流体设备', stories:'产品故事', capability:'服务能力', why:'为什么选择我们', terms:'合作条款', faq:'常见问题', contact:'联系合作' },
+
+    drop: {
+      teaLabel:'茶叶 · TEA', teaTitle:'茶叶与茶制品', teaDesc:'工夫红茶 · 高山绿茶 · 果茶花草茶',
+      black:'红茶', green:'绿茶', fruit:'果茶 · 花草茶', teabag:'袋泡茶 · 代用茶',
+      machLabel:'流体设备 · FLUID', machTitle:'泵 · 消防泵组 · 供水设备', machDesc:'按工况选型，参数与资质可核验',
+      machSeries:'六大产品系列', machCerts:'资质与合规', machRfq:'按工况发送询价',
+      moreLabel:'继续了解', stories:'产品故事', capability:'服务能力', faq:'常见问题',
+      all:'查看全部产品 →', markText:'一个窗口，对接两条业务线'
+    },
 
     hero: { eyebrow:'江西 · 九江 · 修水',
       cta1:'查看产品', cta2:'发送询盘',
@@ -87,7 +96,16 @@ const I18N = {
       title: 'Zhaoshengyuan | Cross-border Supply Chain · Tea & Fluid Equipment',
       desc: 'Supply-chain management, import & export, import-export agency. Origin-sourced tea plus pumps, fire pump sets and VFD booster systems, with selection support.'
     },
-    nav: { about:'About', products:'Tea', industrial:'Fluid Equipment', stories:'Stories', capability:'Services', why:'Why Us', terms:'Terms', faq:'FAQ', contact:'Contact' },
+    nav: { about:'About', center:'Products', products:'Tea', industrial:'Fluid Equipment', stories:'Stories', capability:'Services', why:'Why Us', terms:'Terms', faq:'FAQ', contact:'Contact' },
+
+    drop: {
+      teaLabel:'TEA', teaTitle:'Tea & Tea Products', teaDesc:'Black tea · Green tea · Fruit & herbal',
+      black:'Black tea', green:'Green tea', fruit:'Fruit & herbal', teabag:'Tea bags & substitutes',
+      machLabel:'FLUID EQUIPMENT', machTitle:'Pumps · Fire sets · Booster systems', machDesc:'Selected by duty point, with verifiable data',
+      machSeries:'Six series', machCerts:'Approvals & compliance', machRfq:'Send a duty-point enquiry',
+      moreLabel:'Explore further', stories:'Product stories', capability:'Services', faq:'FAQ',
+      all:'View all products →', markText:'One window, two business lines'
+    },
 
     hero: { eyebrow:'Jiangxi · Jiujiang · Xiushui',
       cta1:'View Products', cta2:'Send Enquiry',
@@ -159,7 +177,16 @@ const I18N = {
       title: 'Чжаошэнъюань | Трансграничные поставки · Чай и гидравлическое оборудование',
       desc: 'Управление цепями поставок, импорт и экспорт, агентская ВЭД. Чай от источника, а также насосы, пожарные агрегаты и насосные станции с подбором по параметрам.'
     },
-    nav: { about:'О компании', products:'Чай', industrial:'Оборудование', stories:'Истории', capability:'Услуги', why:'Почему мы', terms:'Условия', faq:'Вопросы', contact:'Контакты' },
+    nav: { about:'О компании', center:'Продукция', products:'Чай', industrial:'Оборудование', stories:'Истории', capability:'Услуги', why:'Почему мы', terms:'Условия', faq:'Вопросы', contact:'Контакты' },
+
+    drop: {
+      teaLabel:'ЧАЙ', teaTitle:'Чай и чайная продукция', teaDesc:'Красный · зелёный · фруктовые чаи',
+      black:'Красный чай', green:'Зелёный чай', fruit:'Фруктовый и травяной', teabag:'Пакетированный чай',
+      machLabel:'ОБОРУДОВАНИЕ', machTitle:'Насосы · Пожарные агрегаты · Станции', machDesc:'Подбор по параметрам, проверяемые данные',
+      machSeries:'Шесть серий', machCerts:'Документы и соответствие', machRfq:'Запрос по параметрам',
+      moreLabel:'Далее', stories:'Истории продуктов', capability:'Услуги', faq:'Вопросы',
+      all:'Вся продукция →', markText:'Одно окно — два направления'
+    },
 
     hero: { eyebrow:'Цзянси · Цзюцзян · Сюшуй',
       cta1:'Продукция', cta2:'Отправить запрос',

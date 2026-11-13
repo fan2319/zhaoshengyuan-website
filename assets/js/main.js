@@ -176,6 +176,16 @@
     var cats = PROD.categories || [];
     var items = (PROD.products || []).filter(function (p) { return p.published !== false; });
 
+    /* 下拉里的茶叶子项，与页面二级目录用同一套可见性规则：
+       该子类暂无上架商品就自动隐藏，后台加商品后自己出现。 */
+    $$('.navdrop .nd-tea .nd-subs a[data-sub]').forEach(function (a) {
+      var k = a.getAttribute('data-sub');
+      var n = items.filter(function (p) {
+        return p.category === 'tea' && p.subcategory === k;
+      }).length;
+      a.style.display = n ? '' : 'none';
+    });
+
     // 一级：品类
     var used = {};
     items.forEach(function (p) { used[p.category] = (used[p.category] || 0) + 1; });
@@ -497,14 +507,85 @@
   /* ============================================================
      导航 / 交互
      ============================================================ */
+  /* 产品中心下拉直达：设置筛选状态后刷新产品网格。
+     filterCat / filterSub 与 renderProducts 共用，所以点子项和点页面上的
+     筛选按钮效果完全一致，不会出现两套状态。 */
+  function applyNavFilter(cat, sub) {
+    filterCat = cat || 'all';
+    filterSub = sub || 'all';
+    renderProducts();
+  }
+
   function initNav() {
     var bar = $('#topbar'), links = $('#navlinks'), tg = $('#navtoggle');
+    var item = $('#navProducts');
+    var root = item ? $('.nav-root', item) : null;
+    var tgl = item ? $('.navdrop-toggle', item) : null;
+    var prog = $('#scrollProgress');
+
     tg.onclick = function () { links.classList.toggle('open'); };
+
+    /* 用向上遍历代替 closest()，兼容旧内核；点击 .nd-lead 里的 <b>/<small> 也能命中 */
     links.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') links.classList.remove('open');
+      var node = e.target;
+      while (node && node !== links && node.tagName !== 'A') node = node.parentNode;
+      if (node && node.tagName === 'A') {
+        links.classList.remove('open');
+        if (item) item.classList.remove('drop-open');
+        if (tgl) tgl.setAttribute('aria-expanded', 'false');
+        if (root) root.setAttribute('aria-expanded', 'false');
+      }
     });
-    var onScroll = function () { bar.classList.toggle('scrolled', window.scrollY > 30); };
+
+    /* 移动端：点箭头展开。桌面由 CSS :hover / :focus-within 负责 */
+    if (tgl) {
+      tgl.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        var open = !item.classList.contains('drop-open');
+        item.classList.toggle('drop-open', open);
+        tgl.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (root) root.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    if (item) {
+      item.addEventListener('mouseenter', function () { if (root) root.setAttribute('aria-expanded', 'true'); });
+      item.addEventListener('mouseleave', function () { if (root) root.setAttribute('aria-expanded', 'false'); });
+      item.addEventListener('focusin',  function () { if (root) root.setAttribute('aria-expanded', 'true'); });
+      item.addEventListener('focusout', function (e) {
+        if (!item.contains(e.relatedTarget) && root) root.setAttribute('aria-expanded', 'false');
+      });
+      item.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+          item.classList.remove('drop-open');
+          if (tgl) tgl.setAttribute('aria-expanded', 'false');
+          if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+        }
+      });
+      document.addEventListener('click', function (e) {
+        if (!item.contains(e.target)) {
+          item.classList.remove('drop-open');
+          if (tgl) tgl.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    /* 茶叶子项 → 直接切到对应一级 / 二级分类 */
+    $$('.navdrop a[data-cat]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        applyNavFilter(a.getAttribute('data-cat'), a.getAttribute('data-sub') || 'all');
+      });
+    });
+
+    var onScroll = function () {
+      bar.classList.toggle('scrolled', window.scrollY > 30);
+      if (prog) {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        var pct = h > 0 ? Math.min(100, Math.max(0, window.scrollY / h * 100)) : 0;
+        prog.style.width = pct.toFixed(2) + '%';
+      }
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
   }
 
@@ -513,7 +594,11 @@
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.08 });
-    $$('section').forEach(function (s) { s.classList.add('reveal'); io.observe(s); });
+    $$('section').forEach(function (s, i) {
+      s.classList.add('reveal');
+      s.style.transitionDelay = ((i % 3) * 60) + 'ms';
+      io.observe(s);
+    });
   }
 
   function initWechat() {
