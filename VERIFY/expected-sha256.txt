@@ -1,0 +1,21 @@
+昭盛元官网 最终版 V3.1 · 核心文件 SHA256 校验清单
+生成日期：2026-11-14
+用途：覆盖 GitHub 仓库后，运行 RUN-VERIFY.bat 核对是否混入了 origin/main 的旧版文件。
+
+以下 8 个文件必须与清单完全一致，否则页面会出现「首屏正常、下面空白」。
+
+index.html                    a0470286da6f650e9527c127df057de9bd31cfddd92aec77f69dd8a696c705e8
+assets/css/style.css          fbe4b5366582dd69f5438685035cdddaf2988ba79977e353f7056e9079539168
+assets/js/main.js             e0557338537d44f34853e255823fb6790c01db857115530634440dc2a62324cc
+assets/js/i18n.js             276b090c16d9c7d51f255c8171d63bc8918b872c55d92881c08597966d9444ab
+data/machinery.json           60e58f555cfe2ecbc91551fdd35b6c34d2d3f310c1663046fe91e80528549a71
+data/porcelain.json           43282e2151f092f8891ca224eb9d47d4ce92d11e3185e664774cd13b61417134
+data/products.json            bb28dee254c5e429838215a8c11edd1bfb07fa31b8f5628266db10540cfe5758
+data/site.json                c1af4869e67dbfe81654dc87aa6f00ebec8e32521a8ca17661c7df88621d402d
+
+说明
+----
+- 这 8 个文件是「一整套」。只换其中几个 = 新版 JS 读旧版 JSON，初始化直接崩溃。
+- 之前合并冲突时若选了带 origin/main 前缀的选项，5 个核心文件会退回旧版，
+  正是页面只显示 2016+ / 3 / 4 / RU·CN 就断掉的原因。
+- 校验通过后再 commit + push，就不会再出现半加载。
