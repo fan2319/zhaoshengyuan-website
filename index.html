@@ -105,13 +105,42 @@
             <a href="#/about"      data-i18n="drop.why"></a>
             <a href="#/capability" data-i18n="drop.terms"></a>
             <a href="#/contact"    data-i18n="drop.faq"></a>
+            <a class="nd-foot-link" href="#/capability" data-v36="res.nav"></a>
             <span class="nd-mark"><span>ZSY</span><small data-i18n="drop.markText"></small></span>
           </div>
         </div>
       </div>
 
       <!-- Heritage 独立一级：史料只在这里存一份，About 只放资信 -->
-      <a href="#/heritage"   data-i18n="nav.heritage"></a>
+      <!-- 品牌源流：与产品中心同构的悬停下拉，三条故事线直达并同步页内切换 -->
+      <div class="navitem navitem-sm" id="navHeritage">
+        <a class="nav-root" href="#/heritage" data-i18n="nav.heritage"
+           aria-haspopup="true" aria-expanded="false"></a>
+        <button class="navdrop-toggle" type="button" data-v36="hg.expand" aria-expanded="false">⌄</button>
+        <div class="navdrop navdrop-hg" role="menu">
+          <div class="navdrop-in">
+            <div class="nd-col">
+              <p class="nd-kicker" data-v36="hg.colTea"></p>
+              <a class="nd-lead" href="#/heritage" data-hgline="tea" data-v36="hg.tea"></a>
+              <p class="nd-desc" data-v36="hg.teaDesc"></p>
+              <a class="nd-sub" href="#/heritage" data-hgline="tea" data-v36="hg.teaGo"></a>
+            </div>
+            <div class="nd-col">
+              <p class="nd-kicker" data-v36="hg.colPorc"></p>
+              <a class="nd-lead" href="#/heritage" data-hgline="porcelain" data-v36="hg.porc"></a>
+              <p class="nd-desc" data-v36="hg.porcDesc"></p>
+              <a class="nd-sub" href="#/heritage" data-hgline="porcelain" data-v36="hg.porcGo"></a>
+            </div>
+            <div class="nd-col">
+              <p class="nd-kicker" data-v36="hg.colMach"></p>
+              <a class="nd-lead" href="#/heritage" data-hgline="machinery" data-v36="hg.mach"></a>
+              <p class="nd-desc" data-v36="hg.machDesc"></p>
+              <a class="nd-sub" href="#/heritage" data-hgline="machinery" data-v36="hg.machGo"></a>
+            </div>
+          </div>
+          <div class="nd-foot"><a href="#/heritage" data-v36="hg.all"></a></div>
+        </div>
+      </div>
       <a href="#/about"      data-i18n="nav.about"></a>
       <a href="#/capability" data-i18n="nav.sourcing"></a>
       <a href="#/contact"    data-i18n="nav.contact"></a>
@@ -273,6 +302,33 @@
     <div class="hg-timeline" id="hgTimeline"></div>
 
     <div class="hg-links" id="hgLinks"></div>
+    <!-- V3.6 实证引文：只重排已核实史料，不新增事实、不编年代 -->
+    <div class="hg-rich" id="hgRich">
+      <p class="hg-rich-h" data-v36="rich.title"></p>
+      <p class="hg-rich-lead" data-v36="rich.lead"></p>
+      <div class="hg-rich-grid">
+        <article class="hg-fact" data-hgpane="tea">
+          <span class="hg-fact-tag" data-v36="rich.teaTag"></span>
+          <blockquote data-v36="rich.teaQ1"></blockquote><cite data-v36="rich.teaS1"></cite>
+          <blockquote data-v36="rich.teaQ2"></blockquote><cite data-v36="rich.teaS2"></cite>
+          <blockquote data-v36="rich.teaQ3"></blockquote><cite data-v36="rich.teaS3"></cite>
+        </article>
+        <article class="hg-fact" data-hgpane="porcelain">
+          <span class="hg-fact-tag" data-v36="rich.porcTag"></span>
+          <blockquote data-v36="rich.porcQ1"></blockquote><cite data-v36="rich.porcS1"></cite>
+          <blockquote data-v36="rich.porcQ2"></blockquote><cite data-v36="rich.porcS2"></cite>
+          <blockquote data-v36="rich.porcQ3"></blockquote><cite data-v36="rich.porcS3"></cite>
+        </article>
+        <article class="hg-fact" data-hgpane="machinery">
+          <span class="hg-fact-tag" data-v36="rich.machTag"></span>
+          <blockquote data-v36="rich.machQ1"></blockquote><cite data-v36="rich.machS1"></cite>
+          <blockquote data-v36="rich.machQ2"></blockquote><cite data-v36="rich.machS2"></cite>
+          <blockquote data-v36="rich.machQ3"></blockquote><cite data-v36="rich.machS3"></cite>
+        </article>
+      </div>
+      <p class="hg-rich-note" data-v36="rich.note"></p>
+    </div>
+
     <p class="hg-note" data-i18n="heritage.note"></p>
 
     <div class="hg-stories">
@@ -679,5 +735,35 @@
 
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
+
+<!-- ================= V3.6 · 板块底部统一主 CTA ================= -->
+<section class="cta-strip" id="ctaStrip" aria-label="询价入口">
+  <div class="container cta-strip-in">
+    <div class="cta-strip-txt">
+      <p class="cta-strip-kicker" data-v36="cta.kicker"></p>
+      <h2 data-v36="cta.title"></h2>
+      <p class="cta-strip-sub" data-v36="cta.sub"></p>
+    </div>
+    <div class="cta-strip-act">
+      <button type="button" class="btn-gold-lg" data-rfq="general" data-v36="cta.btn"></button>
+      <details class="res-box">
+        <summary data-v36="res.summary"></summary>
+        <div class="res-list">
+          <button type="button" data-rfq="general" data-res="catalog" data-v36="res.i1"></button>
+          <button type="button" data-rfq="general" data-res="datasheet" data-v36="res.i2"></button>
+          <button type="button" data-rfq="general" data-res="certs" data-v36="res.i3"></button>
+          <button type="button" data-rfq="general" data-res="packing" data-v36="res.i4"></button>
+          <p class="res-note" data-v36="res.note"></p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= V3.6 · 窄屏固定询盘条 ================= -->
+<div class="mobile-cta" id="mobileCta">
+  <button type="button" class="btn-gold-lg" data-rfq="general" data-v36="cta.btn"></button>
+</div>
+
 </body>
 </html>

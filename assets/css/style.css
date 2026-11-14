@@ -1814,3 +1814,123 @@ body[data-lang="ru"] .pane-tabs a { line-height: 1.65; }
 .zone-story .p-btn:hover{background:#a98645;color:#fff}
 #porcelain.zone-story .p-hero .p-btn{color:#f3e6c8;background:rgba(194,161,99,.14);border-color:#c2a163}
 /* V3.4 CONTRAST4 END */
+
+
+/* ==================================================================================
+   V3.6 · 呼吸感 / 可读性 / 图片质感 / 主 CTA / 窄屏 / 参数表堆叠
+   ================================================================================== */
+:root{ --v36-gold:#c2a163; --v36-ink:#12293a; }
+body{ font-size:16px; line-height:1.68; }
+.zone-story p, .zone-story li{ line-height:1.9; }
+.zone-story .container, .home-intro .container{ padding-top:14px; padding-bottom:14px; }
+.home-intro{ padding-top:88px; padding-bottom:88px; }
+@media (max-width:860px){ .home-intro{ padding-top:56px; padding-bottom:56px; } }
+
+/* 品牌源流下拉：沿用产品中心外壳，三列紧凑版 */
+.navdrop-hg .navdrop-in{ grid-template-columns:repeat(3,1fr); gap:26px; padding:26px 30px 22px; }
+.navdrop-hg .nd-col{ border-right:1px solid rgba(194,161,99,.18); padding-right:22px; }
+.navdrop-hg .nd-col:last-child{ border-right:0; }
+.navdrop-hg .nd-lead{ font-size:17px; line-height:1.45; }
+.navdrop-hg .nd-desc{ font-size:13px; line-height:1.75; opacity:.72; margin:10px 0 14px; }
+.navdrop-hg .nd-sub{ font-size:13px; color:var(--v36-gold); letter-spacing:.02em; }
+.navdrop-hg .nd-foot{ border-top:1px solid rgba(194,161,99,.18); padding:12px 30px 16px; text-align:right; }
+.navdrop-hg .nd-foot a{ font-size:13px; color:var(--v36-gold); }
+@media (max-width:860px){
+  .navdrop-hg .navdrop-in{ grid-template-columns:1fr; gap:0; padding:14px 20px; }
+  .navdrop-hg .nd-col{ border-right:0; border-bottom:1px solid rgba(194,161,99,.15); padding:12px 0; }
+  .navdrop-hg .nd-col:last-child{ border-bottom:0; }
+  .navdrop-hg .nd-foot{ padding:12px 20px; }
+}
+
+/* 实证引文卡：只有当前品类的那一组可见 */
+.hg-rich{ margin:64px auto 0; max-width:1080px; }
+.hg-rich-h{ font-family:Georgia,"Songti SC",serif; font-size:26px; font-weight:400; letter-spacing:.04em; margin:0 0 8px; }
+.hg-rich-lead, .hg-rich-note{ font-size:14px; line-height:1.9; opacity:.7; }
+.hg-rich-grid{ display:grid; grid-template-columns:1fr; gap:0; margin-top:26px; }
+.hg-fact{ display:none; border-top:1px solid rgba(18,41,58,.14); padding:26px 0 8px; }
+body[data-hgpane="tea"] .hg-fact[data-hgpane="tea"],
+body[data-hgpane="porcelain"] .hg-fact[data-hgpane="porcelain"],
+body[data-hgpane="machinery"] .hg-fact[data-hgpane="machinery"]{ display:block; }
+.hg-fact-tag{ display:inline-block; font-size:12px; letter-spacing:.12em; color:#9a7b3f; margin-bottom:18px; }
+.hg-fact blockquote{ font-family:Georgia,"Songti SC",serif; font-size:19px; line-height:1.75; margin:0 0 6px; padding-left:18px; border-left:2px solid var(--v36-gold); }
+.hg-fact cite{ display:block; font-size:13px; font-style:normal; opacity:.62; margin:0 0 22px 20px; }
+.hg-rich-note{ margin-top:24px; font-size:13px; }
+@media (max-width:860px){ .hg-rich{ margin-top:44px; } .hg-fact blockquote{ font-size:17px; } }
+
+/* 统一图片质感：cover + 轻微缩放 + 柔和阴影；示意图保留 contain */
+.card-img img, .pcard-img img, .m-card-img img, .scard-img img,
+.product-card img, .hg-story-card img, .porc-card img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.m-card-img img, .schematic img{ object-fit:contain; }
+.product-card, .pcard, .m-card, .scard{
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.product-card:hover, .pcard:hover, .m-card:hover, .scard:hover{
+  box-shadow:0 8px 24px rgba(0,0,0,.10); transform:translateY(-2px);
+}
+.zone-industrial .m-card:hover{ box-shadow:0 8px 28px rgba(0,0,0,.45); }
+.product-card:hover img, .pcard:hover img, .scard:hover img, .hg-story-card:hover img{ transform:scale(1.03); }
+@media (prefers-reduced-motion:reduce){
+  .product-card:hover img,.pcard:hover img,.scard:hover img,.hg-story-card:hover img{ transform:none; }
+  .product-card:hover,.pcard:hover,.m-card:hover,.scard:hover{ transform:none; }
+}
+
+/* 底部主 CTA 条 */
+.cta-strip{ background:var(--v36-ink); color:#fff; padding:64px 0 68px; margin-top:0; }
+.cta-strip-in{ display:flex; align-items:center; justify-content:space-between; gap:36px; flex-wrap:wrap; }
+.cta-strip-kicker{ font-size:12px; letter-spacing:.18em; color:var(--v36-gold); margin:0 0 12px; }
+.cta-strip h2{ font-family:Georgia,"Songti SC",serif; font-weight:400; font-size:30px; line-height:1.4; margin:0 0 10px; }
+.cta-strip-sub{ font-size:15px; line-height:1.8; opacity:.72; margin:0; max-width:560px; }
+.cta-strip-act{ display:flex; flex-direction:column; align-items:flex-end; gap:14px; min-width:290px; }
+.btn-gold-lg{
+  background:linear-gradient(180deg,#d8bb79,#b8934f); color:#12293a; border:1px solid #e2c98d;
+  font-size:15px; font-weight:700; letter-spacing:.02em; padding:15px 30px; border-radius:10px;
+  cursor:pointer; transition:filter .3s ease, transform .3s ease, box-shadow .3s ease;
+  box-shadow:0 6px 20px rgba(0,0,0,.22); font-family:inherit;
+}
+.btn-gold-lg:hover{ filter:brightness(1.08); transform:translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.28); }
+.res-box{ width:100%; max-width:330px; text-align:right; }
+.res-box summary{ cursor:pointer; font-size:13px; color:var(--v36-gold); list-style:none; padding:4px 0; }
+.res-box summary::-webkit-details-marker{ display:none; }
+.res-box summary::before{ content:'＋ '; }
+.res-box[open] summary::before{ content:'－ '; }
+.res-list{ background:rgba(255,255,255,.06); border:1px solid rgba(194,161,99,.28); border-radius:10px; padding:14px; margin-top:8px; text-align:left; }
+.res-list button{ display:block; width:100%; background:none; border:0; border-bottom:1px solid rgba(255,255,255,.10);
+  color:#fff; text-align:left; padding:9px 4px; font-size:13px; cursor:pointer; font-family:inherit; }
+.res-list button:hover{ color:var(--v36-gold); }
+.res-note{ font-size:12px; line-height:1.7; opacity:.62; margin:12px 0 2px; }
+@media (max-width:860px){
+  .cta-strip{ padding:44px 0 92px; }
+  .cta-strip-in{ flex-direction:column; align-items:flex-start; gap:22px; }
+  .cta-strip h2{ font-size:24px; }
+  .cta-strip-act{ align-items:flex-start; min-width:0; width:100%; }
+  .res-box{ max-width:none; text-align:left; }
+  .res-box summary{ text-align:left; }
+}
+
+/* 窄屏固定询盘条 */
+.mobile-cta{ display:none; }
+@media (max-width:860px){
+  .mobile-cta{ display:block; position:fixed; left:0; right:0; bottom:0; z-index:118;
+    background:rgba(255,255,255,.96); border-top:1px solid rgba(18,41,58,.12);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom)); box-shadow:0 -4px 18px rgba(0,0,0,.08); }
+  .mobile-cta .btn-gold-lg{ width:100%; padding:13px 20px; }
+  .dock{ bottom:86px !important; }
+  .dock.is-hidden, .dock-panel.is-hidden{ display:none; }
+  body{ padding-bottom:66px; }
+}
+
+/* 泵业参数表：窄屏改堆叠，不横向拖动 */
+@media (max-width:640px){
+  .m-spec-table, .m-specs table, table.m-spec{ display:block; }
+  .m-spec-table tr, .m-specs tr{ display:block; border-bottom:1px solid rgba(255,255,255,.12); padding:8px 0; }
+  .m-spec-table td, .m-specs td{ display:block; border:0; padding:3px 0; }
+  .m-spec-grid{ grid-template-columns:1fr !important; }
+}
+
+/* RFQ 抽屉：提交区常驻可见 */
+@media (max-width:560px){
+  .rfq-drawer .rfq-foot, .rfq-drawer .rfq-submit-wrap{ position:sticky; bottom:0; background:inherit; padding:10px 0; }
+}

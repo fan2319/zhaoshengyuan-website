@@ -226,9 +226,9 @@
         "ru": "Образцы и сроки"
       },
       "text": {
-        "zh": "常规规格现货即发；定制包装确认设计稿后排产，周期下单前明确告知。",
-        "en": "Standard specs ship from stock; custom packaging scheduled after artwork approval.",
-        "ru": "Стандарт со склада; кастом после утверждения макета."
+        "zh": "常规规格现货即发；定制包装确认设计稿后排产。具体周期不预设，按每笔订单在询盘回复中确认。",
+        "en": "Standard specs ship from stock; custom packaging is scheduled after artwork approval. Lead times are not preset and are confirmed per order in the quotation.",
+        "ru": "Стандарт со склада; кастом после утверждения макета. Сроки не фиксируем, подтверждаем по заказу в предложении."
       }
     },
     {
@@ -238,9 +238,9 @@
         "ru": "Оплата"
       },
       "text": {
-        "zh": "对公转账、信用证。新客户首单款到发货，长期客户可协商账期。",
-        "en": "Bank transfer and L/C. First order prepaid; terms negotiable for long-term partners.",
-        "ru": "Перевод и аккредитив. Первый заказ — предоплата."
+        "zh": "对公转账、信用证；俄罗斯市场可走人民币跨境结算（CIPS）。付款节点与比例按每笔订单在询盘回复与合同中确认，不预设固定条件。",
+        "en": "Bank transfer and L/C; cross-border RMB settlement (CIPS) is available for Russia. Payment terms are confirmed per order in the quotation and contract rather than preset.",
+        "ru": "Перевод и аккредитив; для России — трансграничные расчёты в юанях (CIPS). Условия оплаты подтверждаются по заказу в предложении и договоре, без предустановленной схемы."
       }
     },
     {
@@ -329,9 +329,9 @@
         "ru": "Какие сроки отгрузки и способы доставки?"
       },
       "a": {
-        "zh": "常规订单下，茶叶与瓷器生产周期约 15–25 天，水泵视型号约 30–45 天。支持海运与空运；针对俄罗斯及中亚客户，具备中欧班列铁路运输与清关配合经验。具体交期以订单确认为准。",
-        "en": "For standard orders, production takes about 15–25 days for tea and porcelain and about 30–45 days for pumps, depending on the model. We ship by sea and air, and have established China–Europe rail freight with customs-clearance support for Russia and Central Asia. Lead times are confirmed per order.",
-        "ru": "По стандартным заказам производство чая и фарфора занимает около 15–25 дней, насосов — около 30–45 дней в зависимости от модели. Доставка морем и авиа; для России и Центральной Азии есть отработанная схема ж/д перевозок Китай — Европа и сопровождение таможенного оформления. Сроки подтверждаются по каждому заказу."
+        "zh": "不预设固定交期。请在询盘中说明品类、规格、数量与目的港，我们按订单规模与具体型号在报价中逐单确认。支持海运与空运；针对俄罗斯及中亚客户，具备中欧班列铁路运输与清关配合经验。",
+        "en": "We do not publish fixed lead times. Please include the category, specification, quantity and destination port in your inquiry; we confirm the lead time per order, based on order size and the specific model, in our quotation. We ship by sea and air, with established China–Europe rail freight and customs-clearance support for Russia and Central Asia.",
+        "ru": "Фиксированные сроки мы не публикуем. Укажите в запросе категорию, спецификацию, объём и порт назначения — срок подтвердим по каждому заказу с учётом объёма и конкретной модели в коммерческом предложении. Доставка морем и авиа; для России и Центральной Азии есть отработанная схема ж/д перевозок Китай — Европа и сопровождение таможенного оформления."
       }
     },
     {
@@ -365,9 +365,9 @@
         "ru": "Какие способы оплаты вы принимаете?"
       },
       "a": {
-        "zh": "支持对公电汇（T/T）与信用证（L/C）。常规流程为 30% 定金、70% 见提单副本付清。针对俄罗斯市场，支持人民币跨境结算（CIPS）。具体条款以合同约定为准。",
-        "en": "We accept corporate bank transfer (T/T) and letters of credit (L/C). Standard terms are 30% deposit and 70% against a copy of the bill of lading. For Russia, cross-border RMB settlement (CIPS) is available. Terms are finalised in the contract.",
-        "ru": "Банковский перевод на расчётный счёт (T/T) и аккредитив (L/C). Стандартная схема: 30% предоплата, 70% против копии коносамента. Для России доступны трансграничные расчёты в юанях (CIPS). Условия фиксируются в договоре."
+        "zh": "支持对公电汇（T/T）与信用证（L/C）；针对俄罗斯市场，支持人民币跨境结算（CIPS）。付款节点与比例不预设，按每笔订单在询盘回复与合同中确认。",
+        "en": "We accept corporate bank transfer (T/T) and letters of credit (L/C); cross-border RMB settlement (CIPS) is available for Russia. The payment schedule and split are not preset — they are confirmed per order in the quotation and the contract.",
+        "ru": "Банковский перевод на расчётный счёт (T/T) и аккредитив (L/C); для России доступны трансграничные расчёты в юанях (CIPS). График и доли платежей не фиксируем — они подтверждаются по каждому заказу в коммерческом предложении и договоре."
       }
     },
     {

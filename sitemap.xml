@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/sitemap/0.9">
+  <!-- 实际对外域名。本站为单页 hash 路由 + JS 切换三语，
+       不存在三个可分别抓取的语言 URL，因此不写 hreflang：
+       三条 alternate 指向同一 URL 属于无效（且误导）标注。 -->
   <url>
-    <loc>https://www.zhaoshengyuan.com/</loc>
+    <loc>https://zhaoshengyuan-website.tunnir243.workers.dev/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.zhaoshengyuan.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.zhaoshengyuan.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.zhaoshengyuan.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.zhaoshengyuan.com/"/>
   </url>
 </urlset>

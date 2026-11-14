@@ -2033,3 +2033,70 @@
   else init();
 })();
 /* V3.3 VIEWS END */
+
+
+/* ==================================================================================
+   V3.6 · 品牌源流导航下拉 / 实证块 / 主 CTA / 资料索取 / 窄屏询盘条
+   自包含：不访问任何闭包内变量，通过触发既有按钮复用原逻辑。
+   ================================================================================== */
+(function(){
+  var V36 = {"zh": {"hg.expand": "展开品牌故事", "hg.colTea": "茶叶 · 万里茶道", "hg.colPorc": "景德镇瓷器 · 千年窑史", "hg.colMach": "流体设备 · 选型与合规", "hg.tea": "宁红茶与双井绿茶", "hg.teaDesc": "道光年间的外销起点、1891 年俄国皇太子赠匾、宋史中的双井。", "hg.teaGo": "阅读茶叶故事 →", "hg.porc": "一座以皇帝年号命名的城市", "hg.porcDesc": "1004 年因青白瓷得名，1278 年浮梁瓷局，1369 年御器厂。", "hg.porcGo": "阅读窑史与工艺 →", "hg.mach": "按工况说话，不做无法核验的承诺", "hg.machDesc": "Q / H / P / DN 选型口径、体系要求、EAC 归属与可索取文件。", "hg.machGo": "查看选型与合规 →", "hg.all": "查看全部品牌源流 →", "res.nav": "资料索取", "res.summary": "查看可索取资料清单", "res.i1": "产品目录（按品类索取）", "res.i2": "技术参数表 / 数据表（按系列索取）", "res.i3": "资质与合规文件清单", "res.i4": "包装、装箱与运输说明", "res.note": "以上资料按询价提供，不设公开下载；我们不在网站放置未经核实的文件或编号。", "rich.title": "可查证的出处", "rich.lead": "以下每条都标明文献或来源；无法核实的说法不写。", "rich.teaTag": "茶叶", "rich.teaQ1": "「（宁）红茶起自道光季年」", "rich.teaS1": "清 · 叶湍延《纯蒲随笔》", "rich.teaQ2": "「茶盖中华、价高天下」", "rich.teaS2": "1891 年俄国皇太子赠匾 · 人民网江西频道", "rich.teaQ3": "「隆兴之黄龙、双井，皆号绝品也」", "rich.teaS3": "《宋史 · 食货志》", "rich.porcTag": "景德镇瓷器", "rich.porcQ1": "1004 年（景德年间）以青白瓷得名", "rich.porcS1": "《景德镇志略》· 景德镇市人民政府", "rich.porcQ2": "1278 年设浮梁瓷局；1369 年设御器厂", "rich.porcS2": "国家文物局 · 人民网", "rich.porcQ3": "万里茶道经恰克图抵圣彼得堡，茶与瓷器同路北上", "rich.porcS3": "国家民委 · 人民网", "rich.machTag": "流体设备", "rich.machQ1": "按 Q / H / P / DN 与 SI 单位选型", "rich.machS1": "逐型号性能曲线按系列索取", "rich.machQ2": "按 ISO 9001:2015 体系要求组织生产与检验", "rich.machS2": "描述做法，不声明持证状态", "rich.machQ3": "EAC 由俄方进口商作为申请人办理", "rich.machS3": "我方配合提供技术护照、数据表与图纸", "rich.note": "史料只在此处存一份；产品页只回流短链，About 只放可核验的资信。", "cta.kicker": "下一步", "cta.title": "把需求告诉我们，剩下的交给我们核对", "cta.sub": "选品、规格、数量、目的港与所需文件，一次说清即可。", "cta.btn": "获取报价与样品方案"}, "en": {"hg.expand": "Expand heritage", "hg.colTea": "Tea · The Great Tea Road", "hg.colPorc": "Jingdezhen · A Millennium of Kilns", "hg.colMach": "Fluid Equipment · Duty & Compliance", "hg.tea": "Ninghong Black Tea & Shuangjing Green Tea", "hg.teaDesc": "The Daoguang-era export origin, the 1891 gift plaque from the Russian Crown Prince, and Shuangjing in the Song History.", "hg.teaGo": "Read the tea story →", "hg.porc": "A city named after an emperor's reign", "hg.porcDesc": "Named for qingbai porcelain in 1004; Fuliang Porcelain Bureau in 1278; Imperial Kiln in 1369.", "hg.porcGo": "Read kiln history & crafts →", "hg.mach": "Specified by duty, with no unverifiable claims", "hg.machDesc": "Q / H / P / DN selection, system requirements, EAC responsibility and available documents.", "hg.machGo": "View selection & compliance →", "hg.all": "View all heritage →", "res.nav": "Resources", "res.summary": "Documents available on request", "res.i1": "Product catalogue (by category)", "res.i2": "Technical datasheets (by series)", "res.i3": "Qualification & compliance document list", "res.i4": "Packing, carton & shipping notes", "res.note": "All documents are supplied on request. We do not publish unverified files or certificate numbers.", "rich.title": "Verifiable sources", "rich.lead": "Every entry below cites its source; unverifiable claims are not used.", "rich.teaTag": "Tea", "rich.teaQ1": "“Ninghong tea began in the late Daoguang years”", "rich.teaS1": "Ye Tuanyan, Chunpu Suibi (Qing dynasty)", "rich.teaQ2": "“Tea surpassing all under heaven, prized above all”", "rich.teaS2": "Plaque from the Russian Crown Prince, 1891 · People's Daily Jiangxi", "rich.teaQ3": "“Huanglong and Shuangjing of Longxing are all rated supreme”", "rich.teaS3": "Song Shi · Treatise on Food and Money", "rich.porcTag": "Jingdezhen Porcelain", "rich.porcQ1": "Named for qingbai porcelain in 1004 (Jingde reign)", "rich.porcS1": "Jingdezhen Gazetteer · Jingdezhen Municipal Government", "rich.porcQ2": "Fuliang Porcelain Bureau, 1278; Imperial Kiln, 1369", "rich.porcS2": "National Cultural Heritage Administration · People's Daily", "rich.porcQ3": "The Great Tea Road reached St Petersburg via Kyakhta — tea and porcelain travelled together", "rich.porcS3": "National Ethnic Affairs Commission · People's Daily", "rich.machTag": "Fluid Equipment", "rich.machQ1": "Selection by Q / H / P / DN in SI units", "rich.machS1": "Per-model performance curves available by series", "rich.machQ2": "Production and inspection organised to ISO 9001:2015 requirements", "rich.machS2": "Describes practice; no claim of certification status", "rich.machQ3": "EAC certification is applied for by the Russian importer", "rich.machS3": "We supply technical passports, datasheets and drawings", "rich.note": "Sources are stored here once; product pages link back, and About carries verifiable corporate facts only.", "cta.kicker": "Next step", "cta.title": "Tell us the requirement; we will verify the rest", "cta.sub": "Selection, specification, quantity, destination port and documents needed — one message is enough.", "cta.btn": "Get a Quote & Sample Plan"}, "ru": {"hg.expand": "Развернуть историю", "hg.colTea": "Чай · Великий чайный путь", "hg.colPorc": "Цзиндэчжэнь · Тысячелетие печей", "hg.colMach": "Насосное оборудование · Параметры и соответствие", "hg.tea": "Чай Нинхун и зелёный чай Шуанцзин", "hg.teaDesc": "Начало экспорта в эпоху Даогуана, дарственная табличка наследника российского престола 1891 г., упоминание Шуанцзина в «Сун ши».", "hg.teaGo": "Читать историю чая →", "hg.porc": "Город, названный в честь правления императора", "hg.porcDesc": "Назван по фарфору цинбай в 1004 г.; Фулянская фарфоровая управа в 1278 г.; Императорская печь в 1369 г.", "hg.porcGo": "История печей и технологии →", "hg.mach": "Подбор по параметрам, без непроверяемых обещаний", "hg.machDesc": "Подбор по Q / H / P / DN, требования к системе, ответственность по EAC и доступные документы.", "hg.machGo": "Параметры и соответствие →", "hg.all": "Вся история бренда →", "res.nav": "Материалы", "res.summary": "Документы по запросу", "res.i1": "Каталог продукции (по категориям)", "res.i2": "Технические таблицы параметров (по сериям)", "res.i3": "Перечень квалификационных и разрешительных документов", "res.i4": "Описание упаковки, тары и перевозки", "res.note": "Все документы предоставляются по запросу. Мы не публикуем непроверенные файлы и номера сертификатов.", "rich.title": "Проверяемые источники", "rich.lead": "У каждого пункта указан источник; непроверяемые утверждения не используются.", "rich.teaTag": "Чай", "rich.teaQ1": "«Нинхунский чай берёт начало в конце эпохи Даогуан»", "rich.teaS1": "Е Туаньянь, «Чуньпу суйби» (дин. Цин)", "rich.teaQ2": "«Чай превыше всех в Поднебесной, цена выше всех»", "rich.teaS2": "Дарственная табличка наследника российского престола, 1891 · People's Daily, Цзянси", "rich.teaQ3": "«Хуанлун и Шуанцзин из Лунсина — всё высшего качества»", "rich.teaS3": "«Сун ши», раздел «Шихо чжи»", "rich.porcTag": "Фарфор Цзиндэчжэня", "rich.porcQ1": "Назван по фарфору цинбай в 1004 г. (правление Цзиндэ)", "rich.porcS1": "«Цзиндэчжэнь чжилюэ» · Народное правительство г. Цзиндэчжэнь", "rich.porcQ2": "Фулянская фарфоровая управа, 1278; Императорская печь, 1369", "rich.porcS2": "Госуправление по культурному наследию · People's Daily", "rich.porcQ3": "Великий чайный путь через Кяхту достиг Санкт-Петербурга — чай и фарфор шли одним путём", "rich.porcS3": "Госкомитет по делам национальностей · People's Daily", "rich.machTag": "Насосное оборудование", "rich.machQ1": "Подбор по Q / H / P / DN в единицах СИ", "rich.machS1": "Рабочие характеристики по сериям — по запросу", "rich.machQ2": "Производство и контроль организованы по требованиям ISO 9001:2015", "rich.machS2": "Описание практики, без заявления о действующем сертификате", "rich.machQ3": "Заявителем по EAC выступает российский импортёр", "rich.machS3": "Мы предоставляем технические паспорта, таблицы и чертежи", "rich.note": "Источники хранятся здесь в одном экземпляре; страницы товаров дают ссылку, раздел «О нас» — только проверяемые сведения.", "cta.kicker": "Следующий шаг", "cta.title": "Опишите задачу — остальное мы проверим", "cta.sub": "Подбор, спецификация, объём, порт назначения и нужные документы — достаточно одного сообщения.", "cta.btn": "Получить предложение и образцы"}};
+  function lang(){
+    var l = (document.documentElement.lang || 'zh').toLowerCase();
+    if (l.indexOf('ru') === 0) return 'ru';
+    if (l.indexOf('en') === 0) return 'en';
+    return 'zh';
+  }
+  function apply(){
+    var L = lang(), D = V36[L] || V36.zh;
+    document.querySelectorAll('[data-v36]').forEach(function(el){
+      var v = D[el.getAttribute('data-v36')];
+      if (v == null) return;
+      if (el.tagName === 'BUTTON' || el.tagName === 'SUMMARY') el.textContent = v;
+      else if (el.getAttribute('aria-label') != null && el.classList.contains('navdrop-toggle')) el.setAttribute('aria-label', v);
+      else el.textContent = v;
+    });
+    document.querySelectorAll('.navdrop-toggle[data-v36]').forEach(function(b){
+      b.setAttribute('aria-label', D[b.getAttribute('data-v36')] || '');
+    });
+  }
+  function syncPane(){
+    var on = document.querySelector('#hgTabs .hg-tab.on');
+    var k = on ? on.getAttribute('data-hg') : 'tea';
+    document.body.setAttribute('data-hgpane', k);
+  }
+  /* 导航下拉：点某条故事线 → 进 Heritage 视图 → 触发页内同款 tab */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('[data-hgline]') : null;
+    if (!a) return;
+    var k = a.getAttribute('data-hgline');
+    if ((location.hash || '').indexOf('#/heritage') !== 0) location.hash = '#/heritage';
+    setTimeout(function(){
+      var b = document.querySelector('#hgTabs [data-hg="' + k + '"]');
+      if (b) b.click();
+      syncPane();
+    }, 80);
+  });
+  document.addEventListener('click', function(e){
+    if (e.target.closest && e.target.closest('#hgTabs')) setTimeout(syncPane, 30);
+  }, true);
+  /* 资料索取：打开既有 RFQ 抽屉后，把资料类型写进需求说明 */
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-res]') : null;
+    if (!b) return;
+    setTimeout(function(){
+      var ta = document.querySelector('.rfq-drawer textarea, #rfqNote, [data-rfq-note], textarea[name="note"]');
+      var key = b.getAttribute('data-res');
+      var names = {catalog:{zh:'索取产品目录',en:'Product catalogue requested',ru:'Запрос каталога продукции'},
+                   datasheet:{zh:'索取技术参数表 / 数据表',en:'Technical datasheet requested',ru:'Запрос технических таблиц'},
+                   certs:{zh:'索取资质与合规文件清单',en:'Compliance document list requested',ru:'Запрос перечня разрешительных документов'},
+                   packing:{zh:'索取包装与运输说明',en:'Packing & shipping notes requested',ru:'Запрос описания упаковки и перевозки'}};
+      if (ta && names[key]) { ta.value = (names[key][lang()] || '') + '\n' + (ta.value || ''); ta.dispatchEvent(new Event('input',{bubbles:true})); }
+    }, 220);
+  });
+  /* 抽屉 z-index 高于窄屏固定条，天然覆盖；此处不再用 MutationObserver。
+     回调内改写被观察的 style/class 会自激并冻结主线程，已移除。 */
+  new MutationObserver(apply).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
+  window.addEventListener('hashchange', function(){ setTimeout(syncPane, 60); });
+  apply(); setTimeout(syncPane, 200);
+})();
