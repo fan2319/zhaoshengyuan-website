@@ -443,7 +443,8 @@ const I18N = {
         bot: 'Telegram Bot', botTag: '规格与起订量即时答复',
         wechat: 'WeChat', wechatTag: '中国客户咨询',
         open: '展开联系方式', close: '收起联系方式',
-        copied: '✓ 已复制', copyHint: '点击复制微信号'
+        copied: '✓ 已复制', copyHint: '点击复制微信号',
+        foot: '不填表也能直接联系；正式询盘请点卡片上的「获取报价」。'
       }
     },
 
@@ -541,7 +542,8 @@ const I18N = {
         bot: 'Telegram Bot', botTag: 'Instant specs & MOQ',
         wechat: 'WeChat', wechatTag: 'For China inquiries',
         open: 'Open contact options', close: 'Close contact options',
-        copied: '✓ Copied', copyHint: 'Tap to copy WeChat ID'
+        copied: '✓ Copied', copyHint: 'Tap to copy WeChat ID',
+        foot: 'Prefer to talk first? Formal enquiries go through Get Quote.'
       }
     },
 
@@ -640,7 +642,8 @@ const I18N = {
         bot: 'Telegram Bot', botTag: 'Параметры и MOQ мгновенно',
         wechat: 'WeChat', wechatTag: 'Для запросов из Китая',
         open: 'Открыть контакты', close: 'Свернуть контакты',
-        copied: '✓ Скопировано', copyHint: 'Нажмите, чтобы скопировать WeChat'
+        copied: '✓ Скопировано', copyHint: 'Нажмите, чтобы скопировать WeChat',
+        foot: 'Можно написать сразу; официальный запрос — через «Получить предложение».'
       }
     }
   };
@@ -655,5 +658,250 @@ const I18N = {
       } else { dst[k] = v; }
     }
   }
+
+  /* --------------------------------------------------------------------------------
+     V3.2 · Heritage 分品类叙事：茶叶 / 景德镇瓷器 / 流体设备
+     规则：UI 文案 100% 本地化；Q / H / P / DN、SI、ISO 9001、EAC、
+     Telegram Bot 等工程符号与品牌名保持原样。
+     -------------------------------------------------------------------------------- */
+  var HG32 = {
+    zh: {
+      tabs: { tea: '茶叶', porcelain: '景德镇瓷器', machinery: '流体设备' },
+      eyebrows: {
+        tea: '江西 · 九江 · 修水',
+        porcelain: '中国 · 江西 · 景德镇',
+        machinery: '按工况选型 / 工程口径'
+      },
+      titles: {
+        tea: '百年前，它就沿这条路去了俄国',
+        porcelain: '一座城，一条路，一千年',
+        machinery: '不讲故事，只给可核验的口径'
+      },
+      secLead: {
+        tea: '宁红沿万里茶道北上，双井见于宋人笔录与正史。以下每条都标了出处；规格与报价交给产品页，资质与主体信息交给「关于我们」。',
+        porcelain: '一座以皇帝年号命名的城市，做了一千年的瓷器。年份与工艺说明均据公开权威资料整理；供货方图册只用于品类与规格，不作为史料。',
+        machinery: '这一板块不讲述品牌历史。工程采购需要的是可核验的选型口径、参数边界与合规归属，下面逐条列明。'
+      },
+      storyTitles: {
+        tea: '每一样东西，都有一段来历',
+        porcelain: '五大技艺，各有来处',
+        machinery: '按工况交付，不讲故事'
+      },
+      storyLeads: {
+        porcelain: '先认工艺，再认器型。青白瓷是宋代立镇之瓷，青花、玲珑、粉彩、颜色釉合称景德镇四大名瓷。下方说明取自公开资料，不是产品图册的宣传语。',
+        machinery: '泵不是标准品，脱离工况报不出准确价格。下面三条规定了我们如何接单、如何给数据、如何界定文件归属。'
+      },
+      links: { tea: '查看茶叶产品 →', porc: '查看景德镇瓷器 →', mach: '查看流体设备 →' },
+      machItems: [
+        { era: '选型口径',
+          text: '按流量 Q、扬程 H、功率 P、口径 DN 与介质确定系列。逐型号性能曲线与数据表按系列索取，不在公网发布。',
+          src: 'data/machinery.json · 参数与数据表' },
+        { era: '体系与文件',
+          text: '按 ISO 9001:2015 体系要求组织生产。相关体系证书与型式试验报告由合作生产企业持有，我们不宣称持证主体、不公布编号与有效期。',
+          src: 'data/machinery.json · 资质与合规' },
+        { era: '合规归属',
+          text: '输往俄罗斯及欧亚经济联盟的产品，EAC 符合性认证由俄方进口商作为申请人办理；我们配合提供俄文技术护照、数据表、图纸与检测报告。',
+          src: 'data/machinery.json · 出口合规说明' },
+        { era: '消防类附加要求',
+          text: '消防类产品可能另有目的国消防认证要求。请在询盘中说明终端用途与项目所在地，以便逐项确认。',
+          src: 'data/machinery.json · 出口合规说明' }
+      ],
+      machCards: [
+        { era: '一', title: '我们怎么接单', body: '先收工况：介质、流量、扬程、电源、安装形式、认证要求；再按系列给方案。信息越完整，选型与报价越快。' },
+        { era: '二', title: '我们给什么数据', body: 'Q / H / P / DN 一律 SI 单位。数据表、图纸与检测报告按系列索取，通过询盘表单或 Telegram Bot 交付，不放在公网。' },
+        { era: '三', title: '我们不承诺什么', body: '不写无法核验的性能曲线，不声明证书编号与有效期，不把合作生产企业的资质写成自有资质。' }
+      ],
+      craftSrc: '资料来源 · 住建部、景德镇市政府《景德镇志略》、国家文物局、央视网',
+      viewCat: '查看该品类产品 →'
+    },
+    en: {
+      tabs: { tea: 'Tea', porcelain: 'Jingdezhen Porcelain', machinery: 'Fluid Equipment' },
+      eyebrows: {
+        tea: 'Jiangxi · Jiujiang · Xiushui',
+        porcelain: 'China · Jiangxi · Jingdezhen',
+        machinery: 'Selection by duty / Engineering practice'
+      },
+      titles: {
+        tea: 'A century ago it travelled this road to Russia',
+        porcelain: 'One city, one road, a thousand years',
+        machinery: 'No stories — only verifiable practice'
+      },
+      secLead: {
+        tea: 'Ninghong travelled north along the Great Tea Road; Shuangjing appears in Song writings and official history. Every entry below carries its source. Specifications and pricing belong to the product pages, company credentials to About.',
+        porcelain: 'A city named after an imperial reign title has made porcelain for a thousand years. Dates and craft notes come from public authoritative sources; supplier catalogues are used for categories and dimensions only.',
+        machinery: 'This section tells no brand story. Engineering buyers need verifiable selection practice, parameter boundaries and compliance ownership — listed point by point below.'
+      },
+      storyTitles: {
+        tea: 'Every item has a history',
+        porcelain: 'Five techniques, each with a provenance',
+        machinery: 'Delivered against duty conditions, not stories'
+      },
+      storyLeads: {
+        porcelain: 'Know the technique before the shape. Yingqing is the Song ware that named the town; blue-and-white, linglong, famille rose and coloured glazes are the Four Great Porcelains. Notes below come from public sources, not catalogue copy.',
+        machinery: 'A pump is not an off-the-shelf item — no accurate price exists without duty conditions. Three rules below set out how we take enquiries, issue data and attribute documents.'
+      },
+      links: { tea: 'View tea products →', porc: 'View Jingdezhen porcelain →', mach: 'View fluid equipment →' },
+      machItems: [
+        { era: 'Selection basis',
+          text: 'Series are selected by flow Q, head H, power P, nominal diameter DN and medium. Per-model curves and datasheets are supplied on request by series, not published online.',
+          src: 'data/machinery.json · Parameters & datasheets' },
+        { era: 'System & documents',
+          text: 'Production is organised under an ISO 9001:2015 quality management system. Related certificates and type-test reports are held by our manufacturing partner; we make no claim of ownership and publish no numbers or expiry dates.',
+          src: 'data/machinery.json · Qualifications & compliance' },
+        { era: 'Compliance ownership',
+          text: 'For shipments to Russia and the EAEU, EAC conformity assessment is completed by the Russian importer as applicant. We supply Russian technical passports, datasheets, drawings and test reports.',
+          src: 'data/machinery.json · Export compliance' },
+        { era: 'Fire-safety scope',
+          text: 'Fire pump sets may be subject to additional destination-country fire certification. State the end use and project location in your enquiry so each item can be confirmed.',
+          src: 'data/machinery.json · Export compliance' }
+      ],
+      machCards: [
+        { era: '01', title: 'How we take an enquiry', body: 'Duty first: medium, flow, head, power supply, mounting and certification needs — then a series proposal. The more complete the data, the faster the selection and quotation.' },
+        { era: '02', title: 'What data we issue', body: 'Q / H / P / DN always in SI units. Datasheets, drawings and test reports are supplied by series via the enquiry form or Telegram Bot, never posted publicly.' },
+        { era: '03', title: 'What we do not claim', body: 'No unverifiable performance curves, no certificate numbers or expiry dates, no presentation of our partner’s qualifications as our own.' }
+      ],
+      craftSrc: 'Sources · MOHURD, Jingdezhen Municipal Government (Gazetteer), National Cultural Heritage Administration, CCTV',
+      viewCat: 'View products in this category →'
+    },
+    ru: {
+      tabs: { tea: 'Чай', porcelain: 'Цзиндэчжэньский фарфор', machinery: 'Насосное оборудование' },
+      eyebrows: {
+        tea: 'Цзянси · Цзюцзян · Сюшуй',
+        porcelain: 'Китай · Цзянси · Цзиндэчжэнь',
+        machinery: 'Подбор по режиму / Инженерные правила'
+      },
+      titles: {
+        tea: 'Сто лет назад он уже шёл этой дорогой в Россию',
+        porcelain: 'Один город, одна дорога, тысяча лет',
+        machinery: 'Без легенд — только проверяемые правила'
+      },
+      secLead: {
+        tea: 'Нинхун шёл на север по Великому чайному пути; Шуанцзин упомянут в сунских записях и официальной истории. У каждого пункта ниже указан источник. Характеристики и цены — на страницах продукции, сведения о компании — в разделе «О компании».',
+        porcelain: 'Город, получивший имя по девизу правления императора, тысячу лет делает фарфор. Даты и описания техник приведены по открытым официальным источникам; каталоги поставщиков используются только для категорий и размеров.',
+        machinery: 'Здесь нет истории бренда. Инженерному закупщику нужны проверяемые правила подбора, границы параметров и принадлежность документов — всё перечислено ниже по пунктам.'
+      },
+      storyTitles: {
+        tea: 'У каждой вещи есть история',
+        porcelain: 'Пять техник, у каждой — своя история',
+        machinery: 'Работаем по параметрам, а не по легендам'
+      },
+      storyLeads: {
+        porcelain: 'Сначала техника, потом форма. «Инцин» — фарфор, давший городу имя; сине-белый, линлун, фэньцай и цветные глазури — четыре знаменитых фарфора Цзиндэчжэня. Тексты ниже взяты из открытых источников, а не из рекламных каталогов.',
+        machinery: 'Насос — не типовой товар: без параметров режима точной цены не дать. Три правила ниже описывают, как мы принимаем запрос, выдаём данные и разграничиваем документы.'
+      },
+      links: { tea: 'Смотреть чай →', porc: 'Смотреть фарфор →', mach: 'Смотреть оборудование →' },
+      machItems: [
+        { era: 'Правила подбора',
+          text: 'Серия определяется по расходу Q, напору H, мощности P, условному проходу DN и среде. Кривые по каждому типоразмеру и даташиты предоставляются по запросу по сериям, в открытом доступе не публикуются.',
+          src: 'data/machinery.json · Параметры и даташиты' },
+        { era: 'Система и документы',
+          text: 'Производство организовано по системе менеджмента качества ISO 9001:2015. Соответствующие сертификаты и протоколы типовых испытаний принадлежат производственному партнёру; мы не заявляем прав на них и не публикуем номера и сроки действия.',
+          src: 'data/machinery.json · Квалификация и соответствие' },
+        { era: 'Принадлежность соответствия',
+          text: 'При поставках в Россию и ЕАЭС оценку соответствия EAC оформляет российский импортёр как заявитель. Мы предоставляем русскоязычный технический паспорт, даташиты, чертежи и протоколы испытаний.',
+          src: 'data/machinery.json · Экспортное соответствие' },
+        { era: 'Пожарные требования',
+          text: 'Для пожарных насосных агрегатов могут действовать дополнительные требования страны назначения. Укажите в запросе конечное применение и место объекта, чтобы подтвердить каждый пункт.',
+          src: 'data/machinery.json · Экспортное соответствие' }
+      ],
+      machCards: [
+        { era: '01', title: 'Как мы принимаем запрос', body: 'Сначала режим: среда, расход, напор, электропитание, монтаж, требования к сертификации — затем предложение по серии. Полнее данные — быстрее подбор и расчёт.' },
+        { era: '02', title: 'Какие данные выдаём', body: 'Q / H / P / DN — только в единицах SI. Даташиты, чертежи и протоколы выдаём по сериям через форму запроса или Telegram Bot, в открытый доступ не выкладываем.' },
+        { era: '03', title: 'Чего мы не заявляем', body: 'Не приводим непроверяемые кривые, не публикуем номера и сроки сертификатов, не выдаём документы партнёра за собственные.' }
+      ],
+      craftSrc: 'Источники · Минстрой КНР, мэрия Цзиндэчжэня («Краткая хроника»), Госуправление культурного наследия, CCTV',
+      viewCat: 'Смотреть продукцию категории →'
+    }
+  };
+  for (var q = 0; q < LANGS.length; q++) {
+    var H = I18N[LANGS[q]].heritage || (I18N[LANGS[q]].heritage = {});
+    var A = HG32[LANGS[q]];
+    for (var k in A) {
+      if (Object.prototype.hasOwnProperty.call(A, k)) H[k] = A[k];
+    }
+  }
   for (var i = 0; i < LANGS.length; i++) merge(I18N[LANGS[i]], X[LANGS[i]]);
 })();
+
+
+
+/* ==================================================================================
+   V3.3 · 视图分区新增文案（CTA / 标签 100% 本地化）
+   ================================================================================== */
+;(function () {
+  var V = {
+    zh: {
+      intro: {
+        label: '关于昭盛元', title: '一家公司，三条业务线',
+        lead: '九江昭盛元科技有限公司位于江西省九江市修水县，从事供应链管理服务、货物与技术进出口及进出口代理。我们从产地与合作生产企业选品、验货、集货，以本公司名义完成出口交付；茶叶、景德镇瓷器与流体设备各自独立成板块，客户按品类对接，不必在一页里翻找。',
+        laneTea: '茶叶', laneTeaD: '宁红茶、双井绿茶、庐山云雾，以及袋泡茶、果茶、花草茶等可定制品类。',
+        lanePorc: '景德镇瓷器', lanePorcD: '咖啡器、茶器、成套餐具与艺术瓷，按器型、头数与工艺谱系选型。',
+        laneMach: '流体设备', laneMachD: '消防、排污、离心、多级与供水机组等系列，按工况参数选型报价。',
+        go: '查看产品 →', more: '了解公司资质与合作方式 →'
+      },
+      pane: { label: '选择品类', tea: '茶叶', porc: '景德镇瓷器', mach: '流体设备' }
+    },
+    en: {
+      intro: {
+        label: 'About Zhaoshengyuan', title: 'One company, three product lines',
+        lead: 'Jiujiang Zhaoshengyuan Technology Co., Ltd. is based in Xiushui, Jiujiang, Jiangxi. We provide supply-chain management, import/export of goods and technology, and export agency services. We select, inspect and consolidate goods at source and deliver under our own name. Tea, Jingdezhen porcelain and fluid equipment are kept as separate sections so buyers can go straight to the category they need.',
+        laneTea: 'Tea', laneTeaD: 'Ninghong black tea, Shuangjing and Lushan green teas, plus teabags, fruit teas and herbal blends to specification.',
+        lanePorc: 'Jingdezhen Porcelain', lanePorcD: 'Coffee ware, tea ware, dinner services and art porcelain, selected by shape, set size and craft tradition.',
+        laneMach: 'Fluid Equipment', laneMachD: 'Fire, drainage, centrifugal, multistage and water-supply series, specified by duty conditions.',
+        go: 'View products →', more: 'Company credentials & cooperation →'
+      },
+      pane: { label: 'Choose a category', tea: 'Tea', porc: 'Jingdezhen Porcelain', mach: 'Fluid Equipment' }
+    },
+    ru: {
+      intro: {
+        label: 'О компании Чжаошэнъюань', title: 'Одна компания — три направления',
+        lead: 'Компания «Цзюцзян Чжаошэнъюань Технологии» работает в уезде Сюшуй (Цзюцзян, провинция Цзянси): управление цепочками поставок, импорт и экспорт товаров и технологий, агентское сопровождение ВЭД. Мы отбираем, проверяем и консолидируем продукцию у производителей и отгружаем её от своего имени. Чай, цзиндэчжэньский фарфор и насосное оборудование выделены в отдельные разделы — покупатель сразу попадает в нужную категорию.',
+        laneTea: 'Чай', laneTeaD: 'Красный чай Нинхун, зелёные чаи Шуанцзин и Лушань, а также пакетированный чай, фруктовые и травяные смеси на заказ.',
+        lanePorc: 'Цзиндэчжэньский фарфор', lanePorcD: 'Кофейная и чайная посуда, столовые сервизы и художественный фарфор — подбор по форме, числу предметов и технологии росписи.',
+        laneMach: 'Насосное оборудование', laneMachD: 'Пожарные, дренажные, центробежные, многоступенчатые насосы и станции водоснабжения — подбор по параметрам режима.',
+        go: 'Смотреть продукцию →', more: 'Реквизиты и условия сотрудничества →'
+      },
+      pane: { label: 'Выберите категорию', tea: 'Чай', porc: 'Цзиндэчжэньский фарфор', mach: 'Насосное оборудование' }
+    }
+  };
+  for (var i = 0; i < LANGS.length; i++) {
+    if (typeof merge === 'function') merge(I18N[LANGS[i]], V[LANGS[i]]);
+    else {
+      var d = I18N[LANGS[i]], s = V[LANGS[i]];
+      for (var k in s) if (Object.prototype.hasOwnProperty.call(s, k)) d[k] = s[k];
+    }
+  }
+})();
+
+
+/* V3.3 PROD COPY BEGIN
+   产品中心按品类切换后，原副标题「从顶部产品中心下拉进入」不再成立；
+   同时把原本三语都写中文的 prod.label/title/lead/note 补齐本地化。
+   只逐键覆盖，不用浅赋值替换整个 prod 对象。 */
+;(function () {
+  var C = {
+    zh: {
+      label: '茶叶产品', title: '茶叶产品',
+      lead: '按上方品类切换查看茶叶、景德镇瓷器与流体设备；等级、规格与包装以产品卡为准，报价请通过「获取报价」提交。',
+      note: '图示为实物拍摄。各品类规格、起订量与打样周期，请在询盘中说明采购规模与销售渠道。'
+    },
+    en: {
+      label: 'Tea', title: 'Tea',
+      lead: 'Switch between Tea, Jingdezhen Porcelain and Fluid Equipment above. Grades, pack sizes and packaging are shown on each product card; use Get Quote for pricing.',
+      note: 'Photos show actual products. Please state purchase volume and sales channel in your enquiry for specifications, MOQ and sampling lead time.'
+    },
+    ru: {
+      label: 'Чай', title: 'Чай',
+      lead: 'Переключайтесь между чаем, цзиндэчжэньским фарфором и насосным оборудованием выше. Сорта, фасовка и упаковка указаны на карточках; цену запросите через «Получить предложение».',
+      note: 'На фото реальная продукция. Укажите в запросе объём закупки и канал продаж для уточнения спецификаций, MOQ и сроков изготовления образцов.'
+    }
+  };
+  for (var i = 0; i < LANGS.length; i++) {
+    var d = I18N[LANGS[i]];
+    if (!d.prod) d.prod = {};
+    for (var k in C[LANGS[i]]) {
+      if (Object.prototype.hasOwnProperty.call(C[LANGS[i]], k)) d.prod[k] = C[LANGS[i]][k];
+    }
+  }
+})();
+/* V3.3 PROD COPY END */

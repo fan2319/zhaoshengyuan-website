@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title id="pageTitle">九江昭盛元科技有限公司 | 跨境供应链 · 茶叶出口</title>
-<meta name="description" content="九江昭盛元科技有限公司：供应链管理服务、货物与技术进出口、进出口代理。茶叶产地直采，可选袋泡茶、果茶、花草茶与 OEM/ODM 贴牌代工。">
+<meta name="description" content="九江昭盛元科技有限公司：跨境供应链与进出口代理。茶叶、景德镇瓷器、流体设备三条业务线，一个窗口对接。">
 <link rel="icon" href="assets/img/logo-zsy.png">
 <link rel="stylesheet" href="assets/css/style.css">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="九江昭盛元科技有限公司">
 <meta property="og:title" content="九江昭盛元科技有限公司 | 跨境供应链 · 茶叶出口">
-<meta property="og:description" content="进出口资质齐备，产地直采。茶叶、瓷器、机电泵阀，一个窗口对接。">
+<meta property="og:description" content="跨境供应链 · 进出口代理 · 产地直采的中国货源伙伴。茶叶、景德镇瓷器、流体设备三条业务线。">
 <meta property="og:image" content="assets/img/hero-bg.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1a3a5c">
@@ -33,59 +33,59 @@
 }
 </script>
 </head>
-<body>
+<body data-view="home" data-pane="tea">
 
 <!-- 顶部金色阅读进度条（纯装饰，不影响布局与交互） -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="topbar" id="topbar">
   <div class="container">
-    <a class="brand" href="#home">
+    <a class="brand" href="#/home">
       <img src="assets/img/logo-zsy.png" alt="ZSY" onerror="this.style.display='none'">
       <span class="txt">昭盛元<small>ZHAOSHENGYUAN</small></span>
     </a>
     <nav class="navlinks" id="navlinks">
-      <a href="#home" data-i18n="nav.home"></a>
+      <a href="#/home" data-i18n="nav.home"></a>
 
       <!-- 产品中心：桌面鼠标悬停展开，移动端点右侧箭头展开。
            茶叶子项带 data-cat / data-sub，点击后直接切换一级与二级分类，不是死链接。 -->
       <div class="navitem" id="navProducts">
-        <a class="nav-root" href="#products" data-i18n="nav.center"
+        <a class="nav-root" href="#/products" data-i18n="nav.center"
            aria-haspopup="true" aria-expanded="false"></a>
         <button class="navdrop-toggle" type="button" aria-label="展开产品目录" aria-expanded="false">⌄</button>
         <div class="navdrop" role="menu">
           <div class="navdrop-in">
             <div class="nd-col nd-tea">
               <p class="nd-kicker" data-i18n="drop.teaLabel"></p>
-              <a class="nd-lead" href="#products" data-cat="tea" data-sub="all">
+              <a class="nd-lead" href="#/products/tea" data-cat="tea" data-sub="all">
                 <b data-i18n="drop.teaTitle"></b>
                 <small data-i18n="drop.teaDesc"></small>
               </a>
               <div class="nd-subs">
-                <a href="#products" data-cat="tea" data-sub="black"  data-i18n="drop.black"></a>
-                <a href="#products" data-cat="tea" data-sub="green"  data-i18n="drop.green"></a>
-                <a href="#products" data-cat="tea" data-sub="fruit"  data-i18n="drop.fruit"></a>
-                <a href="#products" data-cat="tea" data-sub="teabag" data-i18n="drop.teabag"></a>
-                <a href="#products" data-cat="tea" data-i18n="drop.teaSpecs"></a>
+                <a href="#/products/tea" data-cat="tea" data-sub="black"  data-i18n="drop.black"></a>
+                <a href="#/products/tea" data-cat="tea" data-sub="green"  data-i18n="drop.green"></a>
+                <a href="#/products/tea" data-cat="tea" data-sub="fruit"  data-i18n="drop.fruit"></a>
+                <a href="#/products/tea" data-cat="tea" data-sub="teabag" data-i18n="drop.teabag"></a>
+                <a href="#/products/tea" data-cat="tea" data-i18n="drop.teaSpecs"></a>
               </div>
             </div>
             <div class="nd-col nd-porc">
               <p class="nd-kicker" data-i18n="drop.porcLabel"></p>
-              <a class="nd-lead" href="#porcelain">
+              <a class="nd-lead" href="#/products/porcelain">
                 <b data-i18n="drop.porcTitle"></b>
                 <small data-i18n="drop.porcDesc"></small>
               </a>
               <div class="nd-subs">
-                <a href="#porcelain" data-pg="coffee" data-i18n="drop.porcCoffee"></a>
-                <a href="#porcelain" data-pg="teaset" data-i18n="drop.porcTea"></a>
-                <a href="#porcelain" data-pg="dinner" data-i18n="drop.porcDinner"></a>
+                <a href="#/products/porcelain" data-pg="coffee" data-i18n="drop.porcCoffee"></a>
+                <a href="#/products/porcelain" data-pg="teaset" data-i18n="drop.porcTea"></a>
+                <a href="#/products/porcelain" data-pg="dinner" data-i18n="drop.porcDinner"></a>
                 <a href="#pSpecs"                     data-i18n="drop.porcSpecs"></a>
                 <a href="#pHistory"                    data-i18n="drop.porcHistory"></a>
               </div>
             </div>
             <div class="nd-col nd-mach">
               <p class="nd-kicker" data-i18n="drop.machLabel"></p>
-              <a class="nd-lead" href="#industrial">
+              <a class="nd-lead" href="#/products/machinery">
                 <b data-i18n="drop.machTitle"></b>
                 <small data-i18n="drop.machDesc"></small>
               </a>
@@ -98,23 +98,23 @@
             </div>
           </div>
           <div class="nd-foot">
-            <a href="#products" data-cat="all" data-sub="all" data-i18n="drop.all"></a>
+            <a href="#/products/tea" data-cat="all" data-sub="all" data-i18n="drop.all"></a>
             <span class="nd-foot-sep"></span>
-            <a href="#heritage"   data-i18n="drop.story"></a>
-            <a href="#capability" data-i18n="drop.services"></a>
-            <a href="#why"        data-i18n="drop.why"></a>
-            <a href="#terms"      data-i18n="drop.terms"></a>
-            <a href="#faq"        data-i18n="drop.faq"></a>
+            <a href="#/heritage"   data-i18n="drop.story"></a>
+            <a href="#/capability" data-i18n="drop.services"></a>
+            <a href="#/about"      data-i18n="drop.why"></a>
+            <a href="#/capability" data-i18n="drop.terms"></a>
+            <a href="#/contact"    data-i18n="drop.faq"></a>
             <span class="nd-mark"><span>ZSY</span><small data-i18n="drop.markText"></small></span>
           </div>
         </div>
       </div>
 
       <!-- Heritage 独立一级：史料只在这里存一份，About 只放资信 -->
-      <a href="#heritage"   data-i18n="nav.heritage"></a>
-      <a href="#about"      data-i18n="nav.about"></a>
-      <a href="#capability" data-i18n="nav.sourcing"></a>
-      <a href="#contact"    data-i18n="nav.contact"></a>
+      <a href="#/heritage"   data-i18n="nav.heritage"></a>
+      <a href="#/about"      data-i18n="nav.about"></a>
+      <a href="#/capability" data-i18n="nav.sourcing"></a>
+      <a href="#/contact"    data-i18n="nav.contact"></a>
     </nav>
     <div class="right">
       <div class="gsearch" id="gsearch">
@@ -139,14 +139,14 @@
 </header>
 
 <!-- ================= 首屏 ================= -->
-<section id="home" class="hero">
+<section id="home" data-view="home" class="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="container hero-inner">
     <p class="eyebrow" data-i18n="hero.eyebrow"></p>
     <h1 id="heroTitle"></h1>
     <p class="lead" id="heroSub"></p>
     <div class="hero-cta">
-      <a class="btn primary" href="#products" data-i18n="hero.cta1"></a>
+      <a class="btn primary" href="#/products" data-i18n="hero.cta1"></a>
       <button type="button" class="btn ghost" data-rfq="general" data-i18n="hero.cta2"></button>
     </div>
     <ul class="hero-facts">
@@ -158,8 +158,43 @@
   </div>
 </section>
 
+
+<!-- ================= 公司简介 · 首页只讲昭盛元 =================
+     V3.3：首页不再承载茶叶 / 瓷器 / 流体设备 / 史料 / FAQ / 条款。
+     这里只说明公司主体与三条业务方向，卡片是通往产品中心的入口。
+     ============================================================ -->
+<section id="homeIntro" class="home-intro zone-story" data-view="home">
+  <div class="container">
+    <p class="eyebrow" data-i18n="intro.label"></p>
+    <h2 class="title" data-i18n="intro.title"></h2>
+    <div class="divider"></div>
+    <p class="intro-lead" data-i18n="intro.lead"></p>
+    <div class="intro-grid">
+      <a class="intro-card" href="#/products/tea">
+        <span class="ic-n">01</span>
+        <h3 data-i18n="intro.laneTea"></h3>
+        <p data-i18n="intro.laneTeaD"></p>
+        <span class="ic-go" data-i18n="intro.go"></span>
+      </a>
+      <a class="intro-card" href="#/products/porcelain">
+        <span class="ic-n">02</span>
+        <h3 data-i18n="intro.lanePorc"></h3>
+        <p data-i18n="intro.lanePorcD"></p>
+        <span class="ic-go" data-i18n="intro.go"></span>
+      </a>
+      <a class="intro-card" href="#/products/machinery">
+        <span class="ic-n">03</span>
+        <h3 data-i18n="intro.laneMach"></h3>
+        <p data-i18n="intro.laneMachD"></p>
+        <span class="ic-go" data-i18n="intro.go"></span>
+      </a>
+    </div>
+    <p class="intro-foot"><a href="#/about" data-i18n="intro.more"></a></p>
+  </div>
+</section>
+
 <!-- ================= 按采购场景进入（首页三张快捷卡，不升一级） ================= -->
-<section id="applications">
+<section id="applications" data-view="products">
   <div class="container">
     <p class="app-tag" data-i18n="app.tag"></p>
     <h2 class="app-title" data-i18n="app.title"></h2>
@@ -169,7 +204,7 @@
 </section>
 
 <!-- ================= 关于 ================= -->
-<section id="about">
+<section id="about" data-view="about">
   <div class="container wrap-center">
     <p class="eyebrow" data-i18n="about.label"></p>
     <h2 class="title" id="aboutTitle"></h2>
@@ -186,8 +221,23 @@
   </div>
 </section>
 
+
+<!-- ================= 产品中心 · 品类切换 =================
+     与首页的「业务线入口」呼应：进入产品中心后，三个品类只显示当前一个。
+     ============================================================ -->
+<div class="panebar" id="paneBar" data-view="products">
+  <div class="container">
+    <p class="pane-kicker" data-i18n="pane.label"></p>
+    <div class="pane-tabs" role="tablist" aria-label="Product categories">
+      <a href="#/products/tea"       data-pane="tea"       data-i18n="pane.tea"></a>
+      <a href="#/products/porcelain" data-pane="porcelain" data-i18n="pane.porc"></a>
+      <a href="#/products/machinery" data-pane="machinery" data-i18n="pane.mach"></a>
+    </div>
+  </div>
+</div>
+
 <!-- ================= 产品中心（后台增删改查） ================= -->
-<section id="products" class="alt zone-story">
+<section id="products" data-view="products" data-pane="tea" class="alt zone-story">
   <div class="container wrap-center">
     <p class="eyebrow" data-i18n="prod.label"></p>
     <h2 class="title" data-i18n="prod.title"></h2>
@@ -209,44 +259,25 @@
      史料只在这里存一份：Products 三列底部单向回流到此处。
      About 只保留公司主体 / 经营范围 / 生产企业与许可证归属等资信内容。
      ============================================================ -->
-<section id="heritage" class="zone-story">
+<section id="heritage" data-view="heritage" class="zone-story">
   <span id="stories" aria-hidden="true"></span>
   <div class="hg-wrap">
-    <p class="hg-eyebrow" data-i18n="heritage.eyebrow"></p>
-    <h2 class="hg-title" data-i18n="heritage.title"></h2>
+    <p class="hg-eyebrow" id="hgEyebrow" data-i18n="heritage.eyebrow"></p>
+    <h2 class="hg-title" id="hgTitle" data-i18n="heritage.title"></h2>
     <p class="hg-lead" data-i18n="heritage.lead"></p>
 
-    <div class="hg-timeline" id="hgTimeline">
-      <div class="hg-item">
-        <p class="hg-era" data-i18n="heritage.item1Era"></p>
-        <p class="hg-text" data-i18n="heritage.item1Text"></p>
-        <p class="hg-src"><b data-i18n="heritage.srcLabel"></b> · <span data-i18n="heritage.item1Src"></span></p>
-      </div>
-      <div class="hg-item">
-        <p class="hg-era" data-i18n="heritage.item2Era"></p>
-        <p class="hg-text" data-i18n="heritage.item2Text"></p>
-        <p class="hg-src"><b data-i18n="heritage.srcLabel"></b> · <span data-i18n="heritage.item2Src"></span></p>
-      </div>
-      <div class="hg-item">
-        <p class="hg-era" data-i18n="heritage.item3Era"></p>
-        <p class="hg-text" data-i18n="heritage.item3Text"></p>
-        <p class="hg-src"><b data-i18n="heritage.srcLabel"></b> · <span data-i18n="heritage.item3Src"></span></p>
-      </div>
-      <div class="hg-item">
-        <p class="hg-era" data-i18n="heritage.item4Era"></p>
-        <p class="hg-text" data-i18n="heritage.item4Text"></p>
-        <p class="hg-src"><b data-i18n="heritage.srcLabel"></b> · <span data-i18n="heritage.item4Src"></span></p>
-      </div>
-    </div>
+    <!-- 与产品中心同一套读法：先选品类，再看这一类的来历与出处 -->
+    <div class="hg-tabs" id="hgTabs" role="tablist" aria-label="Heritage sections"></div>
+    <p class="hg-section-lead" id="hgSectionLead"></p>
 
-    <div class="hg-links">
-      <a href="#products"  data-i18n="heritage.viewTea"></a>
-      <a href="#porcelain" data-i18n="heritage.viewPorc"></a>
-    </div>
+    <div class="hg-timeline" id="hgTimeline"></div>
+
+    <div class="hg-links" id="hgLinks"></div>
     <p class="hg-note" data-i18n="heritage.note"></p>
 
     <div class="hg-stories">
-      <h3 class="hg-stories-h" data-i18n="story.title"></h3>
+      <h3 class="hg-stories-h" id="hgStoriesTitle"></h3>
+      <p class="hg-story-lead" id="hgStoryLead"></p>
       <div class="storylist" id="storyList"></div>
       <div class="empty-note" id="storyEmpty" style="display:none"></div>
     </div>
@@ -260,7 +291,7 @@
      俄罗斯人看 сервиз（成套）、чайная пара（杯碟）、ml/mm、
      微波炉洗碗机适用性与 EAC 归属。
      ============================================================ -->
-<section id="porcelain" class="p-sec zone-story">
+<section id="porcelain" data-view="products" data-pane="porcelain" class="p-sec zone-story">
   <div class="p-hero" id="pHero">
     <div class="container">
       <p class="p-eyebrow" id="pEyebrow"></p>
@@ -339,7 +370,7 @@
        型号谱系折叠区   → 中国采购（看全不全）
        资质与归属声明   → 所有市场共同关心的可核验性
      ============================================================ -->
-<section id="industrial" class="m-sec zone-industrial">
+<section id="industrial" data-view="products" data-pane="machinery" class="m-sec zone-industrial">
   <div class="m-hero">
     <div class="container">
       <p class="m-eyebrow" id="mEyebrow"></p>
@@ -406,7 +437,7 @@
 </section>
 
 <!-- ================= 能力 ================= -->
-<section id="capability">
+<section id="capability" data-view="capability">
   <div class="container wrap-center">
     <p class="eyebrow" data-i18n="cap.label"></p>
     <h2 class="title" id="capTitle"></h2>
@@ -420,7 +451,7 @@
 </section>
 
 <!-- ================= 为什么选择我们 ================= -->
-<section id="why" class="alt">
+<section id="why" data-view="about" class="alt">
   <div class="container wrap-center">
     <h2 class="title" id="whyTitle"></h2>
     <div class="divider"></div>
@@ -429,7 +460,7 @@
 </section>
 
 <!-- ================= 合作条款 ================= -->
-<section id="terms">
+<section id="terms" data-view="capability">
   <div class="container wrap-center">
     <h2 class="title" id="termTitle"></h2>
     <div class="divider"></div>
@@ -439,7 +470,7 @@
 </section>
 
 <!-- ================= FAQ ================= -->
-<section id="faq" class="alt">
+<section id="faq" data-view="contact" class="alt">
   <div class="container wrap-center">
     <p class="eyebrow" data-i18n="faq.label"></p>
     <h2 class="title" data-i18n="faq.title"></h2>
@@ -449,7 +480,7 @@
 </section>
 
 <!-- ================= 联系 ================= -->
-<section id="contact">
+<section id="contact" data-view="contact">
   <div class="container wrap-center">
     <p class="eyebrow" data-i18n="contact.label"></p>
     <h2 class="title" data-i18n="contact.title"></h2>

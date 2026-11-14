@@ -32,12 +32,12 @@
   var filterCat = 'all';
   var filterSub = 'all';
 
-  /* 内联占位图：不依赖任何外部服务，中俄都能显示 */
+  /* V34_PH 内联占位图：纯图形、无英文，中俄界面一致；仅作缺图兜底 */
   var PH = 'data:image/svg+xml;charset=utf8,' + encodeURIComponent(
     '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450">' +
     '<rect width="600" height="450" fill="#eef1f5"/>' +
-    '<circle cx="300" cy="200" r="52" fill="#cfd8e2"/>' +
-    '<text x="300" y="300" font-size="20" fill="#8a96a4" text-anchor="middle" font-family="sans-serif">Photo</text></svg>');
+    '<circle cx="300" cy="176" r="42" fill="#cfd8e2"/>' +
+    '<path d="M110 350 L235 228 L318 300 L398 212 L490 350 Z" fill="#c3cedb"/></svg>');
 
   /* ============================================================
      语言
@@ -158,7 +158,6 @@
       '<li><a href="mailto:' + esc(SITE.contact_email_1) + '">' + esc(SITE.contact_email_1) + '</a></li>';
 
     renderProducts();
-    renderStories();
     renderPorcelain();
     renderMachinery();
   }
@@ -834,12 +833,15 @@
   /* ============================================================
      表单 → Cloudflare Worker → Telegram + 邮件
      ============================================================ */
-  /* 接口地址常量。俄区（Beget / Timeweb）优先；Cloudflare 双端点自动回退：
-     第一项 = 改名后的 zhaoshengyuan-form；第二项 = 旧名 gonghehou-form 兜底。
-     确认新 Worker 上线并测试通过后，可删掉第二项。 */
+  /* 接口地址常量。
+     俄区（Beget / Timeweb，数据落在俄境内）优先，失败自动回退 Cloudflare。 */
+  /* 默认使用已验证可用的 Worker。上一版把尚未创建的新名放在第一位，
+     每次提交都先撞一个不存在的地址，是「获取报价失败」的直接原因之一。
+     若已在 Cloudflare 把表单 Worker 改名并确认可访问，把第一行换成新地址即可。
+     白名单（ALLOWED_ORIGINS）限制的是来源网站域名，与 Worker 叫什么无关。 */
   var ENDPOINTS = [
-    'https://здесь-ваш-домен.ru/form.php',   // ← 换成你的俄区接口地址
-    'https://zhaoshengyuan-form.tunnir243.workers.dev', 'https://gonghehou-form.tunnir243.workers.dev'
+    'https://gonghehou-form.tunnir243.workers.dev',
+    'https://zhaoshengyuan-form.tunnir243.workers.dev'
   ];
 
   function initForm() {
@@ -979,6 +981,11 @@
   }
 
   function v3Go(hash) {
+    /* V3.3：场景卡 / 搜索结果统一先走视图路由，再由路由模块定位到目标锚点 */
+    if (window.ZSY_VIEWS && typeof window.ZSY_VIEWS.go === 'function') {
+      window.ZSY_VIEWS.go(hash);
+      return;
+    }
     var el = $(hash);
     if (!el) return;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1157,14 +1164,16 @@
     var tg = 'https://t.me/Fan2399';
     p.innerHTML =
       '<div class="dock-h">' + esc(D.title) + '</div>' +
-      '<a class="dock-row" href="' + esc(wa) + '" target="_blank" rel="noopener">' +
-        '<span class="dock-ico">W</span><span><b>' + esc(D.wa) + '</b><small>wa.me</small></span></a>' +
-      '<a class="dock-row" href="' + esc(tg) + '" target="_blank" rel="noopener">' +
+      '<a class="dock-row" data-ch="wa" href="' + esc(wa) + '" target="_blank" rel="noopener">' +
+        '<span class="dock-ico">W</span><span><b>' + esc(D.wa) + '</b><small>' +
+        ((V3_CTX && V3_CTX.name) ? 'wa.me · ' + esc(V3_CTX.name) : 'wa.me') + '</small></span></a>' +
+      '<a class="dock-row" data-ch="tg" href="' + esc(tg) + '" target="_blank" rel="noopener">' +
         '<span class="dock-ico">T</span><span><b>' + esc(D.tg) + '</b><small>@Fan2399</small></span></a>' +
-      '<a class="dock-row" href="' + esc(TG_BOT_URL) + '" target="_blank" rel="noopener">' +
+      '<a class="dock-row" data-ch="bot" href="' + esc(TG_BOT_URL) + '" target="_blank" rel="noopener">' +
         '<span class="dock-ico">B</span><span><b>' + esc(D.bot) + '</b><small>' + esc(D.botTag) + '</small></span></a>' +
-      '<button type="button" class="dock-row" id="dockWx" style="width:100%;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0">' +
+      '<button type="button" class="dock-row" data-ch="wx" id="dockWx">' +
         '<span class="dock-ico">微</span><span><b>' + esc(D.wechat) + '</b><small>' + esc(D.wechatTag) + '</small></span></button>' +
+      '<div class="dock-foot">' + esc(D.foot || '') + '</div>' +
       '<button type="button" class="dock-close" id="dockClose">' + esc(D.close) + '</button>';
     var wx = $('#dockWx', p);
     if (wx) wx.onclick = function () {
@@ -1205,6 +1214,117 @@
     p.hidden = !open;
     if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open) v3RenderDock();
+  }
+
+  /* ---------------------------------------------------------------- Heritage 分品类叙事（V3.2）
+     与产品中心同一套读法：先选品类，再看这一类的来历、出处与产品故事。
+     茶叶用既有 4 条史料 + 原有产品故事；瓷器复用 PORC.history / PORC.crafts；
+     流体设备不编历史，只列可核验的选型口径与合规归属。
+     ---------------------------------------------------------------- */
+  var HG_TAB = 'tea';
+  function hgI18n() { return (I18N[cur] && I18N[cur].heritage) || {}; }
+  function hgTabDefs() {
+    var H = hgI18n(), T = H.tabs || {};
+    return [
+      { k: 'tea', label: T.tea || 'Tea' },
+      { k: 'porcelain', label: T.porcelain || 'Porcelain' },
+      { k: 'machinery', label: T.machinery || 'Fluid Equipment' }
+    ];
+  }
+  function renderHeritage() {
+    var H = hgI18n(), L = cur;
+    var tabs = $('#hgTabs');
+    if (tabs) {
+      tabs.innerHTML = hgTabDefs().map(function (x) {
+        return '<button type="button" class="hg-tab' + (HG_TAB === x.k ? ' on' : '') +
+               '" data-hg="' + x.k + '" role="tab" aria-selected="' + (HG_TAB === x.k) + '">' +
+               esc(x.label) + '</button>';
+      }).join('');
+      $$('#hgTabs .hg-tab').forEach(function (b) {
+        b.onclick = function () { HG_TAB = b.getAttribute('data-hg'); renderHeritage(); };
+      });
+    }
+
+    /* 眉标与主标题也随品类切换，避免整块看起来「只有茶叶的」 */
+    var eb = $('#hgEyebrow'), tt = $('#hgTitle');
+    if (eb) eb.textContent = (H.eyebrows && H.eyebrows[HG_TAB]) || H.eyebrow || '';
+    if (tt) tt.textContent = (H.titles && H.titles[HG_TAB]) || H.title || '';
+
+    var lead = $('#hgSectionLead');
+    if (lead) lead.textContent = (H.secLead && H.secLead[HG_TAB]) || '';
+
+    /* 时间轴：三类各自的数据源 */
+    var items = [];
+    if (HG_TAB === 'tea') {
+      for (var i = 1; i <= 4; i++) {
+        if (H['item' + i + 'Era']) items.push({
+          era: H['item' + i + 'Era'], text: H['item' + i + 'Text'], src: H['item' + i + 'Src']
+        });
+      }
+    } else if (HG_TAB === 'porcelain') {
+      ((PORC && PORC.history) || []).forEach(function (h) {
+        items.push({
+          era: (h.year || '') + ' · ' + t(h.era, L),
+          text: t(h.title, L) + ' —— ' + t(h.text, L),
+          src: H.craftSrc || ''
+        });
+      });
+    } else {
+      (H.machItems || []).forEach(function (x) {
+        items.push({ era: t(x.era, L), text: t(x.text, L), src: t(x.src, L) });
+      });
+    }
+    var tl = $('#hgTimeline');
+    if (tl) {
+      tl.innerHTML = items.length ? items.map(function (x) {
+        return '<div class="hg-item">' +
+                 '<p class="hg-era">' + esc(x.era || '') + '</p>' +
+                 '<p class="hg-text">' + esc(x.text || '') + '</p>' +
+                 (x.src ? '<p class="hg-src"><b>' + esc(H.srcLabel || '') +
+                          '</b> · <span>' + esc(x.src) + '</span></p>' : '') +
+               '</div>';
+      }).join('') : '<div class="hg-item"><p class="hg-text">' +
+                    esc((H.secLead && H.secLead[HG_TAB]) || '') + '</p></div>';
+    }
+
+    /* 底部回流链接：三条都在，当前品类高亮 */
+    var links = $('#hgLinks'), LK = H.links || {};
+    if (links) {
+      links.innerHTML =
+        '<a href="#products"' + (HG_TAB === 'tea' ? ' class="on"' : '') + '>' + esc(LK.tea || '') + '</a>' +
+        '<a href="#porcelain"' + (HG_TAB === 'porcelain' ? ' class="on"' : '') + '>' + esc(LK.porc || '') + '</a>' +
+        '<a href="#industrial"' + (HG_TAB === 'machinery' ? ' class="on"' : '') + '>' + esc(LK.mach || '') + '</a>';
+    }
+
+    /* 故事区 */
+    var stTitle = $('#hgStoriesTitle'), stLead = $('#hgStoryLead');
+    if (stTitle) stTitle.textContent = (H.storyTitles && H.storyTitles[HG_TAB]) || '';
+    if (stLead) stLead.textContent = HG_TAB === 'tea'
+      ? ((I18N[cur].story && I18N[cur].story.lead) || '')
+      : ((H.storyLeads && H.storyLeads[HG_TAB]) || '');
+
+    var list = $('#storyList'), emp = $('#storyEmpty');
+    if (!list) return;
+    if (HG_TAB === 'tea') { renderStories(); return; }   // 沿用原有茶叶产品故事
+    if (emp) emp.style.display = 'none';
+    var cards = [];
+    if (HG_TAB === 'porcelain') {
+      ((PORC && PORC.crafts) || []).forEach(function (c) {
+        cards.push({ era: H.craftSrc || '', title: t(c.name, L), body: t(c.text, L), href: '#pCrafts' });
+      });
+    } else {
+      (H.machCards || []).forEach(function (c) {
+        cards.push({ era: c.era, title: t(c.title, L), body: t(c.body, L), href: '#mSpecs' });
+      });
+    }
+    list.innerHTML = cards.length ? cards.map(function (c) {
+      return '<article class="hg-scard">' +
+               (c.era ? '<p class="hg-scard-era">' + esc(c.era) + '</p>' : '') +
+               '<h4>' + esc(c.title) + '</h4>' +
+               '<p>' + esc(c.body) + '</p>' +
+               '<a class="hg-scard-cta" href="' + esc(c.href) + '">' + esc(H.viewCat || '') + '</a>' +
+             '</article>';
+    }).join('') : '';
   }
 
   /* ---------------------------------------------------------------- RFQ 抽屉 */
@@ -1430,15 +1550,28 @@
     if (typeof fetch !== 'function') { cb(false); return; }
     (function attempt(i) {
       if (i >= list.length) { cb(false); return; }
+      var done = false, timer = null;
+      /* 9 秒无响应即转下一个端点，避免某个地址挂起时按钮一直转圈 */
+      timer = setTimeout(function () {
+        if (done) return;
+        done = true; attempt(i + 1);
+      }, 9000);
       fetch(list[i], {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
-      }).then(function (r) { return r.json(); })
-        .then(function (j) {
-          if (j && j.ok) cb(true); else attempt(i + 1);
-        })
-        .catch(function () { attempt(i + 1); });
+      }).then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);   // 403 / 500 也要回退
+        return r.json();
+      }).then(function (j) {
+        if (done) return;
+        clearTimeout(timer); done = true;
+        if (j && j.ok) cb(true); else attempt(i + 1);
+      }).catch(function () {
+        if (done) return;
+        clearTimeout(timer); done = true;
+        attempt(i + 1);
+      });
     })(0);
   }
 
@@ -1448,6 +1581,7 @@
     v3StaticI18n();
     v3RenderApps();
     v3RenderDock();
+    renderHeritage();
     v3BuildIndex();
     var sp = $('#gsearchPanel'); if (sp && !sp.hidden) v3RenderSearch();
     var d = $('#rfqDrawer');
@@ -1469,6 +1603,7 @@
     v3StaticI18n();
     v3RenderApps();
     v3RenderDock();
+    renderHeritage();
     v3BuildIndex();
 
     /* 所有卡片 / 锚点 / hero 上的主按钮统一走事件委托 → 全局唯一抽屉 */
@@ -1699,6 +1834,17 @@
       loadJSON('data/porcelain.json').catch(function (e) { console.warn(e); return null; })
     ]).then(function (res) {
       SITE = res[0] || {};
+      /* V3.5: 后台编辑的品牌源流文案覆盖 i18n.js 默认字典 */
+      if (SITE.heritage) {
+        for (var hi = 0; hi < LANGS.length; hi++) {
+          var hl = LANGS[hi], hs = SITE.heritage[hl];
+          if (!hs) continue;
+          var hd = I18N[hl].heritage || (I18N[hl].heritage = {});
+          for (var hk in hs) {
+            if (Object.prototype.hasOwnProperty.call(hs, hk)) hd[hk] = hs[hk];
+          }
+        }
+      }
       PROD = res[1] || { categories: [], products: [] };
       MACH = res[2] || null;
       PORC = res[3] || null;
@@ -1715,3 +1861,175 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
+
+
+/* ==================================================================================
+   V3.3 · 视图分区路由（独立模块，不改任何既有组件）
+   首页 = 公司介绍；产品中心 = 茶叶 / 景德镇瓷器 / 流体设备三个 pane；
+   品牌源流 / 关于 / 服务能力 / 联系 各自独立。
+   旧锚点（#porcelain、#industrial、#mSpecs、#faq …）全部自动映射，
+   已发出去的链接不失效。
+   ================================================================================== */
+;(function () {
+  'use strict';
+  function $q(s, r) { return (r || document).querySelector(s); }
+  function $qa(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+
+  var VIEWS = ['home', 'products', 'heritage', 'about', 'capability', 'contact'];
+  var PANES = ['tea', 'porcelain', 'machinery'];
+
+  /* 旧锚点 → [视图, pane, 视图内定位锚点] */
+  var LEGACY = {
+    home:        ['home', '', ''],
+    applications:['products', '', 'applications'],
+    homeIntro:   ['home', '', 'homeIntro'],
+    products:    ['products', 'tea', ''],
+    porcelain:   ['products', 'porcelain', ''],
+    pHero:       ['products', 'porcelain', 'pHero'],
+    pHistory:    ['products', 'porcelain', 'pHistory'],
+    pCrafts:     ['products', 'porcelain', 'pCrafts'],
+    pSpecs:      ['products', 'porcelain', 'pSpecs'],
+    pCatalogue:  ['products', 'porcelain', 'pCatalogue'],
+    pCompliance: ['products', 'porcelain', 'pCompliance'],
+    industrial:  ['products', 'machinery', ''],
+    mSpecs:      ['products', 'machinery', 'mSpecs'],
+    machSeries:  ['products', 'machinery', 'machSeries'],
+    machCerts:   ['products', 'machinery', 'machCerts'],
+    heritage:    ['heritage', '', ''],
+    stories:     ['heritage', '', 'stories'],
+    about:       ['about', '', ''],
+    why:         ['about', '', 'why'],
+    capability:  ['capability', '', ''],
+    terms:       ['capability', '', 'terms'],
+    faq:         ['contact', '', 'faq'],
+    contact:     ['contact', '', '']
+  };
+
+  function parse(hash) {
+    var h = String(hash || '').replace(/^#/, '');
+    var to = '';
+    var q = h.indexOf('?');
+    if (q > -1) {
+      var qs = h.slice(q + 1);
+      h = h.slice(0, q);
+      var mm = /(?:^|&)to=([^&]+)/.exec(qs);
+      if (mm) { try { to = decodeURIComponent(mm[1]); } catch (e) { to = mm[1]; } }
+    }
+    if (h.charAt(0) === '/') {
+      var parts = h.slice(1).split('/');
+      var v = parts[0], pane = parts[1] || '';
+      if (VIEWS.indexOf(v) === -1) v = 'home';
+      if (v !== 'products') pane = '';
+      if (v === 'products' && PANES.indexOf(pane) === -1) pane = 'tea';
+      return { view: v, pane: pane, to: to };
+    }
+    var L = LEGACY[h];
+    if (L) return { view: L[0], pane: L[1] || (L[0] === 'products' ? 'tea' : ''), to: to || L[2] };
+    return { view: 'home', pane: 'tea', to: '' };
+  }
+
+  function canonical(p) {
+    var s = p.view === 'products'
+      ? '#/products/' + (p.pane || 'tea')
+      : '#/' + p.view;
+    if (p.to) s += '?to=' + encodeURIComponent(p.to);
+    return s;
+  }
+
+  function closeFloaters() {
+    var links = $q('#navlinks'); if (links) links.classList.remove('open');
+    var item = $q('#navProducts'); if (item) item.classList.remove('drop-open');
+    var tgl = $q('.navdrop-toggle', item); if (tgl) tgl.setAttribute('aria-expanded', 'false');
+    var root = $q('.nav-root', item); if (root) root.setAttribute('aria-expanded', 'false');
+    var gs = $q('#gsearch'); if (gs) gs.classList.remove('mobile-open');
+    var gtr = $q('#gsTrigger'); if (gtr) gtr.setAttribute('aria-expanded', 'false');
+    var panel = $q('#gsearchPanel'); if (panel) { panel.hidden = true; panel.innerHTML = ''; }
+    var dock = $q('#contactDock'); if (dock) dock.classList.remove('open');
+    var dp = $q('#dockPanel'); if (dp) dp.hidden = true;
+    var dto = $q('#dockToggle'); if (dto) dto.setAttribute('aria-expanded', 'false');
+  }
+
+  function markActive(view) {
+    var map = { home: '#/home', products: '#/products', heritage: '#/heritage',
+                about: '#/about', capability: '#/capability', contact: '#/contact' };
+    $qa('#navlinks > a, #navlinks .nav-root').forEach(function (a) {
+      if (a.getAttribute('href') === map[view]) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    $qa('#paneBar [data-pane]').forEach(function (a) {
+      a.classList.toggle('on', a.getAttribute('data-pane') === document.body.dataset.pane);
+      a.setAttribute('aria-selected', a.classList.contains('on') ? 'true' : 'false');
+    });
+  }
+
+  function apply(p, scrollTop) {
+    document.body.dataset.view = p.view;
+    document.body.dataset.pane = p.pane || 'tea';
+    $qa('section[data-view]').forEach(function (s) {
+      var v = s.getAttribute('data-view');
+      var pn = s.getAttribute('data-pane');
+      var show = (v === p.view) && (v !== 'products' || !pn || pn === p.pane);
+      s.classList.toggle('view-hidden', !show);
+      if (show) s.classList.add('in');   /* reveal 动效兜底：隐藏→显示不白屏 */
+    });
+    $qa('.panebar[data-view]').forEach(function (el) {
+      el.classList.toggle('view-hidden', p.view !== 'products');
+    });
+    markActive(p.view);
+    closeFloaters();
+    if (scrollTop !== false) {
+      try { window.scrollTo(0, 0); } catch (e) {}
+      if (p.to) {
+        setTimeout(function () {
+          var el = document.getElementById(p.to);
+          if (el && !el.closest('.view-hidden')) {
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            try { el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }
+            catch (e2) { el.scrollIntoView(); }
+          }
+        }, 90);
+      }
+    }
+  }
+
+  function go(hash) {
+    var p = parse(hash);
+    var c = canonical(p);
+    if (location.hash !== c) {
+      location.hash = c;      /* 触发 hashchange → apply */
+    } else {
+      apply(p);               /* 同址点击也要刷新视图（例如重复点同一 pane） */
+    }
+  }
+
+  /* 捕获阶段统一接管所有 # 链接：旧锚点、新路由、搜索结果、footer 全都不失效。
+     不 stopPropagation，data-cat / data-sub / data-pg 的既有筛选委托照常执行。 */
+  document.addEventListener('click', function (e) {
+    var a = e.target;
+    while (a && a !== document && a.nodeType === 1 && a.tagName !== 'A') a = a.parentNode;
+    if (!a || a === document || a.tagName !== 'A') return;
+    var h = a.getAttribute('href') || '';
+    if (h.charAt(0) !== '#' || h.charAt(1) === '!') return;
+    if (a.hasAttribute('data-rfq')) return;
+    e.preventDefault();
+    go(h);
+  }, true);
+
+  window.addEventListener('hashchange', function () { apply(parse(location.hash)); });
+
+  window.ZSY_VIEWS = { go: go, apply: apply, parse: parse };
+
+  function init() {
+    var p = parse(location.hash);
+    apply(p, false);         /* 首屏不强制滚顶，保留浏览器自身位置 */
+    if (location.hash && location.hash !== canonical(p)) {
+      /* 旧链接进站：规范化地址栏，但不触发二次跳转。
+         file:// 下 replaceState 可能抛 SecurityError，忽略即可，视图已生效。 */
+      try { history.replaceState(null, '', canonical(p)); } catch (e) {}
+      apply(p);
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+/* V3.3 VIEWS END */

@@ -15,16 +15,6 @@
         "en": "Porcelain & Crafts",
         "ru": "Фарфор и изделия"
       }
-    },
-    {
-      "key": "machinery",
-      "label": {
-        "zh": "流体设备",
-        "en": "Fluid Equipment",
-        "ru": "Оборудование"
-      },
-      "link": "#industrial",
-      "note": "Pumps & water systems live in the separate #industrial section."
     }
   ],
   "emptyText": {

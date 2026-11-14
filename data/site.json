@@ -10,9 +10,10 @@
     "ru": "Трансграничная логистика · ВЭД-агент · Партнёр по закупкам в Китае"
   },
   "hero_img": "assets/img/hero-bg.jpg",
-
   "about_titles": {
-    "zh": "关于我们", "en": "About Us", "ru": "О компании"
+    "zh": "关于我们",
+    "en": "About Us",
+    "ru": "О компании"
   },
   "about_descs": {
     "zh": "九江昭盛元科技有限公司注册于江西省九江市修水县。公司以供应链管理服务为核心，具备货物进出口、技术进出口与进出口代理经营资质，可自营并代理各类商品与技术的进出口业务。我们立足产地，做采购方与中国制造之间的那一段：选品、验货、集货、报关、运输、清关派送。",
@@ -20,98 +21,368 @@
     "ru": "ООО «Цзюцзян Чжаошэнъюань Технологии» зарегистрировано в уезде Сюшуй, Цзюцзян, провинция Цзянси. Основное направление — управление цепями поставок; имеются лицензии на импорт и экспорт товаров и технологий, а также на агентскую ВЭД-деятельность. Мы находимся у источника и закрываем участок между покупателем и китайским производством: подбор, инспекция, консолидация, таможня, перевозка, доставка."
   },
   "about_img": "assets/img/about-2.jpg",
-
   "qual_items": [
-    { "zh": "货物进出口", "en": "Import & export of goods", "ru": "Импорт и экспорт товаров" },
-    { "zh": "技术进出口", "en": "Import & export of technology", "ru": "Импорт и экспорт технологий" },
-    { "zh": "进出口代理", "en": "Import-export agency", "ru": "Агентская ВЭД-деятельность" },
-    { "zh": "供应链管理服务", "en": "Supply-chain management", "ru": "Управление цепями поставок" },
-    { "zh": "区块链技术相关软件和服务（非金融类）", "en": "Blockchain software & services (non-financial)", "ru": "Блокчейн-ПО и услуги (не финансовые)" },
-    { "zh": "工艺美术品及收藏品零售", "en": "Retail of arts, crafts & collectibles", "ru": "Розничная торговля изделиями искусства" }
+    {
+      "zh": "货物进出口",
+      "en": "Import & export of goods",
+      "ru": "Импорт и экспорт товаров"
+    },
+    {
+      "zh": "技术进出口",
+      "en": "Import & export of technology",
+      "ru": "Импорт и экспорт технологий"
+    },
+    {
+      "zh": "进出口代理",
+      "en": "Import-export agency",
+      "ru": "Агентская ВЭД-деятельность"
+    },
+    {
+      "zh": "供应链管理服务",
+      "en": "Supply-chain management",
+      "ru": "Управление цепями поставок"
+    },
+    {
+      "zh": "区块链技术相关软件和服务（非金融类）",
+      "en": "Blockchain software & services (non-financial)",
+      "ru": "Блокчейн-ПО и услуги (не финансовые)"
+    },
+    {
+      "zh": "工艺美术品及收藏品零售",
+      "en": "Retail of arts, crafts & collectibles",
+      "ru": "Розничная торговля изделиями искусства"
+    }
   ],
   "qual_note": {
     "zh": "以上均取自公司经营范围，可在国家企业信用信息公示系统核验。统一社会信用代码 91360424MAKJBPTM33。区块链相关服务仅限溯源防伪与单据存证，不涉及任何虚拟货币、代币发行或支付结算业务。",
     "en": "All items above are taken from the company's registered business scope and can be verified on the National Enterprise Credit Information Publicity System. Unified Social Credit Code 91360424MAKJBPTM33. Blockchain-related services are limited to traceability, anti-counterfeiting and document attestation — no virtual currency, token issuance or payment settlement involved.",
     "ru": "Все пункты взяты из зарегистрированного вида деятельности и проверяются в Национальной системе раскрытия корпоративной информации. Единый социальный код 91360424MAKJBPTM33. Услуги блокчейна ограничиваются прослеживаемостью, защитой от подделки и подтверждением документов — без виртуальных валют, выпуска токенов и платежей."
   },
-
-  "cap_title": { "zh": "我们能做什么", "en": "What We Do", "ru": "Что мы делаем" },
+  "cap_title": {
+    "zh": "我们能做什么",
+    "en": "What We Do",
+    "ru": "Что мы делаем"
+  },
   "cap_lead": {
     "zh": "从选品到清关派送，七个环节，一个对接人。",
     "en": "From sourcing to customs clearance and delivery — seven steps, one point of contact.",
     "ru": "От подбора до таможни и доставки — семь этапов, один контакт."
   },
   "cap_items": [
-    { "zh": "需求确认：品类、规格、目标市场、合规要求", "en": "Requirements: category, spec, target market, compliance", "ru": "Требования: категория, ТЗ, рынок, комплаенс" },
-    { "zh": "选品采购：产地直采，多家工厂比价与打样", "en": "Sourcing: direct from origin, multi-factory comparison", "ru": "Подбор: напрямую от источника, сравнение фабрик" },
-    { "zh": "验货质检：出货前检验，支持第三方验货", "en": "Inspection: pre-shipment check, third-party accepted", "ru": "Инспекция: проверка перед отгрузкой" },
-    { "zh": "仓储集货：多供应商货物合并，降低头程成本", "en": "Consolidation: merge suppliers to cut first-leg cost", "ru": "Консолидация: объединение поставщиков" },
-    { "zh": "出口报关：单证准备与申报", "en": "Export clearance: documentation and declaration", "ru": "Экспортная таможня: документы и декларирование" },
-    { "zh": "国际运输：海运 / 铁路 / 空运 / 公路", "en": "Transport: sea / rail / air / road", "ru": "Перевозка: море / ж/д / авиа / авто" },
-    { "zh": "清关派送：目的港清关与末端配送", "en": "Destination: customs clearance and last mile", "ru": "Назначение: таможня и последняя миля" }
+    {
+      "zh": "需求确认：品类、规格、目标市场、合规要求",
+      "en": "Requirements: category, spec, target market, compliance",
+      "ru": "Требования: категория, ТЗ, рынок, комплаенс"
+    },
+    {
+      "zh": "选品采购：产地直采，多家工厂比价与打样",
+      "en": "Sourcing: direct from origin, multi-factory comparison",
+      "ru": "Подбор: напрямую от источника, сравнение фабрик"
+    },
+    {
+      "zh": "验货质检：出货前检验，支持第三方验货",
+      "en": "Inspection: pre-shipment check, third-party accepted",
+      "ru": "Инспекция: проверка перед отгрузкой"
+    },
+    {
+      "zh": "仓储集货：多供应商货物合并，降低头程成本",
+      "en": "Consolidation: merge suppliers to cut first-leg cost",
+      "ru": "Консолидация: объединение поставщиков"
+    },
+    {
+      "zh": "出口报关：单证准备与申报",
+      "en": "Export clearance: documentation and declaration",
+      "ru": "Экспортная таможня: документы и декларирование"
+    },
+    {
+      "zh": "国际运输：海运 / 铁路 / 空运 / 公路",
+      "en": "Transport: sea / rail / air / road",
+      "ru": "Перевозка: море / ж/д / авиа / авто"
+    },
+    {
+      "zh": "清关派送：目的港清关与末端配送",
+      "en": "Destination: customs clearance and last mile",
+      "ru": "Назначение: таможня и последняя миля"
+    }
   ],
   "cap_note": {
     "zh": "时效与费用随季节、政策、舱位与目的国波动，我们不标示固定报价——请在询盘中说明品类、体积重量与目的港，我们给出实时方案。",
     "en": "Transit times and costs move with season, policy, capacity and destination. We do not publish fixed rates — tell us the category, volume, weight and destination port and we will quote in real time.",
     "ru": "Сроки и стоимость зависят от сезона, правил, наличия мест и страны назначения. Фиксированных тарифов не публикуем — укажите категорию, объём, вес и порт назначения."
   },
-
-  "why_title": { "zh": "为什么选择我们", "en": "Why Work With Us", "ru": "Почему мы" },
+  "why_title": {
+    "zh": "为什么选择我们",
+    "en": "Why Work With Us",
+    "ru": "Почему мы"
+  },
   "why_items": [
-    { "title": { "zh": "进出口资质齐备", "en": "Fully licensed for trade", "ru": "Полный набор лицензий" },
-      "text": { "zh": "经营范围含货物进出口、技术进出口与进出口代理，可直接组织跨境交付。", "en": "Our scope covers goods, technology and agency — we can organise cross-border delivery directly.", "ru": "Вид деятельности включает товары, технологии и агентскую ВЭД." } },
-    { "title": { "zh": "产地直采", "en": "Source-direct procurement", "ru": "Закупка у источника" },
-      "text": { "zh": "注册地位于修水县茶叶产区，减少中间环节。", "en": "Registered in Xiushui, a tea-producing county — fewer middlemen.", "ru": "Регистрация в чаепроизводящем уезде Сюшуй — меньше посредников." } },
-    { "title": { "zh": "供应链管理是主业", "en": "Supply chain is our core", "ru": "Управление поставками — профиль" },
-      "text": { "zh": "供应链管理服务在册，不是兼营。", "en": "Supply-chain management is registered as our core business, not a side line.", "ru": "Управление цепями поставок — основной вид деятельности." } },
-    { "title": { "zh": "溯源与单据存证", "en": "Traceability & attestation", "ru": "Прослеживаемость" },
-      "text": { "zh": "区块链相关服务用于溯源防伪与单据存证，非金融类，合规可控。", "en": "Blockchain services used only for traceability and document attestation — non-financial and compliant.", "ru": "Блокчейн только для прослеживаемости и документов — не финансовый." } },
-    { "title": { "zh": "多品类可拓展", "en": "Multi-category, extensible", "ru": "Мультикатегорийность" },
-      "text": { "zh": "茶叶已落地，瓷器与机电泵阀陆续上架，一个窗口对接多个品类。", "en": "Tea is live; porcelain and pumps are coming — one window for several categories.", "ru": "Чай уже доступен, фарфор и насосы — в работе." } },
-    { "title": { "zh": "中俄双语直接沟通", "en": "Direct contact in RU / EN / ZH", "ru": "Прямая связь на RU / EN / ZH" },
-      "text": { "zh": "俄罗斯号码与 Telegram 直达，不用等邮件来回。", "en": "A Russian phone number and Telegram — no waiting on email threads.", "ru": "Российский номер и Telegram — без долгой переписки." } }
+    {
+      "title": {
+        "zh": "进出口资质齐备",
+        "en": "Fully licensed for trade",
+        "ru": "Полный набор лицензий"
+      },
+      "text": {
+        "zh": "经营范围含货物进出口、技术进出口与进出口代理，可直接组织跨境交付。",
+        "en": "Our scope covers goods, technology and agency — we can organise cross-border delivery directly.",
+        "ru": "Вид деятельности включает товары, технологии и агентскую ВЭД."
+      }
+    },
+    {
+      "title": {
+        "zh": "产地直采",
+        "en": "Source-direct procurement",
+        "ru": "Закупка у источника"
+      },
+      "text": {
+        "zh": "注册地位于修水县茶叶产区，减少中间环节。",
+        "en": "Registered in Xiushui, a tea-producing county — fewer middlemen.",
+        "ru": "Регистрация в чаепроизводящем уезде Сюшуй — меньше посредников."
+      }
+    },
+    {
+      "title": {
+        "zh": "供应链管理是主业",
+        "en": "Supply chain is our core",
+        "ru": "Управление поставками — профиль"
+      },
+      "text": {
+        "zh": "供应链管理服务在册，不是兼营。",
+        "en": "Supply-chain management is registered as our core business, not a side line.",
+        "ru": "Управление цепями поставок — основной вид деятельности."
+      }
+    },
+    {
+      "title": {
+        "zh": "溯源与单据存证",
+        "en": "Traceability & attestation",
+        "ru": "Прослеживаемость"
+      },
+      "text": {
+        "zh": "区块链相关服务用于溯源防伪与单据存证，非金融类，合规可控。",
+        "en": "Blockchain services used only for traceability and document attestation — non-financial and compliant.",
+        "ru": "Блокчейн только для прослеживаемости и документов — не финансовый."
+      }
+    },
+    {
+      "title": {
+        "zh": "多品类可拓展",
+        "en": "Multi-category, extensible",
+        "ru": "Мультикатегорийность"
+      },
+      "text": {
+        "zh": "茶叶已落地，瓷器与机电泵阀陆续上架，一个窗口对接多个品类。",
+        "en": "Tea is live; porcelain and pumps are coming — one window for several categories.",
+        "ru": "Чай уже доступен, фарфор и насосы — в работе."
+      }
+    },
+    {
+      "title": {
+        "zh": "中俄双语直接沟通",
+        "en": "Direct contact in RU / EN / ZH",
+        "ru": "Прямая связь на RU / EN / ZH"
+      },
+      "text": {
+        "zh": "俄罗斯号码与 Telegram 直达，不用等邮件来回。",
+        "en": "A Russian phone number and Telegram — no waiting on email threads.",
+        "ru": "Российский номер и Telegram — без долгой переписки."
+      }
+    }
   ],
-
-  "term_title": { "zh": "合作条款", "en": "Terms of Trade", "ru": "Условия сотрудничества" },
+  "term_title": {
+    "zh": "合作条款",
+    "en": "Terms of Trade",
+    "ru": "Условия сотрудничества"
+  },
   "term_items": [
-    { "title": { "zh": "起订量", "en": "Minimum order", "ru": "Минимальный заказ" },
-      "text": { "zh": "按品类、规格与定制程度而定，现货低于定制。请以询盘确认为准。", "en": "Depends on category, spec and customisation; stock is lower than custom. Confirm by enquiry.", "ru": "Зависит от категории и ТЗ; сток ниже кастома." } },
-    { "title": { "zh": "样品", "en": "Samples", "ru": "Образцы" },
-      "text": { "zh": "支持寄样。样品费与运费按实际结算，大单确认后可抵扣货款。", "en": "Samples available; cost settled at actuals and credited against a confirmed bulk order.", "ru": "Образцы предоставляются; затраты засчитываются при заказе." } },
-    { "title": { "zh": "打样与交期", "en": "Sampling & lead time", "ru": "Образцы и сроки" },
-      "text": { "zh": "常规规格现货即发；定制包装确认设计稿后排产，周期下单前明确告知。", "en": "Standard specs ship from stock; custom packaging scheduled after artwork approval.", "ru": "Стандарт со склада; кастом после утверждения макета." } },
-    { "title": { "zh": "支付方式", "en": "Payment", "ru": "Оплата" },
-      "text": { "zh": "对公转账、信用证。新客户首单款到发货，长期客户可协商账期。", "en": "Bank transfer and L/C. First order prepaid; terms negotiable for long-term partners.", "ru": "Перевод и аккредитив. Первый заказ — предоплата." } },
-    { "title": { "zh": "包装与贴牌", "en": "Packaging & private label", "ru": "Упаковка и СТМ" },
-      "text": { "zh": "支持 LOGO 加印、包装设计与贴牌代工。使用客户商标需提供证明文件。", "en": "Logo printing, packaging design, contract manufacturing. Own trademark requires proof.", "ru": "Нанесение логотипа, разработка упаковки, СТМ." } },
-    { "title": { "zh": "出口与单证", "en": "Export & documents", "ru": "Экспорт и документы" },
-      "text": { "zh": "可提供营业执照、检测报告、原产地证及出口报关单证。", "en": "Business licence, test reports, certificate of origin and customs papers.", "ru": "Лицензии, протоколы, сертификат происхождения, таможня." } }
+    {
+      "title": {
+        "zh": "起订量",
+        "en": "Minimum order",
+        "ru": "Минимальный заказ"
+      },
+      "text": {
+        "zh": "按询价确认。不同品类、规格与定制程度均不预设固定起订量，以正式询盘回复为准。",
+        "en": "Confirmed upon inquiry. No fixed minimum is preset for any category, specification or customisation; the formal quotation prevails.",
+        "ru": "Подтверждается по запросу. Фиксированный минимум для категорий, спецификаций и кастома не预设; определяющим является официальное предложение."
+      }
+    },
+    {
+      "title": {
+        "zh": "样品",
+        "en": "Samples",
+        "ru": "Образцы"
+      },
+      "text": {
+        "zh": "支持寄样。样品费与运费按实际结算，大单确认后可抵扣货款。",
+        "en": "Samples available; cost settled at actuals and credited against a confirmed bulk order.",
+        "ru": "Образцы предоставляются; затраты засчитываются при заказе."
+      }
+    },
+    {
+      "title": {
+        "zh": "打样与交期",
+        "en": "Sampling & lead time",
+        "ru": "Образцы и сроки"
+      },
+      "text": {
+        "zh": "常规规格现货即发；定制包装确认设计稿后排产，周期下单前明确告知。",
+        "en": "Standard specs ship from stock; custom packaging scheduled after artwork approval.",
+        "ru": "Стандарт со склада; кастом после утверждения макета."
+      }
+    },
+    {
+      "title": {
+        "zh": "支付方式",
+        "en": "Payment",
+        "ru": "Оплата"
+      },
+      "text": {
+        "zh": "对公转账、信用证。新客户首单款到发货，长期客户可协商账期。",
+        "en": "Bank transfer and L/C. First order prepaid; terms negotiable for long-term partners.",
+        "ru": "Перевод и аккредитив. Первый заказ — предоплата."
+      }
+    },
+    {
+      "title": {
+        "zh": "包装与贴牌",
+        "en": "Packaging & private label",
+        "ru": "Упаковка и СТМ"
+      },
+      "text": {
+        "zh": "支持 LOGO 加印、包装设计与贴牌代工。使用客户商标需提供证明文件。",
+        "en": "Logo printing, packaging design, contract manufacturing. Own trademark requires proof.",
+        "ru": "Нанесение логотипа, разработка упаковки, СТМ."
+      }
+    },
+    {
+      "title": {
+        "zh": "出口与单证",
+        "en": "Export & documents",
+        "ru": "Экспорт и документы"
+      },
+      "text": {
+        "zh": "可提供营业执照、检测报告、原产地证及出口报关单证。",
+        "en": "Business licence, test reports, certificate of origin and customs papers.",
+        "ru": "Лицензии, протоколы, сертификат происхождения, таможня."
+      }
+    }
   ],
   "term_note": {
     "zh": "本页条款为通用说明，不构成报价或要约。具体以正式合同为准。",
     "en": "This page is general information and does not constitute an offer. The confirmed contract prevails.",
     "ru": "Страница носит информационный характер и не является офертой."
   },
-
   "faq_list": [
-    { "q": { "zh": "你们是生产厂家还是贸易公司？", "en": "Are you a manufacturer or a trading company?", "ru": "Вы производитель или торговая компания?" },
-      "a": { "zh": "我们是供应链服务商，持有货物进出口、技术进出口与进出口代理资质。茶叶由修水本地持证生产企业供货，我们负责选品、验货、集货与出口交付。", "en": "We are a supply-chain service provider licensed for import and export of goods and technology, and for import-export agency. Tea is supplied by licensed local manufacturers in Xiushui; we handle sourcing, inspection, consolidation and export delivery.", "ru": "Мы — поставщик услуг в сфере цепей поставок с лицензиями на импорт/экспорт и агентскую ВЭД. Чай поставляют лицензированные местные производители Сюшуй; мы отвечаем за подбор, инспекцию, консолидацию и экспорт." } },
-    { "q": { "zh": "茶叶能否做袋泡茶、果茶、花草茶？", "en": "Can you supply tea bags, fruit and herbal teas?", "ru": "Поставляете ли пакетики, фруктовые и травяные чаи?" },
-      "a": { "zh": "可以。供货生产企业的食品生产许可证许可范围明确涵盖袋泡茶、调味茶（混合调味茶）、代用茶（叶类／花类／混合类）。", "en": "Yes. The supplying manufacturer's food production licence explicitly covers tea bags, blended (flavoured) tea and herbal tea (leaf / flower / blended).", "ru": "Да. Лицензия производителя явно покрывает пакетированный, купажированный и травяной чай." } },
-    { "q": { "zh": "你们涉及虚拟货币或区块链金融业务吗？", "en": "Do you deal in crypto or blockchain finance?", "ru": "Работаете ли вы с криптовалютой?" },
-      "a": { "zh": "不涉及。我们的区块链相关服务仅限溯源防伪与单据存证，属于非金融类，不涉及任何虚拟货币、代币发行或支付结算。", "en": "No. Blockchain-related services are limited to traceability, anti-counterfeiting and document attestation — non-financial, with no virtual currency, token issuance or payment settlement.", "ru": "Нет. Блокчейн-услуги ограничены прослеживаемостью и документами — без криптовалют и платежей." } },
-    { "q": { "zh": "除了茶叶，还能供应什么？", "en": "What else besides tea?", "ru": "Что ещё, кроме чая?" },
-      "a": { "zh": "瓷器与机电泵阀正在上架中。经营范围含工艺美术品及收藏品零售，可承接相关品类的询盘与打样。", "en": "Porcelain and pumps are being added. Our scope includes retail of arts, crafts and collectibles, so related enquiries and sampling are welcome.", "ru": "Фарфор и насосы добавляются. Вид деятельности включает розницу изделий искусства." } },
-    { "q": { "zh": "最小起订量是多少？", "en": "What is the MOQ?", "ru": "Каков минимальный заказ?" },
-      "a": { "zh": "按品类、规格与定制程度而定，现货门槛低于定制单。请在询盘中说明采购规模与销售渠道。", "en": "Depends on category, spec and customisation; stock items lower than custom runs. State your volume and channel in your enquiry.", "ru": "Зависит от категории и ТЗ. Укажите объём и канал в запросе." } },
-    { "q": { "zh": "运输方式与时效？", "en": "Shipping modes and transit times?", "ru": "Способы перевозки и сроки?" },
-      "a": { "zh": "海运、铁路、空运、公路均可安排。时效与费用随季节、政策、舱位与目的国波动，我们不标示固定报价，请联系获取实时方案。", "en": "Sea, rail, air and road are all available. Transit times and costs vary with season, policy, capacity and destination — we publish no fixed rates, please ask for a live quote.", "ru": "Море, ж/д, авиа, авто. Сроки и стоимость варьируются — запрашивайте актуальный расчёт." } },
-    { "q": { "zh": "能否出口俄罗斯？需要哪些单证？", "en": "Can you ship to Russia? What documents?", "ru": "Возможна ли поставка в Россию?" },
-      "a": { "zh": "可以。可提供营业执照、检测报告、原产地证及出口报关单证，并按目的国农残限量与检疫标准执行。", "en": "Yes. We supply business licence, test reports, certificate of origin and customs papers, and follow destination residue limits and phytosanitary rules.", "ru": "Да. Предоставляем документы и соблюдаем нормы страны назначения." } },
-    { "q": { "zh": "合作流程是怎样的？", "en": "How does the process work?", "ru": "Как проходит сотрудничество?" },
-      "a": { "zh": "需求确认 → 选品采购 → 验货质检 → 仓储集货 → 出口报关 → 国际运输 → 清关派送。全程一个对接人。", "en": "Requirements → sourcing → inspection → consolidation → export clearance → transport → clearance and delivery. One contact throughout.", "ru": "Требования → подбор → инспекция → консолидация → таможня → перевозка → доставка." } }
+    {
+      "q": {
+        "zh": "你们是生产厂家还是贸易公司？",
+        "en": "Are you a manufacturer or a trading company?",
+        "ru": "Вы производитель или торговая компания?"
+      },
+      "a": {
+        "zh": "我们自有窑厂和工厂，并统一负责选品、验货、集货与出口交付。不同品类的生产企业与资质按实际情况单独说明，不作额外宣称。",
+        "en": "We own our kiln and factory, and handle sourcing, inspection, consolidation and export delivery in-house. The producer and licences for each category are stated separately according to the actual arrangement; we make no additional claims.",
+        "ru": "У нас есть собственная печь и фабрика; подбор, инспекцию, консолидацию и экспортную доставку мы берём на себя. Производитель и документы по каждой категории указываются отдельно по фактической схеме — дополнительных заявлений мы не делаем."
+      }
+    },
+    {
+      "q": {
+        "zh": "除了茶叶，你们还能供应什么？",
+        "en": "What else can you supply besides tea?",
+        "ru": "Что ещё вы можете поставить, кроме чая?"
+      },
+      "a": {
+        "zh": "目前已上线三条业务线：茶类（宁红、绿茶等）、景德镇瓷器（茶器、餐具等）与流体设备（各型水泵）。三类产品共用统一的品控与出口交付标准。",
+        "en": "Three business lines are now live: tea (Ninghong, green tea and others), Jingdezhen porcelain (tea ware, tableware and more) and fluid equipment (pumps of various types). All three follow the same quality-control and export-delivery standards.",
+        "ru": "Сейчас работают три направления: чай (Нинхун, зелёный чай и др.), цзиндэчжэньский фарфор (чайная и столовая посуда и др.) и насосное оборудование (различные типы насосов). Для всех трёх действуют единые стандарты контроля качества и экспортной отгрузки."
+      }
+    },
+    {
+      "q": {
+        "zh": "你们支持 OEM/ODM 定制吗？",
+        "en": "Do you support OEM/ODM customisation?",
+        "ru": "Вы работаете по OEM/ODM?"
+      },
+      "a": {
+        "zh": "支持。依托自有工厂与窑厂，茶叶可定制包装与小规格分装；瓷器可做器型开发、贴牌与专属窑变釉色；水泵可按具体工况（流量、扬程）匹配选型。起订量与图纸要求欢迎询价确认。",
+        "en": "Yes. With our own factory and kiln, tea can be supplied with custom packaging and small-format packing; porcelain supports shape development, private labelling and bespoke kiln-effect glazes; pumps are selected against your duty conditions (flow, head). MOQ and artwork requirements are confirmed on inquiry.",
+        "ru": "Да. На собственной фабрике и печи мы предлагаем индивидуальную упаковку и фасовку малых форматов для чая, разработку форм, частную марку и авторские глазури для фарфора, а также подбор насосов под ваши режимы (расход, напор). MOQ и требования к макетам уточняются по запросу."
+      }
+    },
+    {
+      "q": {
+        "zh": "最小起订量是多少？",
+        "en": "What is the minimum order quantity?",
+        "ru": "Каков минимальный объём заказа?"
+      },
+      "a": {
+        "zh": "按询价确认。请在询盘中说明品类、规格与采购规模，我们据此确认具体起订量。茶叶散装、小包装与瓷器均统一按询价确认，不预设数量。",
+        "en": "Confirmed upon inquiry. Please state the category, specification and purchase volume in your enquiry and we will confirm the MOQ. Loose tea, packed tea and porcelain are all handled the same way; no fixed quantity is published.",
+        "ru": "Подтверждается по запросу. Укажите категорию, спецификацию и объём закупки — мы подтвердим MOQ. Для рассыпного и фасованного чая, а также для фарфора действует единый порядок: без заранее заданного минимума."
+      }
+    },
+    {
+      "q": {
+        "zh": "发货周期和物流方式是怎样的？",
+        "en": "What are your lead times and shipping options?",
+        "ru": "Какие сроки отгрузки и способы доставки?"
+      },
+      "a": {
+        "zh": "常规订单下，茶叶与瓷器生产周期约 15–25 天，水泵视型号约 30–45 天。支持海运与空运；针对俄罗斯及中亚客户，具备中欧班列铁路运输与清关配合经验。具体交期以订单确认为准。",
+        "en": "For standard orders, production takes about 15–25 days for tea and porcelain and about 30–45 days for pumps, depending on the model. We ship by sea and air, and have established China–Europe rail freight with customs-clearance support for Russia and Central Asia. Lead times are confirmed per order.",
+        "ru": "По стандартным заказам производство чая и фарфора занимает около 15–25 дней, насосов — около 30–45 дней в зависимости от модели. Доставка морем и авиа; для России и Центральной Азии есть отработанная схема ж/д перевозок Китай — Европа и сопровождение таможенного оформления. Сроки подтверждаются по каждому заказу."
+      }
+    },
+    {
+      "q": {
+        "zh": "可以提供样品进行测试吗？",
+        "en": "Can we get samples for testing?",
+        "ru": "Можно ли получить образцы для тестирования?"
+      },
+      "a": {
+        "zh": "可以。茶叶与瓷器可提供小规格样品，水泵可视型号提供测试样机。样品费与运费在后续产生批量订单时，可按约定退还或抵扣。",
+        "en": "Yes. Tea and porcelain are available in sample sizes, and test units can be arranged for selected pump models. Sample and freight charges may be refunded or credited against a subsequent bulk order, as agreed.",
+        "ru": "Да. Для чая и фарфора предоставляем образцы малого формата, для отдельных моделей насосов — опытные образцы. Стоимость образцов и доставки может быть возвращена или зачтена в счёт последующего оптового заказа по договорённости."
+      }
+    },
+    {
+      "q": {
+        "zh": "产品有出口资质或目的国认证吗？",
+        "en": "Do the products have export qualifications or destination-market certification?",
+        "ru": "Есть ли экспортные разрешения и сертификация страны назначения?"
+      },
+      "a": {
+        "zh": "我们具备自营进出口主体资质。茶叶与瓷器按目的国食品接触安全要求提供相应检测与合规文件；水泵按 ISO 9001 体系要求组织生产与检验。针对俄罗斯及欧亚经济联盟市场，EAC 符合性认证由俄方进口商作为申请人办理，我们配合提供产品参数、技术护照与工厂审核资料。",
+        "en": "We hold our own import-export entity registration. Tea and porcelain are supplied with the test and compliance documents required by the destination market for food-contact safety; pumps are produced and inspected under an ISO 9001-based quality system. For Russia and the EAEU, EAC conformity certification is applied for by the Russian importer as applicant; we provide product data, technical passports and factory-audit documentation.",
+        "ru": "У нас оформлена собственная регистрация участника ВЭД. По чаю и фарфору предоставляем протоколы испытаний и документы соответствия требованиям страны назначения к материалам, контактирующим с пищевыми продуктами; насосы изготавливаются и проверяются по системе качества на основе ISO 9001. Для России и ЕАЭС сертификацию ЕАС оформляет российский импортёр как заявитель — мы предоставляем параметры изделия, технические паспорта и материалы для проверки производства."
+      }
+    },
+    {
+      "q": {
+        "zh": "目前支持哪些付款方式？",
+        "en": "Which payment terms do you accept?",
+        "ru": "Какие способы оплаты вы принимаете?"
+      },
+      "a": {
+        "zh": "支持对公电汇（T/T）与信用证（L/C）。常规流程为 30% 定金、70% 见提单副本付清。针对俄罗斯市场，支持人民币跨境结算（CIPS）。具体条款以合同约定为准。",
+        "en": "We accept corporate bank transfer (T/T) and letters of credit (L/C). Standard terms are 30% deposit and 70% against a copy of the bill of lading. For Russia, cross-border RMB settlement (CIPS) is available. Terms are finalised in the contract.",
+        "ru": "Банковский перевод на расчётный счёт (T/T) и аккредитив (L/C). Стандартная схема: 30% предоплата, 70% против копии коносамента. Для России доступны трансграничные расчёты в юанях (CIPS). Условия фиксируются в договоре."
+      }
+    },
+    {
+      "q": {
+        "zh": "陶瓷等易碎品在运输中破损怎么处理？",
+        "en": "How is transit damage to fragile goods such as porcelain handled?",
+        "ru": "Что делать при бое фарфора и других хрупких грузов в пути?"
+      },
+      "a": {
+        "zh": "我们采用符合国际长途运输标准的防震包装。如遇运输破损，请提供开箱视频与照片联系我们；核实后，将在下一批次订单中免费补发，或按比例折现退款。",
+        "en": "We use protective packaging rated for long-distance international transport. In the event of damage, please send unpacking video and photos; once verified, we will replace the items free of charge in your next shipment or issue a proportional refund, as agreed.",
+        "ru": "Мы используем амортизирующую упаковку для международных перевозок на дальние расстояния. При повреждении пришлите видео распаковки и фотографии — после проверки мы бесплатно довезём замену в следующей партии либо вернём стоимость пропорционально, по договорённости."
+      }
+    }
   ],
-
   "contact_phone_cn": "+86 188 7925 9179",
   "contact_phone_ru": "+7 911 706 7084",
   "contact_email_1": "fanwh188@gmail.com",
@@ -126,5 +397,301 @@
     "zh": "九江昭盛元科技有限公司 · 统一社会信用代码 91360424MAKJBPTM33",
     "en": "Jiujiang Zhaoshengyuan Technology Co., Ltd. · USCC 91360424MAKJBPTM33",
     "ru": "ООО «Цзюцзян Чжаошэнъюань Технологии» · ЕСКК 91360424MAKJBPTM33"
+  },
+  "heritage": {
+    "zh": {
+      "tabs": {
+        "tea": "茶叶",
+        "porcelain": "景德镇瓷器",
+        "machinery": "流体设备"
+      },
+      "eyebrows": {
+        "tea": "江西 · 九江 · 修水",
+        "porcelain": "中国 · 江西 · 景德镇",
+        "machinery": "按工况选型 / 工程口径"
+      },
+      "titles": {
+        "tea": "百年前，它就沿这条路去了俄国",
+        "porcelain": "一座城，一条路，一千年",
+        "machinery": "不讲故事，只给可核验的口径"
+      },
+      "secLead": {
+        "tea": "宁红沿万里茶道北上，双井见于宋人笔录与正史。以下每条都标了出处；规格与报价交给产品页，资质与主体信息交给「关于我们」。",
+        "porcelain": "一座以皇帝年号命名的城市，做了一千年的瓷器。年份与工艺说明均据公开权威资料整理；供货方图册只用于品类与规格，不作为史料。",
+        "machinery": "这一板块不讲述品牌历史。工程采购需要的是可核验的选型口径、参数边界与合规归属，下面逐条列明。"
+      },
+      "storyTitles": {
+        "tea": "每一样东西，都有一段来历",
+        "porcelain": "五大技艺，各有来处",
+        "machinery": "按工况交付，不讲故事"
+      },
+      "storyLeads": {
+        "porcelain": "先认工艺，再认器型。青白瓷是宋代立镇之瓷，青花、玲珑、粉彩、颜色釉合称景德镇四大名瓷。下方说明取自公开资料，不是产品图册的宣传语。",
+        "machinery": "泵不是标准品，脱离工况报不出准确价格。下面三条规定了我们如何接单、如何给数据、如何界定文件归属。"
+      },
+      "links": {
+        "tea": "查看茶叶产品 →",
+        "porc": "查看景德镇瓷器 →",
+        "mach": "查看流体设备 →"
+      },
+      "machItems": [
+        {
+          "era": "选型口径",
+          "text": "按流量 Q、扬程 H、功率 P、口径 DN 与介质确定系列。逐型号性能曲线与数据表按系列索取，不在公网发布。",
+          "src": "data/machinery.json · 参数与数据表"
+        },
+        {
+          "era": "体系与文件",
+          "text": "按 ISO 9001:2015 体系要求组织生产。相关体系证书与型式试验报告由合作生产企业持有，我们不宣称持证主体、不公布编号与有效期。",
+          "src": "data/machinery.json · 资质与合规"
+        },
+        {
+          "era": "合规归属",
+          "text": "输往俄罗斯及欧亚经济联盟的产品，EAC 符合性认证由俄方进口商作为申请人办理；我们配合提供俄文技术护照、数据表、图纸与检测报告。",
+          "src": "data/machinery.json · 出口合规说明"
+        },
+        {
+          "era": "消防类附加要求",
+          "text": "消防类产品可能另有目的国消防认证要求。请在询盘中说明终端用途与项目所在地，以便逐项确认。",
+          "src": "data/machinery.json · 出口合规说明"
+        }
+      ],
+      "machCards": [
+        {
+          "era": "一",
+          "title": "我们怎么接单",
+          "body": "先收工况：介质、流量、扬程、电源、安装形式、认证要求；再按系列给方案。信息越完整，选型与报价越快。"
+        },
+        {
+          "era": "二",
+          "title": "我们给什么数据",
+          "body": "Q / H / P / DN 一律 SI 单位。数据表、图纸与检测报告按系列索取，通过询盘表单或 Telegram Bot 交付，不放在公网。"
+        },
+        {
+          "era": "三",
+          "title": "我们不承诺什么",
+          "body": "不写无法核验的性能曲线，不声明证书编号与有效期，不把合作生产企业的资质写成自有资质。"
+        }
+      ],
+      "craftSrc": "资料来源 · 住建部、景德镇市政府《景德镇志略》、国家文物局、央视网",
+      "viewCat": "查看该品类产品 →",
+      "eyebrow": "江西 · 九江 · 修水",
+      "title": "百年前，它就沿这条路去了俄国",
+      "lead": "这里只放可以查证的年代、引文与出处。故事负责说明我们从哪里来，规格与报价交给产品页，资质与主体信息交给「关于我们」。",
+      "srcLabel": "史料来源",
+      "viewTea": "查看茶叶产品 →",
+      "viewPorc": "查看景德镇瓷器 →",
+      "note": "引文与出处逐条标注；无法核实的说法不写。",
+      "item1Era": "清 · 光绪十七年（1891）",
+      "item1Text": "商人以宁红茶进献俄国皇太子，获赠匾额「茶盖中华、价高天下」。",
+      "item1Src": "人民网江西频道",
+      "item2Era": "19 世纪末",
+      "item2Text": "销俄宁红茶约占江西茶叶出口八成；宁红沿万里茶道经汉口北上，过恰克图入俄国。",
+      "item2Src": "中央纪委国家监委网站、《江西经济史》",
+      "item3Era": "北宋",
+      "item3Text": "黄庭坚「山谷家乡双井茶，一啜犹须三日夸」；欧阳修《归田录》推双井为草茶第一；《宋史·食货志》列「隆兴之黄龙、双井，皆号绝品也」。",
+      "item3Src": "《山谷集》、《归田录》、《宋史·食货志》",
+      "item4Era": "1915",
+      "item4Text": "宁红茶获巴拿马万国博览会甲级大奖章。",
+      "item4Src": "人民网江西频道",
+      "readMore": "展开全文",
+      "readLess": "收起"
+    },
+    "en": {
+      "tabs": {
+        "tea": "Tea",
+        "porcelain": "Jingdezhen Porcelain",
+        "machinery": "Fluid Equipment"
+      },
+      "eyebrows": {
+        "tea": "Jiangxi · Jiujiang · Xiushui",
+        "porcelain": "China · Jiangxi · Jingdezhen",
+        "machinery": "Selection by duty / Engineering practice"
+      },
+      "titles": {
+        "tea": "A century ago it travelled this road to Russia",
+        "porcelain": "One city, one road, a thousand years",
+        "machinery": "No stories — only verifiable practice"
+      },
+      "secLead": {
+        "tea": "Ninghong travelled north along the Great Tea Road; Shuangjing appears in Song writings and official history. Every entry below carries its source. Specifications and pricing belong to the product pages, company credentials to About.",
+        "porcelain": "A city named after an imperial reign title has made porcelain for a thousand years. Dates and craft notes come from public authoritative sources; supplier catalogues are used for categories and dimensions only.",
+        "machinery": "This section tells no brand story. Engineering buyers need verifiable selection practice, parameter boundaries and compliance ownership — listed point by point below."
+      },
+      "storyTitles": {
+        "tea": "Every item has a history",
+        "porcelain": "Five techniques, each with a provenance",
+        "machinery": "Delivered against duty conditions, not stories"
+      },
+      "storyLeads": {
+        "porcelain": "Know the technique before the shape. Yingqing is the Song ware that named the town; blue-and-white, linglong, famille rose and coloured glazes are the Four Great Porcelains. Notes below come from public sources, not catalogue copy.",
+        "machinery": "A pump is not an off-the-shelf item — no accurate price exists without duty conditions. Three rules below set out how we take enquiries, issue data and attribute documents."
+      },
+      "links": {
+        "tea": "View tea products →",
+        "porc": "View Jingdezhen porcelain →",
+        "mach": "View fluid equipment →"
+      },
+      "machItems": [
+        {
+          "era": "Selection basis",
+          "text": "Series are selected by flow Q, head H, power P, nominal diameter DN and medium. Per-model curves and datasheets are supplied on request by series, not published online.",
+          "src": "data/machinery.json · Parameters & datasheets"
+        },
+        {
+          "era": "System & documents",
+          "text": "Production is organised under an ISO 9001:2015 quality management system. Related certificates and type-test reports are held by our manufacturing partner; we make no claim of ownership and publish no numbers or expiry dates.",
+          "src": "data/machinery.json · Qualifications & compliance"
+        },
+        {
+          "era": "Compliance ownership",
+          "text": "For shipments to Russia and the EAEU, EAC conformity assessment is completed by the Russian importer as applicant. We supply Russian technical passports, datasheets, drawings and test reports.",
+          "src": "data/machinery.json · Export compliance"
+        },
+        {
+          "era": "Fire-safety scope",
+          "text": "Fire pump sets may be subject to additional destination-country fire certification. State the end use and project location in your enquiry so each item can be confirmed.",
+          "src": "data/machinery.json · Export compliance"
+        }
+      ],
+      "machCards": [
+        {
+          "era": "01",
+          "title": "How we take an enquiry",
+          "body": "Duty first: medium, flow, head, power supply, mounting and certification needs — then a series proposal. The more complete the data, the faster the selection and quotation."
+        },
+        {
+          "era": "02",
+          "title": "What data we issue",
+          "body": "Q / H / P / DN always in SI units. Datasheets, drawings and test reports are supplied by series via the enquiry form or Telegram Bot, never posted publicly."
+        },
+        {
+          "era": "03",
+          "title": "What we do not claim",
+          "body": "No unverifiable performance curves, no certificate numbers or expiry dates, no presentation of our partner’s qualifications as our own."
+        }
+      ],
+      "craftSrc": "Sources · MOHURD, Jingdezhen Municipal Government (Gazetteer), National Cultural Heritage Administration, CCTV",
+      "viewCat": "View products in this category →",
+      "eyebrow": "Jiangxi · Jiujiang · Xiushui",
+      "title": "A century ago it travelled this road to Russia",
+      "lead": "Only verifiable dates, quotations and sources live here. Stories explain where we come from; specifications and pricing belong to the product pages, and company credentials to About.",
+      "srcLabel": "Sources",
+      "viewTea": "View tea products →",
+      "viewPorc": "View porcelain →",
+      "note": "Each quotation carries its source. Unverifiable claims are not published.",
+      "item1Era": "Qing · Guangxu 17 (1891)",
+      "item1Text": "Merchants presented Ninghong black tea to the Russian Crown Prince, receiving a plaque reading “Tea surpassing all under heaven, prized above all”.",
+      "item1Src": "People’s Daily Online, Jiangxi",
+      "item2Era": "Late 19th century",
+      "item2Text": "Ninghong shipped to Russia accounted for roughly 80% of Jiangxi tea exports; it travelled the Great Tea Road via Hankou and Kyakhta into Russia.",
+      "item2Src": "CCDI website; Economic History of Jiangxi",
+      "item3Era": "Northern Song",
+      "item3Text": "Huang Tingjian wrote of Shuangjing tea; Ouyang Xiu ranked it first among grass teas in Gui Tian Lu; the Song Shi lists “Huanglong and Shuangjing of Longxing, all called supreme”.",
+      "item3Src": "Shan Gu Ji; Gui Tian Lu; Song Shi, Treatise on Food and Money",
+      "item4Era": "1915",
+      "item4Text": "Ninghong black tea received a Class A Grand Prize at the Panama–Pacific International Exposition.",
+      "item4Src": "People’s Daily Online, Jiangxi",
+      "readMore": "Read full story",
+      "readLess": "Show less"
+    },
+    "ru": {
+      "tabs": {
+        "tea": "Чай",
+        "porcelain": "Цзиндэчжэньский фарфор",
+        "machinery": "Насосное оборудование"
+      },
+      "eyebrows": {
+        "tea": "Цзянси · Цзюцзян · Сюшуй",
+        "porcelain": "Китай · Цзянси · Цзиндэчжэнь",
+        "machinery": "Подбор по режиму / Инженерные правила"
+      },
+      "titles": {
+        "tea": "Сто лет назад он уже шёл этой дорогой в Россию",
+        "porcelain": "Один город, одна дорога, тысяча лет",
+        "machinery": "Без легенд — только проверяемые правила"
+      },
+      "secLead": {
+        "tea": "Нинхун шёл на север по Великому чайному пути; Шуанцзин упомянут в сунских записях и официальной истории. У каждого пункта ниже указан источник. Характеристики и цены — на страницах продукции, сведения о компании — в разделе «О компании».",
+        "porcelain": "Город, получивший имя по девизу правления императора, тысячу лет делает фарфор. Даты и описания техник приведены по открытым официальным источникам; каталоги поставщиков используются только для категорий и размеров.",
+        "machinery": "Здесь нет истории бренда. Инженерному закупщику нужны проверяемые правила подбора, границы параметров и принадлежность документов — всё перечислено ниже по пунктам."
+      },
+      "storyTitles": {
+        "tea": "У каждой вещи есть история",
+        "porcelain": "Пять техник, у каждой — своя история",
+        "machinery": "Работаем по параметрам, а не по легендам"
+      },
+      "storyLeads": {
+        "porcelain": "Сначала техника, потом форма. «Инцин» — фарфор, давший городу имя; сине-белый, линлун, фэньцай и цветные глазури — четыре знаменитых фарфора Цзиндэчжэня. Тексты ниже взяты из открытых источников, а не из рекламных каталогов.",
+        "machinery": "Насос — не типовой товар: без параметров режима точной цены не дать. Три правила ниже описывают, как мы принимаем запрос, выдаём данные и разграничиваем документы."
+      },
+      "links": {
+        "tea": "Смотреть чай →",
+        "porc": "Смотреть фарфор →",
+        "mach": "Смотреть оборудование →"
+      },
+      "machItems": [
+        {
+          "era": "Правила подбора",
+          "text": "Серия определяется по расходу Q, напору H, мощности P, условному проходу DN и среде. Кривые по каждому типоразмеру и даташиты предоставляются по запросу по сериям, в открытом доступе не публикуются.",
+          "src": "data/machinery.json · Параметры и даташиты"
+        },
+        {
+          "era": "Система и документы",
+          "text": "Производство организовано по системе менеджмента качества ISO 9001:2015. Соответствующие сертификаты и протоколы типовых испытаний принадлежат производственному партнёру; мы не заявляем прав на них и не публикуем номера и сроки действия.",
+          "src": "data/machinery.json · Квалификация и соответствие"
+        },
+        {
+          "era": "Принадлежность соответствия",
+          "text": "При поставках в Россию и ЕАЭС оценку соответствия EAC оформляет российский импортёр как заявитель. Мы предоставляем русскоязычный технический паспорт, даташиты, чертежи и протоколы испытаний.",
+          "src": "data/machinery.json · Экспортное соответствие"
+        },
+        {
+          "era": "Пожарные требования",
+          "text": "Для пожарных насосных агрегатов могут действовать дополнительные требования страны назначения. Укажите в запросе конечное применение и место объекта, чтобы подтвердить каждый пункт.",
+          "src": "data/machinery.json · Экспортное соответствие"
+        }
+      ],
+      "machCards": [
+        {
+          "era": "01",
+          "title": "Как мы принимаем запрос",
+          "body": "Сначала режим: среда, расход, напор, электропитание, монтаж, требования к сертификации — затем предложение по серии. Полнее данные — быстрее подбор и расчёт."
+        },
+        {
+          "era": "02",
+          "title": "Какие данные выдаём",
+          "body": "Q / H / P / DN — только в единицах SI. Даташиты, чертежи и протоколы выдаём по сериям через форму запроса или Telegram Bot, в открытый доступ не выкладываем."
+        },
+        {
+          "era": "03",
+          "title": "Чего мы не заявляем",
+          "body": "Не приводим непроверяемые кривые, не публикуем номера и сроки сертификатов, не выдаём документы партнёра за собственные."
+        }
+      ],
+      "craftSrc": "Источники · Минстрой КНР, мэрия Цзиндэчжэня («Краткая хроника»), Госуправление культурного наследия, CCTV",
+      "viewCat": "Смотреть продукцию категории →",
+      "eyebrow": "Цзянси · Цзюцзян · Сюшуй",
+      "title": "Сто лет назад он уже шёл этой дорогой в Россию",
+      "lead": "Здесь только проверяемые даты, цитаты и источники. История объясняет, откуда мы пришли; характеристики и цены — на страницах продукции, сведения о компании — в разделе «О компании».",
+      "srcLabel": "Источники",
+      "viewTea": "Смотреть чай →",
+      "viewPorc": "Смотреть фарфор →",
+      "note": "У каждой цитаты указан источник. Непроверяемые утверждения не публикуются.",
+      "item1Era": "Цин · 17-й год Гуансюй (1891)",
+      "item1Text": "Купцы преподнесли красный чай Нинхун российскому наследнику престола и получили дощечку с надписью «Чай превыше всех в Поднебесной, цена выше всех».",
+      "item1Src": "Жэньминь жибао, Цзянси",
+      "item2Era": "Конец XIX века",
+      "item2Text": "На Нинхун приходилось около 80% экспорта чая из Цзянси в Россию; чай шёл Великим чайным путём через Ханькоу и Кяхту.",
+      "item2Src": "Сайт ЦКПД; «Экономическая история Цзянси»",
+      "item3Era": "Северная Сун",
+      "item3Text": "Хуан Тинцзянь писал о чае Шуанцзин; Оуян Сю в «Гуй тянь лу» поставил его первым среди травяных чаёв; в «Сун ши» сказано: «Хуанлун и Шуанцзин из Лунсина — все именуются высшим сортом».",
+      "item3Src": "«Шань гу цзи»; «Гуй тянь лу»; «Сун ши», раздел о продуктах и деньгах",
+      "item4Era": "1915",
+      "item4Text": "Красный чай Нинхун получил большую золотую медаль класса А на Панамской всемирной выставке.",
+      "item4Src": "Жэньминь жибао, Цзянси",
+      "readMore": "Читать полностью",
+      "readLess": "Свернуть"
+    }
   }
 }
