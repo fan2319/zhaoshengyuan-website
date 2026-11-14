@@ -833,16 +833,32 @@
   /* ============================================================
      表单 → Cloudflare Worker → Telegram + 邮件
      ============================================================ */
-  /* 接口地址常量。
-     俄区（Beget / Timeweb，数据落在俄境内）优先，失败自动回退 Cloudflare。 */
-  /* 默认使用已验证可用的 Worker。上一版把尚未创建的新名放在第一位，
-     每次提交都先撞一个不存在的地址，是「获取报价失败」的直接原因之一。
-     若已在 Cloudflare 把表单 Worker 改名并确认可访问，把第一行换成新地址即可。
+  /* 接口地址：优先读 data/site.json 的 form_endpoints。
+     离线后台「表单诊断」里可直接改地址、增删端点，改完导出更新包再 push，
+     不用再动代码。Worker 改名 / 换域名都走这一处配置。
      白名单（ALLOWED_ORIGINS）限制的是来源网站域名，与 Worker 叫什么无关。 */
-  var ENDPOINTS = [
+  var DEFAULT_ENDPOINTS = [
     'https://gonghehou-form.tunnir243.workers.dev',
     'https://zhaoshengyuan-form.tunnir243.workers.dev'
   ];
+  function getEndpoints() {
+    try {
+      if (SITE && Object.prototype.toString.call(SITE.form_endpoints) === '[object Array]') {
+        var a = SITE.form_endpoints.filter(function (u) {
+          return typeof u === 'string' && /^https:\/\//.test(u.trim());
+        }).map(function (u) { return u.trim().replace(/\/+$/, ''); });
+        if (a.length) return a;
+      }
+    } catch (e) {}
+    return DEFAULT_ENDPOINTS.slice();
+  }
+  /* 提交失败原因前缀：UI 按钮 / 表单文案保持 100% 本地化 */
+  var FAIL_LEAD = {
+    zh: '未送达原因：',
+    en: 'Not delivered: ',
+    ru: 'Причина недоставки: '
+  };
+  function failLead() { return FAIL_LEAD[cur] || FAIL_LEAD.zh; }
 
   function initForm() {
     var form = $('#contactForm'), msgEl = $('#formmsg');
@@ -909,7 +925,7 @@
         page: location.href
       };
       msgEl.className = 'formmsg'; msgEl.textContent = M.send;
-      var list = ENDPOINTS.filter(function (u) { return u && u.indexOf('здесь') === -1; });
+      var list = getEndpoints();
       /* 极老浏览器没有 fetch，直接引导到兜底联系卡，不让它白等 */
       if (typeof fetch !== 'function') {
         msgEl.className = 'formmsg bad'; msgEl.textContent = M.errNetwork;
@@ -920,13 +936,14 @@
         return;
       }
       /* 与 Get Quote 抽屉共用同一个后端提交函数（双端点回退） */
-      postEnquiry(payload, function (ok) {
+      postEnquiry(payload, function (ok, detail) {
         if (ok) {
           msgEl.className = 'formmsg ok'; msgEl.textContent = M.ok; form.reset();
           if (boxWrap) boxWrap.classList.remove('warn'); hideFbk();
           var ma = document.getElementById('mailFallback'); if (ma) ma.style.display = 'none';
         } else {
-          msgEl.className = 'formmsg bad'; msgEl.textContent = M.errNetwork;
+          msgEl.className = 'formmsg bad';
+          msgEl.textContent = M.errNetwork + (detail ? ' ' + detail : '');
           showFbk(payload);
         }
       });
@@ -1522,11 +1539,11 @@
     if (btn) { btn.disabled = true; btn.textContent = M.sending; }
     msg.className = 'rfq-msg'; msg.textContent = M.sending;
     var fail = $('#rfqFail'); if (fail) fail.hidden = true;
-    postEnquiry(payload, function (ok) {
+    postEnquiry(payload, function (ok, detail) {
       if (btn) { btn.disabled = false; btn.textContent = M.submit; }
       if (ok) {
         V3_OK = true;
-        msg.className = 'rfq-msg ok'; msg.textContent = M.ok;
+        msg.className = 'rfq-msg ok'; msg.textContent = M.ok; msg.style.whiteSpace = '';
         var ref = $('#rfqRef');
         if (ref) ref.textContent = M.okRef + ' · ' + String(Date.now()).slice(-8);
         var okb = $('#rfqOkBox'); if (okb) okb.hidden = false;
@@ -1535,41 +1552,63 @@
         var com = $('#rfqCommon'); if (com) com.style.display = 'none';
         if (cw) cw.style.display = 'none';
       } else {
-        msg.className = 'rfq-msg bad'; msg.textContent = M.fail;
-        var f = $('#rfqFail'); if (f) { f.hidden = false; $('#rfqFailText').textContent = M.failTip; }
+        msg.className = 'rfq-msg bad';
+        msg.textContent = M.fail + (detail ? '\n' + failLead() + detail : '');
+        msg.style.whiteSpace = detail ? 'pre-line' : '';
+        var f = $('#rfqFail');
+        if (f) { f.hidden = false; $('#rfqFailText').textContent = M.failTip;
+                 if (f.scrollIntoView) f.scrollIntoView({ block: 'nearest' }); }
+        var fd = $('#rfqFailDetail');
+        if (fd) { fd.textContent = detail ? failLead() + detail : ''; fd.style.display = detail ? '' : 'none'; }
         v3MailFallback(payload);
         v3AssistLinks();
       }
     });
   }
 
-  /* ---------------------------------------------------------------- 共用的后端提交 */
+  /* ---------------------------------------------------------------- 共用的后端提交
+     返回 cb(ok, detail)：失败时把每个端点的真实结果带回来，
+     访客不用按 F12 也能看到是白名单 403、环境变量 500 还是网络被拦。 */
   function postEnquiry(payload, cb) {
-    var list = ENDPOINTS.filter(function (u) { return u && u.indexOf('здесь') === -1; });
-    if (!list.length) { setTimeout(function () { cb(true); }, 600); return; }
-    if (typeof fetch !== 'function') { cb(false); return; }
+    var list = getEndpoints();
+    if (!list.length) { setTimeout(function () { cb(true, ''); }, 600); return; }
+    if (typeof fetch !== 'function') { cb(false, failLead() + 'fetch unavailable'); return; }
+    var notes = [];
     (function attempt(i) {
-      if (i >= list.length) { cb(false); return; }
-      var done = false, timer = null;
+      if (i >= list.length) { cb(false, notes.join(' | ')); return; }
+      var done = false, timer = null, url = list[i];
+      var short = url.replace(/^https:\/\//, '').replace(/\/+$/, '');
       /* 9 秒无响应即转下一个端点，避免某个地址挂起时按钮一直转圈 */
       timer = setTimeout(function () {
         if (done) return;
-        done = true; attempt(i + 1);
+        done = true; notes.push(short + ' → timeout 9s'); attempt(i + 1);
       }, 9000);
-      fetch(list[i], {
+      fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       }).then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);   // 403 / 500 也要回退
-        return r.json();
-      }).then(function (j) {
+        return r.text().then(function (txt) {
+          return { status: r.status, ok: r.ok, txt: String(txt || '') };
+        });
+      }).then(function (res) {
         if (done) return;
         clearTimeout(timer); done = true;
-        if (j && j.ok) cb(true); else attempt(i + 1);
+        var brief = res.txt.slice(0, 120).replace(/\s+/g, ' ');
+        if (!res.ok) {
+          notes.push(short + ' → HTTP ' + res.status + (brief ? ' · ' + brief : ''));
+          attempt(i + 1); return;
+        }
+        var j = null; try { j = JSON.parse(res.txt); } catch (e) {}
+        if (j && j.ok) { cb(true, ''); }
+        else {
+          notes.push(short + ' → ' + (j ? 'no ok flag' : 'non-JSON response') + (brief ? ' · ' + brief : ''));
+          attempt(i + 1);
+        }
       }).catch(function () {
         if (done) return;
         clearTimeout(timer); done = true;
+        notes.push(short + ' → network / CORS / blocked');
         attempt(i + 1);
       });
     })(0);
@@ -1820,7 +1859,9 @@
     },
     setMach: function (m) { if (m) { MACH = m; renderMachinery(); } },
     setPorc: function (p) { if (p) { PORC = p; renderPorcelain(); } },
-    getLang: function () { return cur; }
+    getLang: function () { return cur; },
+    getEndpoints: getEndpoints,
+    postEnquiry: postEnquiry
   };
 
   function boot() {

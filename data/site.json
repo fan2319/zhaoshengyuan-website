@@ -693,5 +693,10 @@
       "readMore": "Читать полностью",
       "readLess": "Свернуть"
     }
-  }
+  },
+  "form_endpoints": [
+    "https://gonghehou-form.tunnir243.workers.dev",
+    "https://zhaoshengyuan-form.tunnir243.workers.dev"
+  ],
+  "form_notify_email": "fanwh188@gmail.com"
 }
