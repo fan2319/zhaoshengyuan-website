@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f7fafd"/><stop offset="1" stop-color="#eaf1f7"/>
+  </linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d8e3ec"/>
+  </linearGradient>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M20 0H0V20" fill="none" stroke="#dfe8ef" stroke-width="1"/>
+  </pattern>
+  <marker id="ar" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+    <path d="M0 0L7 3.5L0 7Z" fill="#9db4c6"/>
+  </marker>
+</defs>
+<rect width="800" height="420" fill="url(#bg)"/>
+<rect width="800" height="420" fill="url(#grid)" opacity=".7"/>
+<path d="M0 40H800M0 380H800" stroke="#9db4c6" stroke-width="1" opacity=".35"/>
+<text x="34" y="34" font-family="Arial,Helvetica,sans-serif" font-size="11"
+      letter-spacing="2.4" fill="#4a6b85">ZSY / FLUID EQUIPMENT</text>
+<text x="766" y="34" text-anchor="end" font-family="Arial,Helvetica,sans-serif"
+      font-size="11" letter-spacing="2" fill="#e8792b">04 / 06</text>
+<text x="34" y="404" font-family="Arial,Helvetica,sans-serif" font-size="12"
+      letter-spacing="2.2" fill="#1d3b52">CDL / GDL / DL  |  MULTISTAGE</text>
+<text x="766" y="404" text-anchor="end" font-family="Arial,Helvetica,sans-serif"
+      font-size="9.5" letter-spacing="1.6" fill="#9db4c6">SCHEMATIC / NOT TO SCALE</text>
+<g font-family="Arial,Helvetica,sans-serif" font-size="10.5" letter-spacing="1.4" fill="#4a6b85">
+<text x="34" y="378">VERTICAL MULTISTAGE</text></g>
+<rect x="328" y="78" width="112" height="84" rx="9" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.8"/><path d="M335 92.0H433" stroke="#4a6b85" stroke-width="1.1" opacity=".75"/><path d="M335 106.0H433" stroke="#4a6b85" stroke-width="1.1" opacity=".75"/><path d="M335 120.0H433" stroke="#4a6b85" stroke-width="1.1" opacity=".75"/><path d="M335 134.0H433" stroke="#4a6b85" stroke-width="1.1" opacity=".75"/><path d="M335 148.0H433" stroke="#4a6b85" stroke-width="1.1" opacity=".75"/><rect x="359" y="65" width="49" height="13" rx="3" fill="#1d3b52"/><path d="M384 65v-9" stroke="#1d3b52" stroke-width="1.4"/><rect x="352" y="162" width="64" height="18" rx="3" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.6"/><rect x="346" y="182" width="76" height="24" rx="3" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.7"/><path d="M354 194h60" stroke="#4a6b85" stroke-width="1" opacity=".7"/><rect x="346" y="209" width="76" height="24" rx="3" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.7"/><path d="M354 221h60" stroke="#4a6b85" stroke-width="1" opacity=".7"/><rect x="346" y="236" width="76" height="24" rx="3" fill="url(#metal)" stroke="#e8792b" stroke-width="1.7"/><path d="M354 248h60" stroke="#4a6b85" stroke-width="1" opacity=".7"/><rect x="346" y="263" width="76" height="24" rx="3" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.7"/><path d="M354 275h60" stroke="#4a6b85" stroke-width="1" opacity=".7"/><rect x="346" y="290" width="76" height="24" rx="3" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.7"/><path d="M354 302h60" stroke="#4a6b85" stroke-width="1" opacity=".7"/><rect x="346" y="317" width="76" height="24" rx="3" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.7"/><path d="M354 329h60" stroke="#4a6b85" stroke-width="1" opacity=".7"/><text x="440" y="248" font-family="Arial" font-size="9" letter-spacing="1.2" fill="#e8792b">STAGE x N</text><path d="M440 245h-14" stroke="#e8792b" stroke-width="1.1"/><rect x="352" y="344" width="64" height="20" rx="3" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.7"/><path d="M346 354h-84M422 354h84" stroke="#1d3b52" stroke-width="7"/><circle cx="262" cy="354" r="15" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.6"/><circle cx="262" cy="354" r="10" fill="none" stroke="#4a6b85" stroke-width="1"/><circle cx="274.0" cy="354.0" r="1.9" fill="#1d3b52"/><circle cx="262.0" cy="366.0" r="1.9" fill="#1d3b52"/><circle cx="250.0" cy="354.0" r="1.9" fill="#1d3b52"/><circle cx="262.0" cy="342.0" r="1.9" fill="#1d3b52"/><circle cx="506" cy="354" r="15" fill="url(#metal)" stroke="#1d3b52" stroke-width="1.6"/><circle cx="506" cy="354" r="10" fill="none" stroke="#4a6b85" stroke-width="1"/><circle cx="518.0" cy="354.0" r="1.9" fill="#1d3b52"/><circle cx="506.0" cy="366.0" r="1.9" fill="#1d3b52"/><circle cx="494.0" cy="354.0" r="1.9" fill="#1d3b52"/><circle cx="506.0" cy="342.0" r="1.9" fill="#1d3b52"/><path d="M250 372H518" stroke="#1d3b52" stroke-width="3.4"/><path d="M262 372v10M506 372v10" stroke="#1d3b52" stroke-width="1.4"/><path d="M250 386H518" stroke="#9db4c6" stroke-width="1" stroke-dasharray="4 4"/><path d="M262 354v-30M506 354v-30" stroke="#1d3b52" stroke-width="7"/><path d="M596 96v268" stroke="#9db4c6" stroke-width="1" stroke-dasharray="4 5"/><text x="608" y="230" font-family="Arial" font-size="9" letter-spacing="1.4" fill="#4a6b85">H = N x H1</text></svg>
